@@ -1,0 +1,57 @@
+{
+  "migIndex": 1,
+  "data": [
+    {
+      "path": "src/Assets/fonts/Inter.ttf",
+      "sha1": "7237d9cf55f177702066a28a4dde1e4c7e8ab576"
+    },
+    {
+      "path": "src/Assets/fonts/Inter_regular.ttf",
+      "sha1": "b8cef4edf34d2851c5d66e99757aeef0aea63bf2"
+    },
+    {
+      "path": "src/Assets/fonts/Roboto.ttf",
+      "sha1": "03d6e3747d862385dbe48e8296385b9236101a62"
+    },
+    {
+      "path": "src/Assets/fonts/Roboto_medium.ttf",
+      "sha1": "3c6a09fcc6a454924c81af7dff94fc6d399ed79b"
+    },
+    {
+      "path": "src/Assets/fonts/SF Pro Display.ttf",
+      "sha1": "b8cef4edf34d2851c5d66e99757aeef0aea63bf2"
+    },
+    {
+      "path": "src/Assets/fonts/SF Pro Display_medium.ttf",
+      "sha1": "b8cef4edf34d2851c5d66e99757aeef0aea63bf2"
+    },
+    {
+      "path": "src/Assets/fonts/SF Pro Text.ttf",
+      "sha1": "b8cef4edf34d2851c5d66e99757aeef0aea63bf2"
+    },
+    {
+      "path": "src/Assets/fonts/SF Pro Text_regular.ttf",
+      "sha1": "b8cef4edf34d2851c5d66e99757aeef0aea63bf2"
+    },
+    {
+      "path": "src/Assets/fonts/Urbanist.ttf",
+      "sha1": "2e72f219acf299c85c728ab840e35f55ba9ed0ea"
+    },
+    {
+      "path": "src/Assets/fonts/Urbanist_bold.ttf",
+      "sha1": "b25f6f60c22feaf33ec829c7ae6bb086af2f4d9e"
+    },
+    {
+      "path": "src/Assets/fonts/Urbanist_medium.ttf",
+      "sha1": "da11e2077535e358e004b439591d701f710918d2"
+    },
+    {
+      "path": "src/Assets/fonts/Urbanist_regular.ttf",
+      "sha1": "b8cef4edf34d2851c5d66e99757aeef0aea63bf2"
+    },
+    {
+      "path": "src/Assets/fonts/Urbanist_semibold.ttf",
+      "sha1": "b5d08f8959820a3797d083cdf84e0e7304f85dc4"
+    }
+  ]
+}

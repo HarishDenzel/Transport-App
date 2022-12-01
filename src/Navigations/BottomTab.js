@@ -36,6 +36,7 @@ const RenderTabIcon = Props => {
                 height: height ? height : 35,
                 resizeMode: 'contain',
                 bottom: bottom,
+                tintColor:'#6A6A6A'
               },
         ]}
       />
@@ -64,6 +65,8 @@ function BottomTab() {
             return (
               <RenderTabIcon
                 isFocused={focused}
+                width={20}
+                height={20}
                 activeIcon={GetImage.homeIcon}
                 inactiveIcon={GetImage.homeIcon}
                 tint={'#1A96F0'}
@@ -82,6 +85,8 @@ function BottomTab() {
             return (
               <RenderTabIcon
                 isFocused={focused}
+                width={20}
+                height={20}
                 activeIcon={GetImage.documentIcon}
                 inactiveIcon={GetImage.documentIcon}
                 tint={'#1A96F0'}
@@ -98,6 +103,8 @@ function BottomTab() {
           tabBarIcon: ({focused}) => {
             return (
               <RenderTabIcon
+              width={20}
+              height={20}
                 isFocused={focused}
                 activeIcon={GetImage.scanIcon}
                 inactiveIcon={GetImage.scanIcon}
@@ -116,6 +123,8 @@ function BottomTab() {
             return (
               <RenderTabIcon
                 isFocused={focused}
+                width={20}
+                height={20}
                 activeIcon={GetImage.profileIcon}
                 inactiveIcon={GetImage.profileIcon}
                 tint={'#1A96F0'}
