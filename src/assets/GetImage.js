@@ -24,5 +24,20 @@ const GetImage = {
   promo:require("../assets/Profile/promo.png"),
   gps:require("../assets/Profile/gps.png"),
   bell:require("../assets/Profile/bell.png"),
+  code1:require("../assets/Profile/code1.png"),
+  code2:require("../assets/Profile/code2.png"),
+  leftArrow:require("../assets/Profile/leftArrow.png"),
+  rightArrow:require("../assets/Profile/rightArrow.png"),
+  from:require("../assets/Profile/from.png"),
+  to:require("../assets/Profile/to.png"),
+  save:require("../assets/Profile/save.png"),
+  saveDes:require("../assets/Profile/saveDes.png"),
+  stopPin:require("../assets/Profile/stoppin.png"),
+
+  //subHome
+  locaionSearch:require("../assets/Profile/Search1.png"),
+  cancel:require("../assets/Profile/cancel.png"),
+ locationModal:require("../assets/Profile/locationModal.png"),
+
 };
 export default GetImage

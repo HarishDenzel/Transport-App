@@ -33,7 +33,10 @@ import ForgetReset from '../Pages/ForgetReset1';
 import ForgetSuccess from '../Pages/ForgetSuccess';
 import Security1 from '../Pages/Security1';
 import Security2 from '../Pages/Security2';
+import PromoCode from '../Pages/PromoCode';
 
+import CurrentLocation from '../Pages/SubHome/CurrentLocation';
+import Destination from '../Pages/SubHome/Destination';
 const Stack = createNativeStackNavigator();
 
 function Routes() {
@@ -178,6 +181,23 @@ function Routes() {
           component={Security2}
           options={{ headerShown: false }}
         />
+        <Stack.Screen
+          name="PromoCode"
+          component={PromoCode}
+          options={{ headerShown: false }}
+        />
+        <Stack.Screen
+          name="CurrentLocation"
+          component={CurrentLocation}
+          options={{ headerShown: false }}
+        />
+        <Stack.Screen
+          name="Destination"
+          component={Destination}
+          options={{ headerShown: false }}
+        />
+       
+       
       </Stack.Navigator>
       <FlashMessage position="top" />
     </NavigationContainer>
