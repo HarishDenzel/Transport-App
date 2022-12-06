@@ -44,7 +44,13 @@ const GetImage = {
  ticket : require("../assets/Notification/ticket.png"),
  visa : require("../assets/Notification/visa.png"),
  cardbg : require("../assets/Notification/cardbg.png"),
- topupic:require('../assets/Notification/Icon.png')
+ topupic:require('../assets/Notification/Icon.png'),
 
+ //Notfication
+ choose:require("../assets/Profile/choose.png"),
+ offer:require("../assets/Profile/offer.png"),
+ Notifi1:require("../assets/Profile/Notifi1.png"),
+ Notifi2:require("../assets/Profile/Notifi2.png"),
+ promoSuccess:require("../assets/Profile/promoSuccess.png"),
 };
 export default GetImage

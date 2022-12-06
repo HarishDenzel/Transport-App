@@ -103,6 +103,7 @@ const Home = (props) => {
     <View style={styles.container}>
       <View style={{ flex: 0.6 }}>
         <TouchableOpacity
+        onPress={()=>navigation.navigate("NotificationScreen")}
           style={{
             zIndex: 5,
             alignSelf: "flex-end",
