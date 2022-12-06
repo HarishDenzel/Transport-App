@@ -45,7 +45,7 @@ export default function Header(props) {
                     />
             </TouchableOpacity>
             </View>
-            <View style={righticon?styles.margin:styles.sub_Con}>
+            <View style={righticon?styles.margin:styles.sub_scroll}>
               
                 {props.children}
             
@@ -77,7 +77,8 @@ const styles = StyleSheet.create({
     },
     sub_scroll:{
         flex:0.95,
-        margin:15
+       
+        
     }
 
 })
