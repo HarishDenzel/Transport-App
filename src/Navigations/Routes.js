@@ -37,6 +37,8 @@ import PromoCode from '../Pages/PromoCode';
 
 import CurrentLocation from '../Pages/SubHome/CurrentLocation';
 import Destination from '../Pages/SubHome/Destination';
+import NotificationScreen from '../Pages/Notification/NotificationScreen';
+import NotificationView from '../Pages/Notification/NotificationView';
 const Stack = createNativeStackNavigator();
 
 function Routes() {
@@ -194,6 +196,16 @@ function Routes() {
         <Stack.Screen
           name="Destination"
           component={Destination}
+          options={{ headerShown: false }}
+        />
+         <Stack.Screen
+          name="NotificationScreen"
+          component={NotificationScreen}
+          options={{ headerShown: false }}
+        />
+         <Stack.Screen
+          name="NotificationView"
+          component={NotificationView}
           options={{ headerShown: false }}
         />
        
