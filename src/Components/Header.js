@@ -46,9 +46,9 @@ export default function Header(props) {
             </TouchableOpacity>
             </View>
             <View style={righticon?styles.margin:styles.sub_Con}>
-                <ScrollView style={{flex:1}}>
+              
                 {props.children}
-                </ScrollView>
+            
                
             </View>
         </View>
