@@ -39,6 +39,13 @@ const GetImage = {
   cancel:require("../assets/Profile/cancel.png"),
  locationModal:require("../assets/Profile/locationModal.png"),
 
+ //wallet 
+ topup : require("../assets/Notification/topup.png"),
+ ticket : require("../assets/Notification/ticket.png"),
+ visa : require("../assets/Notification/visa.png"),
+ cardbg : require("../assets/Notification/cardbg.png"),
+ topupic:require('../assets/Notification/Icon.png'),
+
  //Notfication
  choose:require("../assets/Profile/choose.png"),
  offer:require("../assets/Profile/offer.png"),

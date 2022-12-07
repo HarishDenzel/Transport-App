@@ -37,9 +37,12 @@ import PromoCode from '../Pages/PromoCode';
 
 import CurrentLocation from '../Pages/SubHome/CurrentLocation';
 import Destination from '../Pages/SubHome/Destination';
+import Ewallet from '../Pages/wallet/Ewallet';
+import cardlist from '../Pages/wallet/cardlist';
 import NotificationScreen from '../Pages/Notification/NotificationScreen';
 import NotificationView from '../Pages/Notification/NotificationView';
 const Stack = createNativeStackNavigator();
+
 
 function Routes() {
   return (
@@ -196,6 +199,16 @@ function Routes() {
         <Stack.Screen
           name="Destination"
           component={Destination}
+          options={{ headerShown: false }}
+        />
+            <Stack.Screen
+          name="Ewallet"
+          component={Ewallet}
+          options={{ headerShown: false }}
+        />
+             <Stack.Screen
+          name="cardlist"
+          component={cardlist}
           options={{ headerShown: false }}
         />
          <Stack.Screen
