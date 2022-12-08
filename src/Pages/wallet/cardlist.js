@@ -1,120 +1,148 @@
 import {
-    StyleSheet,
-    Image,
-    Text,
-    View,
-    ScrollView,
-    TouchableOpacity,
-    FlatList,
-    Dimensions,
-    ImageBackground,
-  } from "react-native";
-  import React from "react";
-  import GetImage from "../../assets/GetImage";
-  const height = Dimensions.get("screen").height;
-  
-  const cardlist = () => {
-    const data = [
-      {
-        id: 1,
-        img: GetImage.ticket,
-        title: "Bus Ticket",
-        time: "Dec 16, 2024 | 16:42 PM",
-        rate: "- $14",
-      },
-      {
-        id: 2,
-        img: GetImage.topup,
-        title: "Top Up Wallet",
-        time: "Dec 16, 2024 | 11:39 PM",
-        rate: "+ $80",
-      },
-      {
-        id: 3,
-        img: GetImage.ticket,
-        title: "Bus Ticket",
-        time: "Dec 11, 2024 | 10:42 PM",
-        rate: "- $14",
-      },
-      {
-        id: 4,
-        img: GetImage.ticket,
-        title: "Bus Ticket",
-        time: "Dec 11, 2024 | 11:48 PM",
-        rate: "- $14",
-      },
-      {
-        id: 5,
-        img: GetImage.ticket,
-        title: "Bus Ticket",
-        time: "Dec 11, 2024 | 11:48 PM",
-        rate: "- $14",
-      },
-      {
-        id: 6,
-        img: GetImage.ticket,
-        title: "Bus Ticket",
-        time: "Dec 11, 2024 | 11:48 PM",
-        rate: "- $14",
-      },
-    ];
+  StyleSheet,
+  Image,
+  Text,
+  View,
+  ScrollView,
+  TouchableOpacity,
+  FlatList,
+  Dimensions,
+  ImageBackground,
+} from "react-native";
+import React from "react";
+import GetImage from "../../assets/GetImage";
+const height = Dimensions.get("screen").height;
+import Header from "../../Components/Header";
+// import CircleCheckBox, { LABEL_POSITION } from "react-native-circle-checkbox";
+import { useNavigation } from "@react-navigation/native";
+
+const cardlist = (props) => {
+  const navigation = useNavigation();
+
+  const data = [
+    {
+      id: 1,
+      img: GetImage.mastercard,
+      title: "•••• •••• •••• •••• 4679",
+      time: "Dec 16, 2024 | 16:42 PM",
+      rate: "- $14",
+      isChecked: false
+    },
+    {
+      id: 2,
+      img: GetImage.mastercard,
+      title: "•••• •••• •••• •••• 4679",
+      time: "Dec 16, 2024 | 11:39 PM",
+      rate: "+ $80",
+      isChecked:true
+    },
+  ];
+  const ListFooter = () => {
+    //View to set in Footer
     return (
-      <View style={styles.container}>
-      
-        <View style={{ flex: 1 }}>
-          <Text style={styles.headText}>Select the top up method you want to use.</Text>
+      <TouchableOpacity onPress={() => navigation.navigate("addnewcard")}>
+      <View style={styles.headerFooterStyle}>
+         <Image
+                  source={GetImage.addic}
+                  style={{ height: 15, width: 15, resizeMode: "contain",marginRight:5 }}
+                />
+        <Text style={styles.textStyle}>Add New Card</Text>
+      </View>
+      </TouchableOpacity>
+    );
+  };
+  return (
+    <View style={styles.container}>
+      <Header
+        {...props}
+        righticon={false}
+        onPress={() => setOptionModal(!optionModal)}
+        title={"Top Up E-Wallet"}
+      >
+        <View style={{ flex: 1, marginTop: 10 }}>
+          <Text style={styles.headText}>
+            Select the top up method you want to use.
+          </Text>
           <FlatList
             data={data}
+            ListFooterComponent={ListFooter}
             renderItem={({ item, index }) => (
               <View
                 key={index}
-                style={{ flex: 1, flexDirection: "row", padding: 20 }}
+                style={{
+                  flex: 1,
+                  flexDirection: "row",
+                  padding: 20,
+                  borderRadius: 10,
+                  shadowColor: "#171717",
+                  shadowOffset: { width: -2, height: 2 },
+                  shadowOpacity: 0.2,
+                  shadowRadius: 1,
+                  marginHorizontal: 20,
+                  elevation: 2,
+                  marginBottom: 10,
+                  marginTop: 10,
+                  backgroundColor: "#ffff",
+                  justifyContent:'center',
+                  alignItems:'center'
+                }}
               >
                 <Image
                   source={item.img}
-                  style={{ height: 52, width: 52, resizeMode: "contain" }}
+                  style={{ height: 32, width: 32, resizeMode: "contain" }}
                 />
                 <View
                   style={{ flex: 1, justifyContent: "center", paddingLeft: 10 }}
                 >
                   <Text style={styles.headsubText}>{item.title}</Text>
-                  <View style={{ flexDirection: "row", paddingTop: 5 }}>
-                    <Text style={[styles.subText, { flex: 1 }]}>{item.time}</Text>
-                    <Text style={styles.subText}>{item.rate}</Text>
-                  </View>
                 </View>
+                <Image
+                  source={item.isChecked ?GetImage.check:GetImage.uncheck}
+                  style={{ height: 15, width: 15, resizeMode: "contain",marginRight:5 }}
+                />
               </View>
             )}
             keyExtractor={(item) => item.id}
           />
         </View>
-      </View>
-    );
-  };
-  const styles = StyleSheet.create({
-    container: {
-      flex: 1,
-      backgroundColor: "#fff",
-    },
-    headText: {
-      fontSize: (height / 100) * 2.5,
-      fontFamily: "Urbanist_semibold",
-      fontWeight: "bold",
-      color: "#000",
-      paddingLeft: 20,
-    },
-    headsubText: {
-      fontSize: 16,
-      fontFamily: "Urbanist_semibold",
-      fontWeight: "bold",
-      color: "#000",
-    },
-    subText: {
-      fontSize: 14,
-      fontFamily: "  Urbanist_regular",
-      color: "#616161",
-    },
-  });
-  
-  export default cardlist;
-  
+      </Header>
+    </View>
+  );
+};
+const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+    backgroundColor: "#fff",
+  },
+  headText: {
+    fontSize: 15,
+    fontFamily: "Urbanist_regular",
+    fontWeight: "500",
+    color: "#424242",
+    paddingLeft: 20,
+  },
+  headsubText: {
+    fontSize: 16,
+    fontFamily: "Urbanist_semibold",
+    fontWeight: "700",
+    color: "#000",
+  },
+  subText: {
+    fontSize: 14,
+    fontFamily: "  Urbanist_regular",
+    color: "#616161",
+  },
+  headerFooterStyle: {
+    justifyContent: "center",
+    alignItems: "center",
+    flexDirection:'row'
+  },
+  textStyle: {
+    fontSize: 13,
+    fontFamily: "Urbanist_semibold",
+    fontWeight: "700",
+    color: "#0F437B",
+  },
+});
+
+export default cardlist;

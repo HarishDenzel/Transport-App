@@ -41,13 +41,14 @@ import Ewallet from '../Pages/wallet/Ewallet';
 import cardlist from '../Pages/wallet/cardlist';
 import NotificationScreen from '../Pages/Notification/NotificationScreen';
 import NotificationView from '../Pages/Notification/NotificationView';
+import addnewcard from '../Pages/wallet/addnewcard';
 const Stack = createNativeStackNavigator();
 
 
 function Routes() {
   return (
     <NavigationContainer>
-      <Stack.Navigator initialRouteName="SplashScreen">
+      <Stack.Navigator initialRouteName="Ewallet">
         <Stack.Screen
           name="SplashScreen"
           component={SplashScreen}
@@ -209,6 +210,11 @@ function Routes() {
              <Stack.Screen
           name="cardlist"
           component={cardlist}
+          options={{ headerShown: false }}
+        />
+             <Stack.Screen
+          name="addnewcard"
+          component={addnewcard}
           options={{ headerShown: false }}
         />
          <Stack.Screen

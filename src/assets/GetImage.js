@@ -45,6 +45,14 @@ const GetImage = {
  visa : require("../assets/Notification/visa.png"),
  cardbg : require("../assets/Notification/cardbg.png"),
  topupic:require('../assets/Notification/Icon.png'),
+ mastercard:require('../assets/Notification/mastercard.png'),
+ addic:require('../assets/Notification/addic.png'),
+ check:require('../assets/Notification/check.png'),
+ uncheck:require('../assets/Notification/uncheck.png'),
+ ticketb:require('../assets/Notification/ticketb.png'),
+
+
+
 
  //Notfication
  choose:require("../assets/Profile/choose.png"),
