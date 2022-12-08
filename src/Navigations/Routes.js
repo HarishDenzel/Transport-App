@@ -42,6 +42,7 @@ import cardlist from '../Pages/wallet/cardlist';
 import NotificationScreen from '../Pages/Notification/NotificationScreen';
 import NotificationView from '../Pages/Notification/NotificationView';
 import addnewcard from '../Pages/wallet/addnewcard';
+import EReceipt from '../Pages/wallet/EReceipt';
 const Stack = createNativeStackNavigator();
 
 
@@ -225,6 +226,11 @@ function Routes() {
          <Stack.Screen
           name="NotificationView"
           component={NotificationView}
+          options={{ headerShown: false }}
+        />
+        <Stack.Screen
+          name="EReceipt"
+          component={EReceipt}
           options={{ headerShown: false }}
         />
        
