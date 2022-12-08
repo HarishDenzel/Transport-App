@@ -14,8 +14,11 @@ import {
   const height = Dimensions.get("screen").height;
   import Header from "../../Components/Header";
   // import CircleCheckBox, { LABEL_POSITION } from "react-native-circle-checkbox";
-  
+  import { useNavigation } from "@react-navigation/native";
+
   const addnewcard = (props) => {
+    const navigation = useNavigation();
+
     const data = [
       {
         id: 1,
@@ -50,7 +53,7 @@ import {
             <FlatList
               data={data}
               renderItem={({ item, index }) => (
-                <TouchableOpacity>
+                <TouchableOpacity onPress={()=>{index === 1 ?navigation.navigate("cardDetails"):null}}>
                 <View
                   key={index}
                   style={{

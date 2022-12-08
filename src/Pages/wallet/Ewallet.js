@@ -9,7 +9,7 @@ import {
   Dimensions,
   ImageBackground,
 } from "react-native";
-import React from "react";
+import React, { useState, useEffect } from "react";
 import GetImage from "../../assets/GetImage";
 const height = Dimensions.get("screen").height;
 import { useNavigation } from "@react-navigation/native";

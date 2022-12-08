@@ -42,6 +42,7 @@ import cardlist from '../Pages/wallet/cardlist';
 import NotificationScreen from '../Pages/Notification/NotificationScreen';
 import NotificationView from '../Pages/Notification/NotificationView';
 import addnewcard from '../Pages/wallet/addnewcard';
+import cardDetails from '../Pages/wallet/cardDetails';
 const Stack = createNativeStackNavigator();
 
 
@@ -215,6 +216,11 @@ function Routes() {
              <Stack.Screen
           name="addnewcard"
           component={addnewcard}
+          options={{ headerShown: false }}
+        />
+          <Stack.Screen
+          name="cardDetails"
+          component={cardDetails}
           options={{ headerShown: false }}
         />
          <Stack.Screen
