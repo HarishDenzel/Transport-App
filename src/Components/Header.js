@@ -8,7 +8,7 @@ export default function Header(props) {
     const navigation = useNavigation();
     const { title, onPress, righticon } = props
     return (
-        <View style={{ flex: 1, backgroundColor: "#ffff" }}>
+        <View style={{ flex: 1, backgroundColor: "#f7f7f7" }}>
             <View
                 style={styles.container}
             >
@@ -85,7 +85,7 @@ const styles = StyleSheet.create({
     sub_scroll: {
         flex: 0.95,
 
-
+      
     }
 
 })
