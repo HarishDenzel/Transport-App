@@ -58,6 +58,7 @@ function BottomTab() {
       initialRouteName="Home">
       <Tab.Screen
         name="Home"
+       
         component={Home}
         options={{
           headerShown: false,
@@ -75,6 +76,7 @@ function BottomTab() {
             );
           },
         }}
+        initialParams={{data:true,para:""}}
       />
       <Tab.Screen
         name="Trip"

@@ -1,5 +1,5 @@
 import { ScrollView, StyleSheet, Text, View, Image, TouchableOpacity } from 'react-native'
-import React from 'react'
+import React,{useState} from 'react'
 import Header from '../../Components/Header'
 import { icon } from '../../assets/icons';
 import { height, View_Spacing } from '../../assets/fontsAndColors';

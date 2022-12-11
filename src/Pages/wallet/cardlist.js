@@ -11,6 +11,7 @@ import {
 } from "react-native";
 import React from "react";
 import GetImage from "../../assets/GetImage";
+import Bt_Main from "../../Components/Bt_Main";
 const height = Dimensions.get("screen").height;
 import Header from "../../Components/Header";
 // import CircleCheckBox, { LABEL_POSITION } from "react-native-circle-checkbox";
@@ -105,6 +106,8 @@ const cardlist = (props) => {
             keyExtractor={(item) => item.id}
           />
         </View>
+
+        <Bt_Main label={"Contine"} onPress={()=>props.navigation.navigate("TopupScreen")} />
       </Header>
     </View>
   );

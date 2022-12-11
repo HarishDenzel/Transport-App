@@ -74,7 +74,7 @@ const Ewallet = () => {
           }}
         >
           <ImageBackground source={GetImage.cardbg} style={{ flex: 1 }}>
-            <View style={{ flex: 1, paddingLeft: 10 }}>
+            <View style={{ flex: 1, paddingLeft: 10,}}>
               <View
                 style={{
                   flexDirection: "row",
@@ -82,9 +82,10 @@ const Ewallet = () => {
                   justifyContent: "center",
                   alignItems: "center",
                   flex: 0.5,
+                  
                 }}
               >
-                <View style={{ paddingTop: 5, flex: 1 }}>
+                <View style={{ paddingTop: 5, flex: 1, }}>
                   <Text style={[styles.headsubText, { color: "#fff" }]}>
                     {"Ahmad Fazri"}
                   </Text>

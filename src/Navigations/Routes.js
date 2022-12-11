@@ -44,13 +44,14 @@ import NotificationView from '../Pages/Notification/NotificationView';
 import addnewcard from '../Pages/wallet/addnewcard';
 import cardDetails from '../Pages/wallet/cardDetails';
 import EReceipt from '../Pages/wallet/EReceipt';
+import TopupScreen from '../Pages/wallet/TopupScreen';
 const Stack = createNativeStackNavigator();
 
 
 function Routes() {
   return (
     <NavigationContainer>
-      <Stack.Navigator initialRouteName="Ewallet">
+      <Stack.Navigator initialRouteName="SplashScreen">
         <Stack.Screen
           name="SplashScreen"
           component={SplashScreen}
@@ -83,6 +84,7 @@ function Routes() {
         <Stack.Screen
           name="Home"
           component={Home}
+          options={{ headerShown: false }}
         />
         <Stack.Screen
           name="Notification"
@@ -237,6 +239,11 @@ function Routes() {
         <Stack.Screen
           name="EReceipt"
           component={EReceipt}
+          options={{ headerShown: false }}
+        />
+         <Stack.Screen
+          name="TopupScreen"
+          component={TopupScreen}
           options={{ headerShown: false }}
         />
        

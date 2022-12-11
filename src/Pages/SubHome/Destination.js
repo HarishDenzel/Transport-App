@@ -13,6 +13,7 @@ import {
 import React, { useState } from "react";
 import GetImage from "../../assets/GetImage";
 import { useNavigation } from "@react-navigation/native";
+import GetLocation from "../../Components/GetLocation";
 
 export default function Destination() {
   const height = Dimensions.get("screen").height;
@@ -58,7 +59,7 @@ export default function Destination() {
         }}
       >
         <TouchableOpacity
-          onPress={() => navigation.goBack(null)}
+                   onPress={() => navigation.navigate("Home",{data:false,para:''})}
           style={{ flex: 0.15, justifyContent: "center", alignItems: "center" }}
         >
           <Image
@@ -82,109 +83,10 @@ export default function Destination() {
       <View style={{ flex: 0.93 ,}}>
       <KeyboardAvoidingView style={{ flex: 1, }}   behavior={Platform.OS === "ios" ? "padding" : null}>
         <View style={{height:height/100*2}}></View>
-          <View
-            style={{
-        
-             paddingTop:5,
-              alignItems: "center",
-            }}
-          >
-            <TouchableOpacity
-              onPress={() => navigation.navigate("CurrentLocation")}
-              style={{
-                flexDirection: "row",
-                height: (height / 100) * 6,
-                borderWidth: 0.3,
-                width: "90%",
-                borderRadius: 12,
-              }}
-            >
-              <View
-                style={{
-                  flex: 0.15,
-                  justifyContent: "center",
-                  alignItems: "center",
-                }}
-              >
-                <Image
-                  source={GetImage.locaionSearch}
-                  style={{
-                    height: (height / 100) * 2,
-                    width: (height / 100) * 2,
-                    resizeMode: "contain",
-                  }}
-                />
-              </View>
-              <View style={{ flex: 0.75 }}>
-                <TextInput
-                  value={search_location}
-                  onChangeText={(text) => setSearch_Location(text)}
-                  placeholder="Search Location ..."
-                  placeholderTextColor={" #616161"}
-                  style={{color:'#000',}}
-                />
-              </View>
-              <View
-                style={{
-                  flex: 0.15,
-                  justifyContent: "center",
-                  alignItems: "center",
-                }}
-              >
-                <Image
-                  source={GetImage.cancel}
-                  style={{
-                    height: (height / 100) * 2,
-                    width: (height / 100) * 2,
-                    resizeMode: "contain",
-                  }}
-                />
-              </View>
-            </TouchableOpacity>
-          </View>
-          <View
-            style={{
-              height: (height / 100) * 10,
-              width: "100%",
-              justifyContent: "center",
-              alignItems: "center",
-            }}
-          >
-            <View
-              style={{
-                height: (height / 100) * 6,
-                width: "90%",
-                flexDirection: "row",
-                justifyContent: "flex-start",
-                alignItems: "center",
-                borderTopWidth: 1,
-                borderBottomWidth: 1,
-                borderColor: "#EEEEEE",
-              }}
-            >
-              <Image
-                source={GetImage.from}
-                style={{
-                  height: (height / 100) * 2,
-                  width: (height / 100) * 2,
-                  resizeMode: "contain",
-                 
-                  left: 5,
-                }}
-              />
-              <Text
-                style={{
-                  fontSize: (height / 100) * 2,
-                  fontFamily: "Urbanist_semibold",
-                  left: 15,
-                  fontWeight: "bold",
-                  color:' #616161'
-                }}
-              >
-                {"Use My Location"}
-              </Text>
-            </View>
-          </View>
+         
+        < GetLocation 
+        onPress={(data)=> navigation.navigate("Home",{data:false,para:data.description})}
+         />
           <FlatList
             data={search_location==""?null: data}
             renderItem={({ item, index }) => (

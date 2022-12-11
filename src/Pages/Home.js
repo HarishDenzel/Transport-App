@@ -14,9 +14,10 @@ import MapView, { PROVIDER_GOOGLE, Marker } from "react-native-maps";
 import GetLocation from "react-native-get-location";
 import GetImage from "../assets/GetImage";
 import Geolocation from "@react-native-community/geolocation";
-import { useNavigation } from "@react-navigation/native";
+import { useIsFocused, useNavigation } from "@react-navigation/native";
 import CustomMarker from "../Components/CustomMarker";
 import ReactModal from "../Components/ReactModal";
+import { icon } from "../assets/icons";
 const { width, height } = Dimensions.get("window");
 const Hight = Dimensions.get("screen").height;
 const ASPECT_RATIO = width / height;
@@ -26,6 +27,18 @@ const LATITUDE_DELTA = 2200;
 const LONGITUDE_DELTA = LATITUDE_DELTA * ASPECT_RATIO;
 
 const Home = (props) => {
+  const{data,para}=props.route?.params
+ console.log(para)
+  const isFocused=useIsFocused();
+  useEffect(()=>{
+    setSome(data)
+
+if(from!==""){
+  setTo(para)
+}else{
+  setFrom(para)
+}
+  },[isFocused])
   const [state, setState] = useState({
     isLoading: true,
     latitude: "37.78825",
@@ -33,6 +46,8 @@ const Home = (props) => {
   });
   const [some, setSome] = useState(true);
   const [locationModal, setLocationModal] = useState(false);
+  const[from,setFrom]=useState("");
+  const[to,setTo]=useState("")
   const Bold = "Urbanist_bold";
   const navigation = useNavigation();
   useEffect(() => {
@@ -177,7 +192,8 @@ const Home = (props) => {
       >
         {some ? (
           <>
-            <View
+            <TouchableOpacity
+            onPress={()=>navigation.navigate("Ewallet")}
               style={{
                 flex: 0.5,
                 justifyContent: "flex-end",
@@ -186,10 +202,11 @@ const Home = (props) => {
               }}
             >
               <Image
+              
                 source={GetImage.wallet}
                 style={{ height: "50%", width: "90%", resizeMode: "contain" }}
               />
-            </View>
+            </TouchableOpacity>
             <View
               style={{
                 flex: 0.07,
@@ -205,6 +222,7 @@ const Home = (props) => {
                     fontSize: (height / 100) * 2.2,
                     fontFamily: "Urbanist_bold",
                     fontWeight: "bold",
+                    color:'#000'
                   }}
                 >
                   Promo
@@ -325,7 +343,7 @@ const Home = (props) => {
                         borderLeftWidth: 0.5,
                       }}
                     >
-                      <Image source={GetImage.work} style={styles.Img_2} />
+                      <Image source={icon.place} style={styles.Img_2} />
                     </View>
                   </View>
                 </View>
@@ -376,7 +394,7 @@ const Home = (props) => {
                       color: " #616161",
                     }}
                   >
-                    Current Location
+                   {from==""?"Current Location":from}
                   </Text>
                 </TouchableOpacity>
                 <View style={{ height: (height / 100) * 1 }} />
@@ -401,7 +419,7 @@ const Home = (props) => {
                       color: " #616161",
                     }}
                   >
-                    {"Destination"}
+                    {to==""?"Destination":to}
                   </Text>
                 </TouchableOpacity>
               </View>
@@ -463,6 +481,7 @@ const Home = (props) => {
               >
                 <TouchableOpacity
                   style={styles.btn3}
+                  onPress={()=>alert("fetched route")}
                 >
                   <Text
                     style={{

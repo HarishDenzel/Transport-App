@@ -13,11 +13,14 @@ import {
 import React, { useState } from "react";
 import GetImage from "../../assets/GetImage";
 import { useNavigation } from "@react-navigation/native";
+import GetLocation from "../../Components/GetLocation";
 
 export default function CurrentLocation() {
   const height = Dimensions.get("screen").height;
+  const width = Dimensions.get("screen").width;
   const navigation = useNavigation();
   const [search_location, setSearch_Location] = useState("");
+ 
   const data = [
     {
       id: 1,
@@ -58,7 +61,7 @@ const _chooseLocation=(item)=>{
         }}
       >
         <TouchableOpacity
-          onPress={() => navigation.goBack(null)}
+          onPress={() => navigation.navigate("Home",{data:false,para:''})}
           style={{ flex: 0.15, justifyContent: "center", alignItems: "center" }}
         >
           <Image
@@ -83,7 +86,13 @@ const _chooseLocation=(item)=>{
       <View style={{ flex: 0.93 ,}}>
       <KeyboardAvoidingView style={{ flex: 1, }}   behavior={Platform.OS === "ios" ? "padding" : null}>
         <View style={{height:height/100*2}}></View>
-          <View
+
+        < GetLocation 
+        onPress={(data)=> navigation.navigate("Home",{data:false,para:data.description})}
+         />
+    
+
+          {/* <View
             style={{
         
              paddingTop:5,
@@ -142,50 +151,8 @@ const _chooseLocation=(item)=>{
                 />
               </View>
             </TouchableOpacity>
-          </View>
-          <View
-            style={{
-              height: (height / 100) * 10,
-              width: "100%",
-              justifyContent: "center",
-              alignItems: "center",
-            }}
-          >
-            <View
-              style={{
-                height: (height / 100) * 6,
-                width: "90%",
-                flexDirection: "row",
-                justifyContent: "flex-start",
-                alignItems: "center",
-                borderTopWidth: 1,
-                borderBottomWidth: 1,
-                borderColor: "#EEEEEE",
-              }}
-            >
-              <Image
-                source={GetImage.from}
-                style={{
-                  height: (height / 100) * 2,
-                  width: (height / 100) * 2,
-                  resizeMode: "contain",
-                 
-                  left: 5,
-                }}
-              />
-              <Text
-                style={{
-                  fontSize: (height / 100) * 2,
-                  fontFamily: "Urbanist_semibold",
-                  left: 15,
-                  fontWeight: "bold",
-                  color:' #616161'
-                }}
-              >
-                {"Use My Location"}
-              </Text>
-            </View>
-          </View>
+          </View> */}
+          
           <FlatList
             data={search_location==""?null: data}
             renderItem={({ item, index }) => (
@@ -251,6 +218,8 @@ const _chooseLocation=(item)=>{
             )}
             keyExtractor={(item) => item.id}
           />
+
+
        </KeyboardAvoidingView>
       </View>
     </View>
