@@ -106,6 +106,6 @@ const styles = StyleSheet.create({
         fontSize: (height / 100) * 1.8,
         fontFamily: "Urbanist_semibold",
         fontWeight: 'bold',
-        color: " #616161",
+        color: "#616161",
     },
 })

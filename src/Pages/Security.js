@@ -64,7 +64,7 @@ const styles = StyleSheet.create({
     letterSpacing: 0.2,
     lineHeight: 25,
     fontWeight: "500",
-    fontFamily: "Urbanist",
+    fontFamily: "Urbanist, sans-serif",
     color: "#212121",
     textAlign: "center",
   },

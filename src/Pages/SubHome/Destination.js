@@ -73,7 +73,7 @@ export default function Destination() {
               fontSize: (height / 100) * 2.5,
               fontFamily: "Urbanist_semibold",
               fontWeight: "bold",
-              color:' #616161'
+              color:'#000'
             }}
           >
             {"Destination"}

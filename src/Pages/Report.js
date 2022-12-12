@@ -17,7 +17,11 @@ export default function Report() {
                       </View>
                         <View style={styles.Input}>
                           <View style={styles.Content1}>
-                            <TextInput style={styles.Txt072}>Reporter Name</TextInput>
+                            <TextInput style={styles.Txt072}
+                            underlineColorAndroid = "transparent"
+                            placeholder = "Reporter Name"
+                            autoCapitalize = "none"
+                            placeholderTextColor = "black" />
                           </View>
                           </View>
 
@@ -28,9 +32,12 @@ export default function Report() {
                       </View>
                         <View style={styles.Input}>
                           <View style={styles.Content1}>
-                            <TextInput style={styles.Txt072}>
-                              What This All About
-                            </TextInput>
+                            <TextInput style={styles.Txt072}
+                            underlineColorAndroid = "transparent"
+                            placeholder = "What This All About"
+                            autoCapitalize = "none"
+                            placeholderTextColor = "black"/>
+
                           </View>
                     </View>
                   </View>
@@ -41,7 +48,11 @@ export default function Report() {
                       <View style={styles.Content2}>
                         <View style={styles.Input1}>
                           <View style={styles.Content1}>
-                            <TextInput style={styles.Txt072}>Description</TextInput>
+                            <TextInput style={styles.Txt072}
+                            underlineColorAndroid = "transparent"
+                            placeholder = "Description"
+                            autoCapitalize = "none"
+                            placeholderTextColor = "black"/>
                           </View>
                         </View>
                       </View>

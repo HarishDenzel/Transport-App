@@ -26,4 +26,10 @@ export default function NotificationList(props) {
   )
 }
 
-const styles = StyleSheet.create({})
+const styles = StyleSheet.create({
+  list_font: {
+    fontFamily: "Urbanist_semibold",
+    color: "#616161",
+    fontWeight: 'bold',
+  }
+})

@@ -2,10 +2,9 @@ import React from "react"
 import { StyleSheet, Image, Text, View, ScrollView, TouchableOpacity } from "react-native"
 import { useNavigation } from "@react-navigation/native";
 import { RadioButton } from 'react-native-paper';
-import GetImage from '../assets/GetImage';
-import GetColors from '../assets/GetColors';
+import GetColors from '../../assets/GetColors';
 
-export default function Address() {
+export default function Places() {
   const navigation = useNavigation();
   const [checked, setChecked] = React.useState('first');
   return (
@@ -37,7 +36,7 @@ export default function Address() {
                   </View>
                   <Image
                     style={styles.IconlyBoldEdit}
-                    source={require('../assets/Profile/pencil.png')}
+                    source={require('../../assets/Profile/pencil.png')}
                   />
                 </View>
                 <View
@@ -62,7 +61,7 @@ export default function Address() {
                   </View>
                   <Image
                     style={styles.IconlyBoldEdit}
-                    source={require('../assets/Profile/pencil.png')}
+                    source={require('../../assets/Profile/pencil.png')}
                   />
                 </View>
                 <View
@@ -87,7 +86,7 @@ export default function Address() {
                   </View>
                   <Image
                     style={styles.IconlyBoldEdit}
-                    source={require('../assets/Profile/pencil.png')}
+                    source={require('../../assets/Profile/pencil.png')}
                   />
                 </View>
                 <View
@@ -112,7 +111,7 @@ export default function Address() {
                   </View>
                   <Image
                     style={styles.IconlyBoldEdit}
-                    source={require('../assets/Profile/pencil.png')}
+                    source={require('../../assets/Profile/pencil.png')}
                   />
                 </View>
                 <View
@@ -137,7 +136,7 @@ export default function Address() {
                   </View>
                   <Image
                     style={styles.IconlyBoldEdit}
-                    source={require('../assets/Profile/pencil.png')}
+                    source={require('../../assets/Profile/pencil.png')}
                   />
                 </View>
                 <View
@@ -162,7 +161,7 @@ export default function Address() {
                   </View>
                   <Image
                     style={styles.IconlyBoldEdit}
-                    source={require('../assets/Profile/pencil.png')}
+                    source={require('../../assets/Profile/pencil.png')}
                   />
                 </View>
               </View>
@@ -200,7 +199,7 @@ const styles = StyleSheet.create({
     paddingBottom: 47,
     paddingLeft: 23,
     paddingRight: 23,
-    height: 650,
+    height: 600,
     width: 428,
   },
   AutoLayoutVertical2: {
@@ -208,14 +207,14 @@ const styles = StyleSheet.create({
     flexDirection: "column",
     justifyContent: "flex-start",
     alignItems: "flex-start",
-    width: 380,
+    // width: 380,
   },
   AutoLayoutVertical1: {
     display: "flex",
     flexDirection: "column",
     justifyContent: "flex-start",
     alignItems: "center",
-    width: 380,
+    // width: 380,
   },
   CategoryLocationEditThemeLightComponentLocationList: {
     display: "flex",
@@ -223,7 +222,7 @@ const styles = StyleSheet.create({
     justifyContent: "center",
     alignItems: "center",
     marginBottom: 16,
-    width: 380,
+    // width: 380,
   },
   AutoLayoutHorizontal: {
     display: "flex",
@@ -232,7 +231,7 @@ const styles = StyleSheet.create({
     alignItems: "center",
     flex: 1,
     marginRight: 12,
-    width: 344,
+    // width: 344,
   },
   AutoLayoutVertical: {
     display: "flex",
@@ -240,7 +239,7 @@ const styles = StyleSheet.create({
     justifyContent: "flex-start",
     alignItems: "flex-start",
     flex: 1,
-    width: 300,
+    // width: 300,
   },
   Txt363: {
     fontSize: 18,
@@ -279,14 +278,14 @@ const styles = StyleSheet.create({
     flexDirection: "row",
     justifyContent: "flex-start",
     alignItems: "center",
-    width: 380,
+    // width: 380,
   },
   Button: {
     display: 'flex',
     flexDirection: 'row',
     justifyContent: 'center',
     alignItems: 'center',
-    top: 40,
+    top: 1,
     padding: 12,
     borderRadius: 100,
     backgroundColor: GetColors.PrimaryBlue_500,

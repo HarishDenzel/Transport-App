@@ -15,12 +15,10 @@ import GetImage from "../../assets/GetImage";
 import { useNavigation } from "@react-navigation/native";
 import GetLocation from "../../Components/GetLocation";
 
-export default function CurrentLocation() {
+export default function Destination() {
   const height = Dimensions.get("screen").height;
-  const width = Dimensions.get("screen").width;
   const navigation = useNavigation();
   const [search_location, setSearch_Location] = useState("");
- 
   const data = [
     {
       id: 1,
@@ -47,10 +45,10 @@ export default function CurrentLocation() {
       km: "2.9km",
     },
   ];
-const _chooseLocation=(item)=>{
-  setSearch_Location(item.place)
-
-}
+  const _chooseLocation=(item)=>{
+    setSearch_Location(item.place)
+  
+  }
   return (
     <View style={{ flex: 1 }}>
       <View
@@ -61,7 +59,7 @@ const _chooseLocation=(item)=>{
         }}
       >
         <TouchableOpacity
-          onPress={() => navigation.navigate("Home",{data:false,para:''})}
+                   onPress={() => navigation.navigate("Home",{data:false,para:''})}
           style={{ flex: 0.15, justifyContent: "center", alignItems: "center" }}
         >
           <Image
@@ -75,90 +73,26 @@ const _chooseLocation=(item)=>{
               fontSize: (height / 100) * 2.5,
               fontFamily: "Urbanist_semibold",
               fontWeight: "bold",
-              color:' #616161'
+              color:'#000'
             }}
-
           >
-            {"Current Location"}
+            {"Destination"}
           </Text>
         </View>
       </View>
       <View style={{ flex: 0.93 ,}}>
       <KeyboardAvoidingView style={{ flex: 1, }}   behavior={Platform.OS === "ios" ? "padding" : null}>
         <View style={{height:height/100*2}}></View>
-
+         
         < GetLocation 
         onPress={(data)=> navigation.navigate("Home",{data:false,para:data.description})}
          />
-    
-
-          {/* <View
-            style={{
-        
-             paddingTop:5,
-              alignItems: "center",
-            }}
-          >
-            <TouchableOpacity
-              onPress={() => navigation.navigate("CurrentLocation")}
-              style={{
-                flexDirection: "row",
-                height: (height / 100) * 6,
-                borderWidth: 0.3,
-                width: "90%",
-                borderRadius: 12,
-              }}
-            >
-              <View
-                style={{
-                  flex: 0.15,
-                  justifyContent: "center",
-                  alignItems: "center",
-                }}
-              >
-                <Image
-                  source={GetImage.locaionSearch}
-                  style={{
-                    height: (height / 100) * 2,
-                    width: (height / 100) * 2,
-                    resizeMode: "contain",
-                  }}
-                />
-              </View>
-              <View style={{ flex: 0.75 }}>
-                <TextInput
-                  value={search_location}
-                  onChangeText={(text) => setSearch_Location(text)}
-                  placeholder="Search Location ..."
-                  placeholderTextColor={"#000"}
-                  style={{color:'#000',}}
-                />
-              </View>
-              <View
-                style={{
-                  flex: 0.15,
-                  justifyContent: "center",
-                  alignItems: "center",
-                }}
-              >
-                <Image
-                  source={GetImage.cancel}
-                  style={{
-                    height: (height / 100) * 2,
-                    width: (height / 100) * 2,
-                    resizeMode: "contain",
-                  }}
-                />
-              </View>
-            </TouchableOpacity>
-          </View> */}
-          
           <FlatList
             data={search_location==""?null: data}
             renderItem={({ item, index }) => (
               <View key={index} style={{ flex: 1 }}>
                 <TouchableOpacity
-                onPress={()=>_chooseLocation(item)}
+                 onPress={()=>_chooseLocation(item)}
                   style={{
                     height: (height / 100) * 10,
                     width: "100%",
@@ -184,7 +118,7 @@ const _chooseLocation=(item)=>{
                           fontSize: (height / 100) * 1.8,
                           fontFamily: "Urbanist_semibold",
                           left: 15,
-                          color: "#000",
+                          color: ' #616161',
                           fontWeight: "800",
                         }}
                       >
@@ -218,8 +152,6 @@ const _chooseLocation=(item)=>{
             )}
             keyExtractor={(item) => item.id}
           />
-
-
        </KeyboardAvoidingView>
       </View>
     </View>

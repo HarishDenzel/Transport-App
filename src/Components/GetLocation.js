@@ -26,8 +26,10 @@ export default function GetLocation(props) {
       <GooglePlacesAutocomplete
         keepResultsAfterBlur={true}
         placeholder="Search for an address"
+      
         fetchDetails={true}
         eturnKeyType={"search"}
+       
         ref={(ref) => {
           ref?.setAddressText("123 myDefault Street, mycity");
         }}
@@ -36,17 +38,20 @@ export default function GetLocation(props) {
           language: "en",
           //components: `country:${isDefaultCountry}`,
         }}
+        
         styles={{
+          description:{color:'#000'},
           textInputContainer: {
             flexDirection: "row",
             width: width - 45,
             height: 40,
 
-            borderRadius: 5,
+           borderRadius: 5,
             backgroundColor: "#fff",
             alignSelf: "center",
             // margin: 13,
             marginVertical: 15,
+          
           },
 
           textInput: {
@@ -57,6 +62,7 @@ export default function GetLocation(props) {
             backgroundColor: "rgba(203, 211, 223, 0.33)",
             paddingLeft: 40,
             color: "#000",
+            
           },
         }}
         //currentLocation={true}
@@ -71,6 +77,7 @@ export default function GetLocation(props) {
         isRowScrollable={false}
         disableScroll={true}
         textInputProps={{
+          placeholderTextColor:"#000",
           onFocus: () => setFocused(true),
           onBlur: () => setFocused(false),
           value: () => {
@@ -182,7 +189,7 @@ onPress(data)
               fontFamily: "Urbanist_semibold",
               left: 15,
               fontWeight: "bold",
-              color: " #616161",
+              color: "#000",
             }}
           >
             {"Use My Location"}

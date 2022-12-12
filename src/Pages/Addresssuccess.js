@@ -20,7 +20,7 @@ export default function Addresssuccess() {
         </View>
       </View>
       <View style={styles._modalActionComponent}>
-         <TouchableOpacity style={styles.Button} onPress={() => navigation.navigate("EditProfile1")}>
+         <TouchableOpacity style={styles.Button} onPress={() => navigation.navigate("Addressnew")}>
         <Text style={styles.btnTxt}>Okay</Text>
       </TouchableOpacity>
       </View>
@@ -40,7 +40,7 @@ const styles = StyleSheet.create({
     paddingLeft: 31.05,
     paddingRight: 31.05,
     borderRadius: 24,
-    // backgroundColor: "rgba(255, 255, 255, 1)",
+    backgroundColor: "rgba(255, 255, 255, 1)",
     width: '100%',
     height: '100%',
   },

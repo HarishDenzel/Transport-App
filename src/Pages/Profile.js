@@ -157,7 +157,7 @@ const styles = StyleSheet.create({
         justifyContent: "center",
         alignItems: "center",
         position: "relative",
-        // backgroundColor: "rgba(255, 255, 255, 1)",
+        backgroundColor: "rgba(255, 255, 255, 1)",
         width: '100%',
         height: '100%',
     },
@@ -171,7 +171,7 @@ const styles = StyleSheet.create({
         justifyContent: "center",
         alignItems: "center",
         marginBottom: 10,
-        // width: 380,
+        // width: 140,
     },
     AvatarThumbail: {
         width: 150,

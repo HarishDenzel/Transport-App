@@ -30,6 +30,26 @@ const Home = (props) => {
   const{data,para}=props.route?.params
  console.log(para)
   const isFocused=useIsFocused();
+  // var date ='11-12-2022';
+  // var varDate = new Date(date); //dd-mm-YYYY
+  // var today = new Date();
+  // console.log("date==>",varDate,t)
+  useEffect(()=>{
+  
+    var specific_date = new Date('2022-12-14');
+    var current_date = new Date();
+    if(current_date.getTime() >= specific_date.getTime())
+    {
+        today.push(["h"])
+    }
+    else
+    {
+        console.log('current_date date is lower than specific_date')
+    }
+    
+  }
+ 
+  ,[isFocused])
   useEffect(()=>{
     setSome(data)
 
@@ -233,6 +253,7 @@ if(from!==""){
                   style={{
                     fontSize: (height / 100) * 1.5,
                     fontFamily: "Urbanist_semibold",
+                    color:'#000'
                   }}
                 >
                   View all
@@ -274,7 +295,7 @@ if(from!==""){
                     style={{
                       fontSize: (height / 100) * 1.8,
                       fontFamily: "Urbanist_semibold",
-                      color: " #616161",
+                      color: "#000",
                     }}
                   >
                     {"Get me Somewhere"}
@@ -311,12 +332,13 @@ if(from!==""){
                       style={{
                         fontSize: (height / 100) * 1.8,
                         fontFamily: "Urbanist_semibold",
-                        color: " #616161",
+                        color: "#000",
                       }}
                     >
                       {"Get me home"}
                     </Text>
                   </View>
+                  
                   <View
                     style={{
                       flex: 0.4,
@@ -391,7 +413,7 @@ if(from!==""){
                       fontFamily: "Urbanist_semibold",
                       alignSelf: "center",
                       left: (height / 100) * 2,
-                      color: " #616161",
+                      color: "#616161",
                     }}
                   >
                    {from==""?"Current Location":from}
@@ -416,14 +438,15 @@ if(from!==""){
                       fontFamily: "Urbanist_semibold",
                       alignSelf: "center",
                       left: (height / 100) * 2,
-                      color: " #616161",
+                      color: "#616161",
                     }}
                   >
                     {to==""?"Destination":to}
                   </Text>
                 </TouchableOpacity>
               </View>
-              <View
+              <TouchableOpacity
+                onPress={() => navigation.navigate("SavedDestionation")}
                 style={{
                   height: (height / 100) * 10,
                   width: "100%",
@@ -456,7 +479,7 @@ if(from!==""){
                       fontSize: (height / 100) * 2,
                       fontFamily: "Urbanist_semibold",
 
-                      color: " #616161",
+                      color: "#616161",
                     }}
                   >
                     {"View saved destination"}
@@ -470,7 +493,7 @@ if(from!==""){
                     }}
                   />
                 </View>
-              </View>
+              </TouchableOpacity>
               <View
                 style={{
                   height: (height / 100) * 10,
@@ -481,7 +504,7 @@ if(from!==""){
               >
                 <TouchableOpacity
                   style={styles.btn3}
-                  onPress={()=>alert("fetched route")}
+                  onPress={()=>navigation.navigate("SavedDestionation")}
                 >
                   <Text
                     style={{
@@ -505,7 +528,7 @@ if(from!==""){
           justifyContent: "center",
           alignItems: "center",
         }}
-        visible={locationModal}
+        visible={false}
       >
         <View
           style={{
@@ -547,7 +570,7 @@ if(from!==""){
               style={{
                 fontSize: (height / 100) * 2,
                 fontFamily: "Urbanist_semibold",
-                color: " #616161",
+                color: "#616161",
               }}
             >
               We need access to your location to be able {"\n"}
@@ -665,7 +688,7 @@ const styles = StyleSheet.create({
     width: "90%",
     justifyContent: "center",
     alignItems: "center",
-    backgroundColor: "#B5C5D6",
+    backgroundColor: "#0F437B",
     borderRadius: 25,
     top: 5,
     position: "absolute",

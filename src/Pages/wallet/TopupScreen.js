@@ -193,7 +193,7 @@ setAmount(e.amount)
                             style={{
                                 fontSize: (height / 100) * 1.8,
                                 fontFamily: "Urbanist_semibold",
-                                color: " #616161",
+                                color: "#616161",
                             }}
                         >
                             "You have successfully top up{"\n"}{"           "}e-wallet for $ {amount}"

@@ -48,7 +48,7 @@ export default function NotificationScreen(props) {
               fontSize: (height / 100) * 2.2,
               fontFamily: "Urbanist_semibold",
               fontWeight: 'bold',
-              color: " #616161",
+              color: "#616161",
             }}
             onPress={() => alert("hi")}>Latest</Text>
           <Text style={{
@@ -80,7 +80,7 @@ export default function NotificationScreen(props) {
               fontSize: (height / 100) * 2.2,
               fontFamily: "Urbanist_semibold",
               fontWeight: 'bold',
-              color: " #616161",
+              color: "#616161",
             }}
             onPress={() => alert("hi")}>{"Today"}</Text>
           <Text style={{
@@ -112,7 +112,7 @@ export default function NotificationScreen(props) {
               fontSize: (height / 100) * 2.2,
               fontFamily: "Urbanist_semibold",
               fontWeight: 'bold',
-              color: " #616161",
+              color: "#616161",
             }}
             onPress={() => alert("hi")}>{"Older"}</Text>
           <Text style={{
@@ -181,7 +181,7 @@ export default function NotificationScreen(props) {
 const styles = StyleSheet.create({
   list_font: {
     fontFamily: "Urbanist_semibold",
-    color: " #616161",
+    color: "#616161",
     fontWeight: 'bold',
   }
 })

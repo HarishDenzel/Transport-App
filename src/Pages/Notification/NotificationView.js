@@ -132,7 +132,7 @@ export default function NotificationView(props) {
                             style={{
                                 fontSize: (height / 100) * 1.5,
                                 fontFamily: "Urbanist_semibold",
-                                color: " #616161",
+                                color: "#616161",
                             }}
                         >
                             We hope you get great day today
