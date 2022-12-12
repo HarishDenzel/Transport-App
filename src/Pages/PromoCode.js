@@ -52,7 +52,8 @@ export default function PromoCode(props) {
             style={{
               fontSize: (height / 100) * 2.5,
               fontFamily: "Urbanist_semibold",
-              fontWeight:'bold'
+              fontWeight:'bold',
+              color:'#000'
             }}
           >
             Promo

@@ -301,6 +301,7 @@ if(from!==""){
                     {"Get me Somewhere"}
                   </Text>
                 </TouchableOpacity>
+                
                 <View
                   style={{
                     flex: 0.5,
@@ -309,7 +310,8 @@ if(from!==""){
                     borderTopWidth: 0.5,
                   }}
                 >
-                  <View
+                  <TouchableOpacity
+              onPress={() => navigation.navigate("SavedDestionation")}
                     style={{
                       flex: 0.6,
                       flexDirection: "row",
@@ -337,7 +339,7 @@ if(from!==""){
                     >
                       {"Get me home"}
                     </Text>
-                  </View>
+                  </TouchableOpacity>
                   
                   <View
                     style={{
@@ -347,7 +349,9 @@ if(from!==""){
                       flexDirection: "row",
                     }}
                   >
-                    <View
+                    <TouchableOpacity
+                                  onPress={() => navigation.navigate("SavedDestionation")}
+
                       style={{
                         flex: 0.5,
                         justifyContent: "center",
@@ -355,8 +359,10 @@ if(from!==""){
                       }}
                     >
                       <Image source={GetImage.work} style={styles.Img_2} />
-                    </View>
-                    <View
+                    </TouchableOpacity>
+                    <TouchableOpacity
+                                  onPress={() => navigation.navigate("SavedDestionation")}
+
                       style={{
                         flex: 0.5,
                         justifyContent: "center",
@@ -366,7 +372,7 @@ if(from!==""){
                       }}
                     >
                       <Image source={icon.place} style={styles.Img_2} />
-                    </View>
+                    </TouchableOpacity>
                   </View>
                 </View>
               </View>

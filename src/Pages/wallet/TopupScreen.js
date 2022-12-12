@@ -113,6 +113,7 @@ setAmount(e.amount)
               color:'#0F437B'
             }}
             placeholder="0"
+            placeholderTextColor={'#000'}
           />
         </View>
 

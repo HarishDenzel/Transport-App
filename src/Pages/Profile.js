@@ -62,7 +62,9 @@ export default function Profile({navigation}) {
                             />
                         </Pressable>
                         <Pressable style={styles.AutoLayoutHorizontal}
-                            onPress={() => navigation.navigate("Payment")}>
+                            // onPress={() => navigation.navigate("Payment")}>
+                                        onPress={()=>navigation.navigate("Ewallet")}>
+
                             <Image
                                 style={styles.IconlyLightOutlineProfile}
                                 source={require('../assets/Profile/payment.png')}
