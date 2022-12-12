@@ -53,6 +53,10 @@ import EReceipt from '../Pages/wallet/EReceipt';
 import TopupScreen from '../Pages/wallet/TopupScreen';
 import NotificationScreen from '../Pages/Notification/NotificationScreen';
 import NotificationView from '../Pages/Notification/NotificationView';
+import ScanQR from '../Pages/QR/ScanQR';
+import routerlist from '../Pages/QR/routerlist';
+
+
 const Stack = createNativeStackNavigator();
 
 function Routes() {
@@ -277,6 +281,17 @@ function Routes() {
        <Stack.Screen
         name="TopupScreen"
         component={TopupScreen}
+         options={{ headerShown: false }}
+      />
+           <Stack.Screen
+        name="ScanQR"
+        component={ScanQR}
+         options={{ headerShown: false }}
+      />
+
+<Stack.Screen
+        name="routerlist"
+        component={routerlist}
          options={{ headerShown: false }}
       />
 

@@ -60,7 +60,16 @@ const GetImage = {
   Notifi1:require("../assets/Profile/Notifi1.png"),
   Notifi2:require("../assets/Profile/Notifi2.png"),
   promoSuccess:require("../assets/Profile/promoSuccess.png"),
+  
  
+  qrimage:require("../assets/Notification/qrimage.png"),
+  d:require("../assets/Notification/d.png"),
+  timeout:require("../assets/Notification/timeout.png"),
+  wrong:require("../assets/Notification/wrong.png"),
+//qr code 
+  fire:require("../assets/Notification/fire.png"),
+  bell1:require("../assets/Notification/bell.png"),
+  routeNo:require("../assets/Notification/routeNo.png"),
 
 };
 export default GetImage

@@ -10,10 +10,12 @@ import {
   StyleSheet,
 } from 'react-native';
 import {CameraKitCameraScreen} from 'react-native-camera-kit';
+import { useNavigation } from "@react-navigation/native";
 
 export default function Scan() {
   const [qrvalue, setQrvalue] = useState('');
   const [opneScanner, setOpneScanner] = useState(false);
+  const navigation = useNavigation();
 
   const onOpenlink = () => {
     Linking.openURL(qrvalue);
@@ -92,6 +94,11 @@ export default function Scan() {
             style={styles.buttonStyle}>
             <Text style={styles.buttonTextStyle}>Open QR Scanner</Text>
           </TouchableHighlight>
+          <TouchableHighlight
+            onPress={() => navigation.navigate("ScanQR")}
+            style={styles.buttonStyle}>
+            <Text style={styles.buttonTextStyle}>Open my QR</Text>
+          </TouchableHighlight>
         </View>
       )}
     </SafeAreaView>
@@ -123,6 +130,7 @@ const styles = StyleSheet.create({
     backgroundColor: 'green',
     padding: 5,
     minWidth: 250,
+    marginTop:5
   },
   buttonTextStyle: {
     padding: 5,

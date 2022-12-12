@@ -6,7 +6,7 @@ import Trips from '../Pages/Trips/Trips';
 import Scan from '../Pages/Scan';
 import Profile from '../Pages/Profile';
 import GetImage from '../assets/GetImage';
-
+import ScanQR from '../Pages/QR/ScanQR';
 const RenderTabIcon = Props => {
   const {
     activeIcon,
@@ -98,8 +98,9 @@ function BottomTab() {
         }}
       />
       <Tab.Screen
-        name="Scan"
-        component={Scan}
+       // name="Scan"
+       name="ScanQR"
+        component={ScanQR}
         options={{
           headerShown: false,
           tabBarIcon: ({focused}) => {
