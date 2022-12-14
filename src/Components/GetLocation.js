@@ -21,7 +21,7 @@ export default function GetLocation(props) {
   const navigation=useNavigation()
   return (
     <View
-      style={{ height: text == "" ? (height / 100) * 15 : (height / 100) * 40 }}
+      style={{ height: text == "" ? (height / 100) * 15 : (height / 100) * 50 }}
     >
       <GooglePlacesAutocomplete
         keepResultsAfterBlur={true}

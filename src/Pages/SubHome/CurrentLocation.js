@@ -50,7 +50,7 @@ export default function Destination() {
   
   }
   return (
-    <View style={{ flex: 1 }}>
+    <View style={{ flex: 1,backgroundColor:'#ffff' }}>
       <View
         style={{
           flex: 0.07,

@@ -13,6 +13,7 @@ import React, { useState } from "react";
 import GetImage from "../../assets/GetImage";
 import { KeyboardAwareScrollView } from 'react-native-keyboard-aware-scroll-view'
 const height = Dimensions.get("screen").height;
+const width = Dimensions.get("screen").width;
 import { useNavigation } from "@react-navigation/native";
 import Header from "../../Components/Header";
 import Bt_Main from "../../Components/Bt_Main";
@@ -73,7 +74,7 @@ const _trigger=()=>{
         title={"Add New Card"}
       >
         <KeyboardAwareScrollView style={{ flex: 1 }}>
-        <View style={{height:height/100*5}}></View>
+        <View style={{height:height/100*3}}></View>
             <View
               style={{
                 flex: 1,
@@ -84,7 +85,7 @@ const _trigger=()=>{
               <Image
                 style={{
                   height: (height / 100) * 30,
-                  width: (height / 100) * 80,
+                  width: (width / 100) * 90,
                   resizeMode: "contain",
                 }}
                 source={require("../../assets/icons/debit.png")}
@@ -95,7 +96,7 @@ const _trigger=()=>{
             <View >
               <Text
                 style={{
-                  fontSize: (height / 100) * 2.2,
+                  fontSize: (height / 100) * 2,
                   fontFamily: "Urbanist_bold",
                   fontWeight: "bold",
                   color: "#000",
@@ -106,17 +107,17 @@ const _trigger=()=>{
               </Text>
               <View style={styles.textinput_con}>
                 <TextInput
-                  placeholder="Name On Card"
+                  placeholder="  Name On Card"
                   placeholderTextColor={"#9E9E9E"}
                   style={styles.textinput}
                 />
               </View>
             </View>
-            <View style={{height:height/100*2}}></View>
+            <View style={{height:height/100*1.5}}></View>
             <View>
               <Text
                 style={{
-                  fontSize: (height / 100) * 2.2,
+                  fontSize: (height / 100) * 2,
                   fontFamily: "Urbanist_bold",
                   fontWeight: "bold",
                   color: "#000",
@@ -127,13 +128,13 @@ const _trigger=()=>{
               </Text>
               <View style={styles.textinput_con}>
                 <TextInput
-                  placeholder="Card Number"
+                  placeholder="  Card Number"
                   placeholderTextColor={"#9E9E9E"}
                   style={styles.textinput}
                 />
               </View>
             </View>
-            <View style={{height:height/100*2}}></View>
+            <View style={{height:height/100*1}}></View>
             <View
               style={{
                 flexDirection: "row",
@@ -144,18 +145,18 @@ const _trigger=()=>{
               <View style={{ flex: 0.48 }}>
                 <Text
                   style={{
-                    fontSize: (height / 100) * 2.2,
+                    fontSize: (height / 100) * 2,
                     fontFamily: "Urbanist_bold",
                     fontWeight: "bold",
                     color: "#000",
-                    paddingLeft: 20,
+                    paddingLeft: 15,
                   }}
                 >
                   {"Expiry Date"}
                 </Text>
                 <View style={styles.textinput_con}>
                   <TextInput
-                    placeholder="MM/YY"
+                    placeholder="  MM/YY"
                     placeholderTextColor={"#9E9E9E"}
                     style={styles.textinput}
                   />
@@ -164,18 +165,18 @@ const _trigger=()=>{
               <View style={{ flex: 0.48 }}>
                 <Text
                   style={{
-                    fontSize: (height / 100) * 2.2,
+                    fontSize: (height / 100) * 2,
                     fontFamily: "Urbanist_bold",
                     fontWeight: "bold",
                     color: "#000",
-                    paddingLeft: 20,
+                    paddingLeft: 15
                   }}
                 >
                   {"CVV"}
                 </Text>
                 <View style={styles.textinput_con}>
                   <TextInput
-                    placeholder="CVV"
+                    placeholder="   CVV"
                     placeholderTextColor={"#9E9E9E"}
                     style={styles.textinput}
                   />
@@ -194,9 +195,11 @@ const _trigger=()=>{
                 expiry={reg_details.date}
                 cvc={reg_details.cvv}
               /> */}
-
-              <Bt_Main label="Add new Card" onPress={()=>_trigger()}></Bt_Main>
+              <View style={{height:height/100*4}}></View>
+        <Bt_Main label="Add new Card" onPress={()=>_trigger()}></Bt_Main>
         </KeyboardAwareScrollView>
+
+       
       </Header>
     </View>
   );
@@ -204,7 +207,7 @@ const _trigger=()=>{
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: "#fff",
+    backgroundColor: "#E5E5E5;",
   },
   headText: {
     fontSize: 15,
@@ -236,19 +239,20 @@ const styles = StyleSheet.create({
     color: "#0F437B",
   },
   textinput_con: {
-    height: (height / 100) * 9,
+    height: (height / 100) * 8,
     justifyContent: "center",
     alignItems: "center",
   },
   textinput: {
+    backgroundColor:'#E5E5E5;',
     width: "90%",
     borderWidth: 1,
     borderColor: "#9E9E9E",
-    height: (height / 100) * 7,
+    height: (height / 100) * 6,
     borderRadius: 10,
     borderTopLeftRadius: 10,
     borderTopRightRadius: 10,
-    backgroundColor: "#fff",
+    
   },
 });
 

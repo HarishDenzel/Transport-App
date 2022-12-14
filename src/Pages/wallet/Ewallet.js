@@ -156,14 +156,14 @@ const Ewallet = (props) => {
      
       <View style={{ flex: 0.6 }}>
 
-        <Text style={styles.headText}>Transaction History</Text>
+        <Text style={[styles.headText,{paddingTop:20}]}>Transaction History</Text>
         
         <FlatList
           data={data}
           renderItem={({ item, index }) => (
             <View
               key={index}
-              style={{ flex: 1, flexDirection: "row", padding: 10 }}
+              style={{ flex: 1, flexDirection: "row", padding: 10,top:10 }}
             >
               <Image
                 source={item.img}

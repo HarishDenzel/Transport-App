@@ -13,6 +13,7 @@ import PromoImg from "../Components/PromoImg";
 import { useNavigation } from "@react-navigation/native";
 export default function PromoCode(props) {
   const height = Dimensions.get("screen").height;
+  const width = Dimensions.get("screen").width;
   const navigation = useNavigation();
   const data=[
     {
@@ -33,7 +34,7 @@ export default function PromoCode(props) {
     },
   ]
   return (
-    <View style={{ flex: 1 }}>
+    <View style={{ flex: 1,backgroundColor:"#FFFFFF" }}>
        
       <View
         style={{ flex: 0.05, flexDirection: "row" ,paddingTop:height/100*2}}

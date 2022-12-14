@@ -69,7 +69,7 @@ function BottomTab() {
                 height={20}
                 activeIcon={GetImage.homeIcon}
                 inactiveIcon={GetImage.homeIcon}
-                tint={'#1A96F0'}
+                tint={'#0F437B;'}
                 // title='Home'
               />
             );
@@ -91,7 +91,7 @@ function BottomTab() {
                 height={20}
                 activeIcon={GetImage.documentIcon}
                 inactiveIcon={GetImage.documentIcon}
-                tint={'#1A96F0'}
+                tint={'#0F437B;'}
               />
             );
           },
@@ -111,7 +111,7 @@ function BottomTab() {
                 isFocused={focused}
                 activeIcon={GetImage.scanIcon}
                 inactiveIcon={GetImage.scanIcon}
-                tint={'#1A96F0'}
+                tint={'#0F437B;'}
               />
             );
           },
@@ -130,7 +130,7 @@ function BottomTab() {
                 height={20}
                 activeIcon={GetImage.profileIcon}
                 inactiveIcon={GetImage.profileIcon}
-                tint={'#1A96F0'}
+                tint={'#0F437B;'}
               />
             );
           },
