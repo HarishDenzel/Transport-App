@@ -13,7 +13,7 @@ import { useNavigation } from "@react-navigation/native";
 
 
 export default function GetLocation(props) {
-    const{onAddressSelected,onPress}=props
+    const{onAddressSelected,onPress,label,currentLocation}=props
   const height = Dimensions.get("screen").height;
   const width = Dimensions.get("screen").width;
   const [focused, setFocused] = useState(false);
@@ -161,7 +161,7 @@ onPress(data)
           alignItems: "center",
         }}
       >
-        <View
+       {currentLocation? <View
           style={{
             height: (height / 100) * 6,
             width: "90%",
@@ -192,9 +192,26 @@ onPress(data)
               color: "#000",
             }}
           >
-            {"Use My Location"}
+            {label}
           </Text>
-        </View>
+        </View>:<View
+          style={{
+            height: (height / 100) * 6,
+            width: "90%",
+            flexDirection: "row",
+            justifyContent: "flex-start",
+            alignItems: "center",
+           
+            
+          }}
+        ><Text
+         
+         style={{
+          fontSize: (height / 100) * 1.5,
+          fontFamily: "Urbanist_semibold",
+          fontWeight: "bold",
+          color:'#0F437B'
+        }}>{"View more result"}</Text></View>}
       </View>
     </View>
   );

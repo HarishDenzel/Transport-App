@@ -17,6 +17,7 @@ import GetLocation from "../../Components/GetLocation";
 
 export default function Destination() {
   const height = Dimensions.get("screen").height;
+  const width = Dimensions.get("screen").width;
   const navigation = useNavigation();
   const [search_location, setSearch_Location] = useState("");
   const data = [
@@ -50,7 +51,7 @@ export default function Destination() {
   
   }
   return (
-    <View style={{ flex: 1 }}>
+    <View style={{ flex: 1 ,backgroundColor:'#ffff'}}>
       <View
         style={{
           flex: 0.07,
@@ -86,6 +87,7 @@ export default function Destination() {
          
         < GetLocation 
         onPress={(data)=> navigation.navigate("Home",{data:false,para:data.description})}
+        currentLocation={false}
          />
           <FlatList
             data={search_location==""?null: data}

@@ -128,7 +128,7 @@ if(from!==""){
           setLocationEnable(false)
         }
         )
-
+        setLocationEnable(false)
         console.log("You can use the location");
       } else {
         console.log("location permission denied");

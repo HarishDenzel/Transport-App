@@ -76,7 +76,7 @@ export default function Destination() {
               color:'#000'
             }}
           >
-            {"Destination"}
+            {"Current Location"}
           </Text>
         </View>
       </View>
@@ -86,6 +86,7 @@ export default function Destination() {
          
         < GetLocation 
         onPress={(data)=> navigation.navigate("Home",{data:false,para:data.description})}
+        label={"Use my current location"}
          />
           <FlatList
             data={search_location==""?null: data}

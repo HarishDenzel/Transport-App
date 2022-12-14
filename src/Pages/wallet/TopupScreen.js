@@ -1,4 +1,4 @@
-import { StyleSheet, Text, View, TextInput, TouchableOpacity } from "react-native";
+import { StyleSheet, Text, View, TextInput, TouchableOpacity ,Dimensions} from "react-native";
 import React, { useState } from "react";
 import Header from "../../Components/Header";
 import { height, View_Spacing } from "../../assets/fontsAndColors";
@@ -8,6 +8,7 @@ import Lottie from 'lottie-react-native';
 export default function TopupScreen(props) {
     const[amount,setAmount]=React.useState("");
     const[amountModal,setAmountModal]=useState(false)
+    const width = Dimensions.get("screen").width;
   const data = [
     {
       id: 1,
@@ -207,7 +208,7 @@ setAmount(e.amount)
                             style={{
                                 height: (height / 100) * 6,
                                 backgroundColor: "#0F437B",
-                                width: (height / 100) * 35,
+                                width: (width / 100) * 55,
                                 justifyContent: "center",
                                 alignItems: "center",
                                 borderRadius: 25,
