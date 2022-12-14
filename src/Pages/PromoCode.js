@@ -61,19 +61,15 @@ export default function PromoCode(props) {
         </View>
       </View>
       <View style={{ flex: 0.95 }}>
-        <ScrollView style={{flex:1}}>
         <FlatList
                       data={data}
                       renderItem={({item, index}) => (
-                        <View key={index} style={{flex: 1}}>
                           
                          <PromoImg img={item.img} />
-                        </View>
                       )}
                       keyExtractor={item => item.id}
                     />
      
-        </ScrollView>
       </View>
     </View>
   );

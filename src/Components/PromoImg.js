@@ -17,11 +17,11 @@ function PromoImg(props) {
 
     const height = Dimensions.get("screen").height;
   return (
-   <View style={{flex:1}}>
-    <TouchableOpacity  style={{flex:0.1,justifyContent:"center",alignItems:'center',paddingTop:height/100*2}} >
+   <View style={{flex:1,backgroundColor:'#FFFFFF'}}>
+    <TouchableOpacity  style={{flex:0.1,justifyContent:"center",alignItems:'center',paddingTop:5}} >
           <Image
             source={props.img}
-            style={{ height: height/100*23, width: height/100*40, resizeMode: "contain" ,}}
+            style={{ height: height/100*22, width: height/100*45, resizeMode: "contain" ,}}
           >
             </Image>
             <View style={{flex:1,position:'absolute',paddingRight:height/100*25}}>

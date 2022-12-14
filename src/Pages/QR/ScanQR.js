@@ -15,6 +15,7 @@ import { useNavigation } from "@react-navigation/native";
 import Header from "../../Components/Header";
 import GetImage from "../../assets/GetImage";
 import ReactModal from "../../Components/ReactModal";
+import { width } from "../../assets/fontsAndColors";
 
 function ScanQR(props) {
     const[amountModal,setAmountModal]= React.useState(false)
@@ -151,8 +152,8 @@ const _Triggr = () =>{
                 <View
                     style={{
                         backgroundColor: "#fff",
-                        height: (height / 100) * 45,
-                        width: "85%",
+                        height: (height / 100) * 50,
+                        width: "95%",
                         justifyContent: "center",
                         alignItems: "center",
                         borderRadius: 10,
@@ -205,7 +206,7 @@ const _Triggr = () =>{
                             style={{
                                 height: (height / 100) * 6,
                                 backgroundColor: "#0F437B",
-                                width: (height / 100) * 35,
+                                width: width/1.8,
                                 justifyContent: "center",
                                 alignItems: "center",
                                 borderRadius: 25,

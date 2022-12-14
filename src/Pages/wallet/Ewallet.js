@@ -13,8 +13,9 @@ import React, { useState, useEffect } from "react";
 import GetImage from "../../assets/GetImage";
 const height = Dimensions.get("screen").height;
 import { useNavigation } from "@react-navigation/native";
+import Header from '../../Components/Header'
 
-const Ewallet = () => {
+const Ewallet = (props) => {
   const navigation = useNavigation();
 
   const data = [
@@ -63,6 +64,10 @@ const Ewallet = () => {
   ];
   return (
     <View style={styles.container}>
+           <Header {...props}
+                rightIcon={false}
+                title={"E-Wallet"}>
+                   <ScrollView>
       <View style={{ flex: 0.4, justifyContent: "center" }}>
         <View
           style={{
@@ -95,7 +100,7 @@ const Ewallet = () => {
                 </View>
                 <Image
                   source={GetImage.visa}
-                  style={{ height: 80, width: 80, resizeMode: "contain" }}
+                  style={{ height: 75, width: 75, resizeMode: "contain" }}
                 />
               </View>
               <View
@@ -108,11 +113,11 @@ const Ewallet = () => {
                 }}
               >
                 <View style={{ paddingTop: 5, flex: 1 }}>
-                  <Text style={[styles.headsubText, { color: "#fff" }]}>
+                  <Text style={[styles.subText, { color: "#fff" }]}>
                     {"Your Balance"}
                   </Text>
                   <Text
-                    style={[styles.subText, { fontSize: 22, color: "#fff" }]}
+                    style={[styles.subText, { fontSize: 30, color: "#fff" ,fontWeight:'bold'}]}
                   >
                     {"$957,5"}
                   </Text>
@@ -148,14 +153,17 @@ const Ewallet = () => {
           </ImageBackground>
         </View>
       </View>
+     
       <View style={{ flex: 0.6 }}>
+
         <Text style={styles.headText}>Transaction History</Text>
+        
         <FlatList
           data={data}
           renderItem={({ item, index }) => (
             <View
               key={index}
-              style={{ flex: 1, flexDirection: "row", padding: 20 }}
+              style={{ flex: 1, flexDirection: "row", padding: 10 }}
             >
               <Image
                 source={item.img}
@@ -175,6 +183,17 @@ const Ewallet = () => {
           keyExtractor={(item) => item.id}
         />
       </View>
+  
+   <View style={{marginTop:5,height:30,width:'90%',alignSelf:'center',borderTopWidth:0.8,borderColor:'#c1c1c1'}}>
+    <Text style={{fontSize: 14,
+    fontFamily: "Urbanist_regular",
+    fontWeight: "600",
+    color: "#0F437B",
+    marginTop:5}}>{"View more result"}</Text>
+    </View>
+      <View style={{height:height/100*5}} />
+   </ScrollView>
+      </Header>
     </View>
   );
 };
@@ -184,7 +203,7 @@ const styles = StyleSheet.create({
     backgroundColor: "#fff",
   },
   headText: {
-    fontSize: (height / 100) * 2.5,
+    fontSize: 14,
     fontFamily: "Urbanist_semibold",
     fontWeight: "bold",
     color: "#000",

@@ -65,7 +65,7 @@ export default function Report() {
         <View style={styles.Button}>
           <View style={styles._buttonBasePrimary}>
           <TouchableOpacity
-       onPress={() => navigation.navigate("Home")}
+       onPress={() => navigation.navigate("Home",{data:true,para:''})}
       >
         <Text>Submit</Text>
       </TouchableOpacity>

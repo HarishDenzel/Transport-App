@@ -27,7 +27,7 @@ export default function Header(props) {
                         style={{
                             fontSize: (height / 100) * 2.2,
                             fontFamily: "Urbanist_semibold",
-                            fontWeight: 'bold',
+                            fontWeight: '800',
                             color: isBackground?'#fff': "#000"
 
                         }}
@@ -46,8 +46,8 @@ export default function Header(props) {
                         <Image
                             source={GetImage.choose}
                             style={{
-                                height: 15,
-                                width: 15,
+                                height: 20,
+                                width: 20,
                                 resizeMode: 'contain'
                             }}
                         />

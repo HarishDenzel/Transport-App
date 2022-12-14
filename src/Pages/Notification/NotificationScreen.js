@@ -35,7 +35,7 @@ export default function NotificationScreen(props) {
 
   ]
   return (
-    <View style={{ flex: 1 }}>
+    <View style={{ flex: 1,backgroundColor:'#FFFFFF' }}>
       <Header
         {...props}
         righticon={true}
@@ -68,6 +68,7 @@ export default function NotificationScreen(props) {
                 SubHead={item.subhead}
                 time={item.time}
                 img={item.img}
+                isRead = {index == 1  || index == 2 ? true : false}
               />
             </View>
           )}

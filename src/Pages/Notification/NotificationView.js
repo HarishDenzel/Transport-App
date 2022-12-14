@@ -19,28 +19,28 @@ export default function NotificationView(props) {
             {...props}
             rightIcon={false}
             title={"Special Offer & Promo"} >
-            <View style={{ flex: 0.3, }}>
+            <View style={{ flex: 0.3, marginTop:10,backgroundColor:'#fff'}}>
 
 
                 <Image style={styles.bg} source={require("../../assets/Profile/bg.png")} />
             </View>
-            <View style={{ flex: 0.7 }}>
+            <View style={{ flex: 0.7 ,backgroundColor:'#fff'}}>
                 <ScrollView style={{ margin: 15, }}>
-                    <Text style={[styles.font,{fontSize:height/100*1.5}]
+                    <Text style={[styles.font,{fontSize:height/100*2.5,paddingBottom:5}]
                         
 
                     } >{"30% Special Discount!"}</Text>
-                    <Text style={[styles.font,{fontSize:height/100*1.5}]
+                    <Text style={[styles.font,{fontSize:height/100*1.7,color: '#616161'}]
                         
 
                     } >{"Special promotion only valid today"}</Text>
 
 
 
-                    <View style={{ height: height / 100 * 2, borderBottomWidth: 0.5 }} />
+                    <View style={{ height: height / 100 * 2, borderBottomWidth: 0.5,borderColor:'#EEEEEE' }} />
 
                     <Text style={{
-                        fontSize: (height / 100) * 1.8,
+                        fontSize: (height / 100) * 2.3,
                         fontFamily: "Urbanist_semibold",
                         color: "#000",
                         fontWeight: '600',
@@ -48,12 +48,15 @@ export default function NotificationView(props) {
                     }} >{"Details"}</Text>
 
                     <Text style={{
-                        fontSize: (height / 100) * 1.5,
+                        fontSize: (height / 100) * 1.8,
                         fontFamily: "Urbanist_semibold",
-                        color: "#000", paddingTop: height / 100 * 2,
-                        fontWeight: '400', lineHeight: height / 100 * 2
+                        color: "#616161", paddingTop: height / 100 * 2,
+                        fontWeight: '400', lineHeight: 25
                     }} >{"It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English. Read more..."}</Text>
-                    <View style={{ flex: 0.1, justifyContent: 'center', alignItems: 'center', paddingTop: height / 100 * 15 }}>
+                  
+
+                </ScrollView>
+                <View style={{ paddingBottom:5, justifyContent: 'center', alignItems: 'center', paddingTop: 0 }}>
                         <TouchableOpacity
                             onPress={() => setPromoModal(true)}
                             style={{
@@ -78,9 +81,6 @@ export default function NotificationView(props) {
                             </Text>
                         </TouchableOpacity>
                     </View>
-
-                </ScrollView>
-
             </View>
 
             <ReactModal
@@ -174,7 +174,8 @@ export default function NotificationView(props) {
 const styles = StyleSheet.create({
     bg: {
         height: "100%",
-        width: '100%'
+        width: '100%',
+        backgroundColor:'#fff'
     },
     font: {
         fontFamily: "Urbanist_semibold",

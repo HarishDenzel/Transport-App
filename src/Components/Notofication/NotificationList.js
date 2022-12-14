@@ -2,12 +2,12 @@ import { StyleSheet, Text, View ,Image,Dimensions, TouchableOpacity} from 'react
 import React from 'react'
 
 export default function NotificationList(props) {
-    const{img,Head,SubHead,time,onPress}=props
+    const{img,Head,SubHead,time,onPress,isRead}=props
     const height = Dimensions.get("screen").height;
   return (
     <View>
      <View style={{height:height/100*2}} />
-          <View style={{flex:1,height:height/100*10,flexDirection:'row',borderRadius:height/100*2,backgroundColor:'#EEEEEE',elevation:1}}>
+          <View style={{flex:1,height:height/100*10,flexDirection:'row',borderRadius:height/100*2,backgroundColor: isRead ?'#fff': '#EEEEEE',elevation:1}}>
             <View style={{flex:0.2,justifyContent:"center",alignItems:'center'}}>
             <Image
                         source={img}
