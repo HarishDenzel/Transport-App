@@ -13,19 +13,24 @@ import Payment from '../Pages/Payment';
 import Security from '../Pages/Security';
 import Language from '../Pages/Language';
 import Notification from '../Pages/Notification';
-import PrivacyPolicies from '../Pages/Privacypolicy';
-import Editprofile from '../Pages/Editprofile';
+import PrivacyPolicy from '../Pages/Privacypolicy';
+import EditProfile from '../Pages/Editprofile';
 import EditProfile1 from '../Pages/EditProfile1';
 import Editsuccess from '../Pages/Editsuccess';
+
 import Helpcenter from '../Pages/Helpcenter';
-import FQA from '../Pages/FQA';
+import Fqa from '../Pages/FQA';
 import Contact from '../Pages/Contact';
 import Report from '../Pages/Report';
+import General from '../Pages/Helpcenter/General';
+
 import Address from '../Pages/Address';
 import Addressnew from '../Pages/Addressnew';
 import Addresssuccess from '../Pages/Addresssuccess';
-import Singup from '../Pages/Singup';
-import Singin from '../Pages/Singin';
+
+import SingUp from '../Pages/Singup';
+import SingIn from '../Pages/Singin';
+
 import Invite from '../Pages/Invite';
 import FirstTimeRegister from '../Pages/FirstTimeReg';
 import ForgetPassword from '../Pages/ForgetReset';
@@ -51,10 +56,26 @@ import addnewcard from '../Pages/wallet/addnewcard';
 import cardDetails from '../Pages/wallet/cardDetails';
 import EReceipt from '../Pages/wallet/EReceipt';
 import TopupScreen from '../Pages/wallet/TopupScreen';
+
 import NotificationScreen from '../Pages/Notification/NotificationScreen';
 import NotificationView from '../Pages/Notification/NotificationView';
+import NotificationPayment from '../Pages/Notification/NotificationPayment';
+import NotificationGeneral from '../Pages/Notification/NotificationGeneral';
+
 import ScanQR from '../Pages/QR/ScanQR';
 import routerlist from '../Pages/QR/routerlist';
+import list from '../Pages/Trips/list';
+import Success from '../Pages/Helpcenter/success';
+import Saved from '../Pages/SavedDestionation/saved1';
+import Addresspage from '../Pages/SavedDestionation/addressPages';
+import Success1 from '../Pages/SavedDestionation/success';
+import Savedlocation from '../Pages/SavedDestionation/location';
+import SavedAddress from '../Pages/SavedDestionation/savedaddress';
+import SavedDelete from '../Pages/SavedDestionation/savedDelete';
+
+import HomeAction from '../Pages/SubHome/Bus';
+import Homelist from '../Pages/SubHome/homelist';
+import Successaddress from '../Pages/Address/success';
 
 
 const Stack = createNativeStackNavigator();
@@ -66,6 +87,11 @@ function Routes() {
         <Stack.Screen
           name="SplashScreen"
           component={SplashScreen}
+          options={{ headerShown: false }}
+        />
+        <Stack.Screen
+          name="SingIn"
+          component={SingIn}
           options={{ headerShown: false }}
         />
         <Stack.Screen
@@ -84,6 +110,11 @@ function Routes() {
           options={{ headerShown: false }}
         />
         <Stack.Screen
+          name="SingUp"
+          component={SingUp}
+          options={{ headerShown: false }}
+        />
+        <Stack.Screen
           name="BottomTab"
           component={BottomTab}
           options={{ headerShown: false }}
@@ -91,22 +122,21 @@ function Routes() {
         <Stack.Screen
           name="Profile"
           component={Profile}
-           />
-        <Stack.Screen
-          name="Home"
-          component={Home}
+          options={{ headerShown: false }}
         />
+        <Stack.Screen name="Home" component={Home} />
+        <Stack.Screen name="Notification" 
+        component={Notification} 
+        options={{ headerShown: false }}/>
         <Stack.Screen
-          name="Notification"
-          component={Notification}
-        />
-        <Stack.Screen
-          name="PrivacyPolicies"
-          component={PrivacyPolicies}
+          name="PrivacyPolicy"
+          component={PrivacyPolicy}
+          options={{ headerShown: false }}
         />
         <Stack.Screen
           name="Editprofile"
-          component={Editprofile}
+          component={EditProfile}
+          options={{ headerShown: false }}
         />
         <Stack.Screen
           name="EditProfile1"
@@ -118,13 +148,10 @@ function Routes() {
           component={Editsuccess}
           options={{ headerShown: false }}
         />
-        <Stack.Screen
-          name="Helpcenter"
-          component={Helpcenter}
-        />
+        <Stack.Screen name="Helpcenter" component={Helpcenter} />
         <Stack.Screen
           name="Helpcenter1"
-          component={FQA}
+          component={Fqa}
           options={{ headerShown: false }}
         />
         <Stack.Screen
@@ -140,56 +167,37 @@ function Routes() {
         <Stack.Screen
           name="Address"
           component={Address}
+          options={{ headerShown: false }}
         />
-        <Stack.Screen
-          name="Payment"
-          component={Payment}
-        />
-        <Stack.Screen
-          name="Security"
-          component={Security}
-        />
-        <Stack.Screen
-          name="Language"
-          component={Language}
-        />
+        <Stack.Screen name="Payment" component={Payment} />
+        <Stack.Screen name="Security" component={Security} />
+        <Stack.Screen name="Language" component={Language} />
         <Stack.Screen
           name="Addressnew"
           component={Addressnew}
-          // options={{ headerShown: false }}
+          options={{ headerShown: false }}
         />
         <Stack.Screen
           name="Addresssuccess"
           component={Addresssuccess}
           options={{ headerShown: false }}
         />
-        <Stack.Screen
-          name="Singup"
-          component={Singup}
-        />
-        <Stack.Screen
-          name="Singin"
-          component={Singin}
-        />
-        <Stack.Screen
-          name="Invite"
-          component={Invite}
-        />
+        <Stack.Screen name="Invite" component={Invite} />
         <Stack.Screen
           name="FirstTimeRegister"
           component={FirstTimeRegister}
+          options={{ headerShown: false }}
         />
-        <Stack.Screen
-          name="ForgetPassword"
-          component={ForgetPassword}
-        />
+        <Stack.Screen name="ForgetPassword" component={ForgetPassword} />
         <Stack.Screen
           name="ForgetReset"
           component={ForgetReset}
+          options={{ headerShown: false }}
         />
         <Stack.Screen
           name="ForgetSuccess"
           component={ForgetSuccess}
+          options={{ headerShown: false }}
         />
         <Stack.Screen
           name="Security1"
@@ -221,7 +229,7 @@ function Routes() {
           component={Favourite}
           options={{ headerShown: false }}
         />
-       <Stack.Screen
+        <Stack.Screen
           name="Complete"
           component={Complete}
           options={{ headerShown: false }}
@@ -229,7 +237,7 @@ function Routes() {
         <Stack.Screen
           name="SavedDestionation"
           component={SavedDestionation}
-          // options={{ headerShown: false }}
+          options={{ headerShown: false }}
         />
         <Stack.Screen
           name="HomeSaved"
@@ -241,61 +249,124 @@ function Routes() {
           component={Places}
           options={{ headerShown: false }}
         />
-         <Stack.Screen
+        <Stack.Screen
           name="NotificationScreen"
           component={NotificationScreen}
           options={{ headerShown: false }}
         />
-         <Stack.Screen
+        <Stack.Screen
           name="NotificationView"
           component={NotificationView}
           options={{ headerShown: false }}
         />
-            <Stack.Screen
+        <Stack.Screen
+          name="NotificationPayment"
+          component={NotificationPayment}
+          options={{ headerShown: false }}
+        />
+        <Stack.Screen
+          name="NotificationGeneral"
+          component={NotificationGeneral}
+          options={{ headerShown: false }}
+        />
+        <Stack.Screen
           name="Ewallet"
           component={Ewallet}
           options={{ headerShown: false }}
         />
-             <Stack.Screen
+        <Stack.Screen
           name="cardlist"
           component={cardlist}
           options={{ headerShown: false }}
         />
-                     <Stack.Screen
+        <Stack.Screen
           name="addnewcard"
           component={addnewcard}
           options={{ headerShown: false }}
         />
-          <Stack.Screen
+        <Stack.Screen
           name="cardDetails"
           component={cardDetails}
           options={{ headerShown: false }}
         />
-         <Stack.Screen
-         
-         name="EReceipt"
-         component={EReceipt}
-           options={{ headerShown: false }}
-         />
+        <Stack.Screen
+          name="EReceipt"
+          component={EReceipt}
+          options={{ headerShown: false }}
+        />
 
-       <Stack.Screen
-        name="TopupScreen"
-        component={TopupScreen}
-         options={{ headerShown: false }}
-      />
-           <Stack.Screen
-        name="ScanQR"
-        component={ScanQR}
-         options={{ headerShown: false }}
-      />
+        <Stack.Screen
+          name="TopupScreen"
+          component={TopupScreen}
+          options={{ headerShown: false }}
+        />
+        <Stack.Screen
+          name="ScanQR"
+          component={ScanQR}
+          options={{ headerShown: false }}
+        />
 
-<Stack.Screen
-        name="routerlist"
-        component={routerlist}
-         options={{ headerShown: false }}
-      />
-
-
+        <Stack.Screen
+          name="routerlist"
+          component={routerlist}
+          options={{ headerShown: false }}
+        />
+        <Stack.Screen
+          name="list"
+          component={list}
+          options={{ headerShown: false }}
+        />
+        <Stack.Screen
+          name="Success"
+          component={Success}
+          options={{ headerShown: false }}
+        />
+        <Stack.Screen
+          name="Saved"
+          component={Saved}
+          options={{ headerShown: false }}
+        />
+        <Stack.Screen
+          name="Addresspage"
+          component={Addresspage}
+          options={{ headerShown: false }}
+        />
+        <Stack.Screen
+          name="Success1"
+          component={Success1}
+          options={{ headerShown: false }}
+        />
+        <Stack.Screen
+          name="Savedlocation"
+          component={Savedlocation}
+          options={{ headerShown: false }}
+        />
+        <Stack.Screen
+          name="SavedDelete"
+          component={SavedDelete}
+          options={{ headerShown: false }}
+        />
+        <Stack.Screen
+          name="SavedAddress"
+          component={SavedAddress}
+          options={{ headerShown: false }}
+        />
+        <Stack.Screen
+          name="HomeAction"
+          component={HomeAction}
+          options={{ headerShown: false }}
+        />
+        <Stack.Screen
+          name="Homelist"
+          component={Homelist}
+          options={{ headerShown: false }}
+        />
+        <Stack.Screen
+          name="Successaddress"
+          component={Successaddress}
+          options={{ headerShown: false }}
+        />
+        <Stack.Screen name="General" component={General} />
       </Stack.Navigator>
       <FlashMessage position="top" />
     </NavigationContainer>

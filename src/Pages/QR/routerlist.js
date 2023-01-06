@@ -9,6 +9,7 @@ import {
   FlatList,
   Dimensions,
   ImageBackground,
+  Pressable
 } from "react-native";
 const height = Dimensions.get("screen").height;
 import { useNavigation } from "@react-navigation/native";
@@ -169,14 +170,18 @@ export default function routerlist(props) {
                       alignItems: "center",
                     }}
                   >
+                   
                     <Image
                       source={item.img}
                       style={{ height: 15, width: 15, resizeMode: "contain" }}
-                    />
+                    /> 
+                    <Pressable  onPress={() => navigation.navigate("NotificationView")}>
                     <Text style={[styles.subText, { paddingLeft: 2, flex: 1 }]}>
                       {item.time}
                     </Text>
+                    </Pressable>
                     <Text style={styles.subText}>{item.rate}</Text>
+                    
                   </View>
                 </View>
               </View>

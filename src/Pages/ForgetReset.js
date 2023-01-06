@@ -5,7 +5,7 @@ import { useNavigation } from "@react-navigation/native";
 const ForgetPassword = () => {
   const navigation = useNavigation();
   return (
-    <ScrollView>
+    <ScrollView style={styles.container}>
     <View style={styles.forgetResetPassword}>
       <View style={styles.autoLayoutVertical3}>
         <Image
@@ -74,6 +74,10 @@ const styles = StyleSheet.create({
   ml20: {
     marginLeft: 20,
   },
+  container: {
+    flex: 1,
+    backgroundColor: "#fff",
+  },
   mt24: {
     marginTop: 24,
   },
@@ -91,7 +95,7 @@ const styles = StyleSheet.create({
     letterSpacing: 0.2,
     lineHeight: 25,
     fontWeight: "500",
-    fontFamily: "Urbanist",
+    fontFamily: "Urbanist,sans-serif",
     color: "#212121",
     textAlign: "left",
   },
@@ -133,7 +137,7 @@ const styles = StyleSheet.create({
     fontSize: 12,
     letterSpacing: 0.2,
     fontWeight: "500",
-    fontFamily: "Urbanist",
+    fontFamily: "Urbanist,sans-serif",
     color: "#757575",
     textAlign: "left",
   },
@@ -144,7 +148,7 @@ const styles = StyleSheet.create({
     letterSpacing: 0.2,
     lineHeight: 22,
     fontWeight: "700",
-    fontFamily: "Urbanist",
+    fontFamily: "Urbanist,sans-serif",
     color: "#000",
     textAlign: "left",
   },
@@ -213,7 +217,7 @@ const styles = StyleSheet.create({
     fontSize: 12,
     letterSpacing: 0.2,
     fontWeight: "500",
-    fontFamily: "Urbanist",
+    fontFamily: "Urbanist,sans-serif",
     color: "#757575",
     textAlign: "left",
   },
@@ -224,7 +228,7 @@ const styles = StyleSheet.create({
     letterSpacing: 0.2,
     lineHeight: 22,
     fontWeight: "700",
-    fontFamily: "Urbanist",
+    fontFamily: "Urbanist,sans-serif",
     color: "#000",
     textAlign: "left",
   },
@@ -267,7 +271,7 @@ const styles = StyleSheet.create({
     letterSpacing: 0.2,
     lineHeight: 28,
     fontWeight: "600",
-    fontFamily: "Urbanist",
+    fontFamily: "Urbanist,sans-serif",
     color: "#fff",
     textAlign: "center",
   },
@@ -311,6 +315,7 @@ const styles = StyleSheet.create({
     width: "100%",
     height: 926,
     overflow: "hidden",
+    marginTop:15,
   },
 });
 

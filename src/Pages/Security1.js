@@ -20,10 +20,10 @@ const Security1 = () => {
           </View>
           <View style={[styles.modalActionComponent, styles.mt32]}>
             <TouchableOpacity style={styles.Button} onPress={() => navigation.navigate("Security2")}>
-            <Text style={styles.btnTxt}>Continue</Text>
+            <Text style={styles.btnTxt}>Request Email</Text>
           </TouchableOpacity>
-          <TouchableOpacity style={styles.Button} onPress={() => navigation.navigate("Security")}>
-            <Text style={styles.btnTxt}>Cancel</Text>
+          <TouchableOpacity style={styles.Button1} onPress={() => navigation.navigate("Security")}>
+            <Text style={styles.btnTxt1}>Cancel</Text>
           </TouchableOpacity>
           </View>
         </View>
@@ -519,6 +519,21 @@ const styles = StyleSheet.create({
     width: '80%',
     marginHorizontal: '10%',
   },
+  Button1: {
+    display: 'flex',
+    flexDirection: 'row',
+    justifyContent: 'center',
+    alignItems: 'center',
+    padding: 12,
+    marginTop: 20,
+    borderRadius: 100,
+    // backgroundColor: GetColors.PrimaryBlue_500,
+    borderWidth: 1,
+    borderStyle: 'solid',
+    borderColor: "gray",
+    width: '80%',
+    marginHorizontal: '10%',
+  },
   btnTxt: {
     fontSize: 18,
     fontFamily: 'Urbanist, sans-serif',
@@ -526,6 +541,16 @@ const styles = StyleSheet.create({
     lineHeight: 28,
     letterSpacing: 0.2,
     color: GetColors.white,
+    textAlign: 'center',
+    justifyContent: 'center',
+  },
+  btnTxt1: {
+    fontSize: 18,
+    fontFamily: 'Urbanist, sans-serif',
+    fontWeight: '600',
+    lineHeight: 28,
+    letterSpacing: 0.2,
+    color: "gray",
     textAlign: 'center',
     justifyContent: 'center',
   },

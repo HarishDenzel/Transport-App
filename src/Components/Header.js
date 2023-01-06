@@ -8,7 +8,7 @@ export default function Header(props) {
     const navigation = useNavigation();
     const { title, onPress, righticon ,isBackground} = props
     return (
-        <View style={{ flex: 1, backgroundColor: isBackground ?'#002B7F':"#f7f7f7" }}>
+        <View style={{ flex: 1, backgroundColor: isBackground ?'#002B7F':"#fff" }}>
             <View
                 style={styles.container}
             >

@@ -20,7 +20,7 @@ export default function Addresssuccess() {
         </View>
       </View>
       <View style={styles._modalActionComponent}>
-         <TouchableOpacity style={styles.Button} onPress={() => navigation.navigate("Addressnew")}>
+         <TouchableOpacity style={styles.Button} onPress={() => navigation.navigate("Successaddress")}>
         <Text style={styles.btnTxt}>Okay</Text>
       </TouchableOpacity>
       </View>

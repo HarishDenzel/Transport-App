@@ -1,19 +1,33 @@
-import React from "react"
-import { StyleSheet, Image, Text, View, ScrollView, TextInput, TouchableOpacity } from "react-native";
+import React, { useState } from 'react';
+import { StyleSheet, Image, Text, View, ScrollView,Dimensions, TextInput, TouchableOpacity } from "react-native";
 import { RadioButton } from 'react-native-paper';
 import { useNavigation } from "@react-navigation/native";
 import GetImage from '../assets/GetImage';
 import GetColors from '../assets/GetColors';
+import Header from "../Components/Header";
+import Lottie from 'lottie-react-native';
+import ReactModal from '../Components/ReactModal';
 
-export default function Editprofile1() {
+export default function Editprofile1(props) {
+
+  const height = Dimensions.get("screen").height;
+  const [promoModal, setPromoModal] = useState(false)
+
   const navigation = useNavigation();
   const [checked, setChecked] = React.useState('first');
+  const [text, setText] = React.useState("");
   return (
-    <ScrollView>
-      <View style={styles.EditProfile_03}>
-        <View style={styles.Group642}>
-          <View style={styles.AutoLayoutVertical2}>
-            {/* <View style={styles.AutoLayoutVertical1}> */}
+    <Header
+      {...props}
+      rightIcon={false}
+      // isBackground={true}
+      title={"Edit Profile"}
+    >
+      <ScrollView style={styles.container}>
+        <View style={styles.EditProfile_03}>
+          <View style={styles.Group642}>
+            <View style={styles.AutoLayoutVertical2}>
+              {/* <View style={styles.AutoLayoutVertical1}> */}
               <View style={styles.AutoLayoutVertical}>
                 <Image
                   style={styles.AvatarThumbail}
@@ -27,6 +41,7 @@ export default function Editprofile1() {
                           value="first"
                           status={checked === 'first' ? 'checked' : 'unchecked'}
                           onPress={() => setChecked('first')}
+                          color={'#0F437B'}
                         />
                       </View>
                       <Text style={styles.Txt914}>Male</Text>
@@ -37,6 +52,7 @@ export default function Editprofile1() {
                           value="second"
                           status={checked === 'second' ? 'checked' : 'unchecked'}
                           onPress={() => setChecked('second')}
+                          color={'#0F437B'}
                         />
                       </View>
                       <Text style={styles.Txt914}>Female</Text>
@@ -47,10 +63,10 @@ export default function Editprofile1() {
                       <View style={styles.Content1}>
                         {/* <TextInput style={styles.Txt674}>Ahmad Fazri</TextInput> */}
                         <TextInput style={styles.Txt754}
-                           underlineColorAndroid = "transparent"
-                           placeholder = "Name"
-                           autoCapitalize = "none"
-                           placeholderTextColor = "black"/>
+                          underlineColorAndroid="transparent"
+                          placeholder="Name"
+                          autoCapitalize="none"
+                          placeholderTextColor="gray" />
                       </View>
                     </View>
                   </View>
@@ -59,10 +75,10 @@ export default function Editprofile1() {
                       <View style={styles.Content1}>
                         {/* <TextInput style={styles.Txt855}>920505-05-8723</TextInput> */}
                         <TextInput style={styles.Txt754}
-                           underlineColorAndroid = "transparent"
-                           placeholder = "Number"
-                           autoCapitalize = "none"
-                           placeholderTextColor = "black"/>
+                          underlineColorAndroid="transparent"
+                          placeholder="Number"
+                          autoCapitalize="none"
+                          placeholderTextColor="gray" />
                       </View>
                     </View>
                   </View>
@@ -73,10 +89,10 @@ export default function Editprofile1() {
                           ahmadfazri23@gmail.com
                         </TextInput> */}
                         <TextInput style={styles.Txt754}
-                           underlineColorAndroid = "transparent"
-                           placeholder = "Gmail"
-                           autoCapitalize = "none"
-                           placeholderTextColor = "black"/>
+                          underlineColorAndroid="transparent"
+                          placeholder="Gmail"
+                          autoCapitalize="none"
+                          placeholderTextColor="gray" />
                       </View>
                     </View>
                   </View>
@@ -85,10 +101,10 @@ export default function Editprofile1() {
                       <View style={styles.Content1}>
                         {/* <TextInput style={styles.Txt591}>Nationality</TextInput> */}
                         <TextInput style={styles.Txt754}
-                           underlineColorAndroid = "transparent"
-                           placeholder = "Nationality"
-                           autoCapitalize = "none"
-                           placeholderTextColor = "black"/>
+                          underlineColorAndroid="transparent"
+                          placeholder="Nationality"
+                          autoCapitalize="none"
+                          placeholderTextColor="gray" />
                       </View>
                     </View>
                   </View>
@@ -101,27 +117,115 @@ export default function Editprofile1() {
                         />
                         {/* <TextInput style={styles.Txt1073}>Phone Number</TextInput> */}
                         <TextInput style={styles.Txt754}
-                           underlineColorAndroid = "transparent"
-                           placeholder = "Phone Number"
-                           autoCapitalize = "none"
-                           placeholderTextColor = "black"/>
+                          underlineColorAndroid="transparent"
+                          placeholder="Phone Number"
+                          autoCapitalize="none"
+                          placeholderTextColor="gray" />
                       </View>
                     </View>
                   </View>
                 </View>
               </View>
-            {/* </View> */}
-            <TouchableOpacity style={styles.Button} onPress={() => navigation.navigate("Editsuccess")}>
-              <Text style={styles.btnTxt}>Continue</Text>
-            </TouchableOpacity>
+              {/* </View> */}
+              <TouchableOpacity style={styles.Button} onPress={() => setPromoModal(true)}>
+                <Text style={styles.btnTxt}>Update</Text>
+              </TouchableOpacity>
+            </View>
           </View>
         </View>
-      </View>
-    </ScrollView>
+      </ScrollView>
+      <ReactModal
+        container={{
+          backgroundColor: "rgba(0,0,0,0.7)",
+          justifyContent: "center",
+          alignItems: "center",
+        }}
+        visible={promoModal}
+      >
+        <View
+          style={{
+            backgroundColor: "#fff",
+            height: (height / 100) * 45,
+            width: "89%",
+            justifyContent: "center",
+            alignItems: "center",
+            borderRadius: 10,
+          }}
+        >
+          <View style={{ flex: 0.4, }}>
+            {/* <Image
+              source={GetImage.promoSuccess}
+              style={{
+                height: (height / 100) * 18,
+                width: (height / 100) * 18,
+                resizeMode: "contain",
+              }}
+            /> */}
+            <Lottie style={{ height: height / 100 * 20, width: height / 100 * 30 }} source={require("../assets/Animation/lf20_s2lryxtd.json")} autoPlay />
+          </View>
+          <View
+            style={{
+              flex: 0.2,
+              alignItems: "center",
+              justifyContent: "flex-end",
+            }}
+          >
+            <Text
+              style={{
+                fontSize: (height / 100) * 2.5,
+                fontFamily: "Urbanist_semibold",
+                color: "#000",
+              }}
+            >
+              {"Succesfully Update"}
+            </Text>
+            <Text
+              style={{
+                fontSize: (height / 100) * 1.5,
+                fontFamily: "Urbanist_semibold",
+                color: "#616161",
+              }}
+            >
+              Your profile has been updated
+            </Text>
+          </View>
+
+          <View style={{ flex: 0.2, top: height / 100 * 5 }}>
+            <TouchableOpacity
+              onPress={() => setPromoModal(!promoModal)}
+              style={{
+                height: (height / 100) * 6,
+                backgroundColor: "#0F437B",
+                width: (height / 100) * 35,
+                justifyContent: "center",
+                alignItems: "center",
+                borderRadius: 25,
+              }}
+            >
+              <Text
+                style={{
+                  fontSize: (height / 100) * 2,
+                  fontFamily: "Urbanist_semibold",
+                  color: "#fff",
+                }}
+              >
+                {"Okay"}
+              </Text>
+            </TouchableOpacity>
+            <View style={{ height: (height / 100) * 2 }}></View>
+
+          </View>
+        </View>
+      </ReactModal>
+    </Header>
   )
 }
 
 const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+    backgroundColor: "#fff",
+  },
   EditProfile_03: {
     display: "flex",
     flexDirection: "column",
@@ -193,7 +297,7 @@ const styles = StyleSheet.create({
   Content: {
     display: "flex",
     flexDirection: "row",
-    justifyContent: "flex-start",
+    justifyContent: "center",
     alignItems: "center",
   },
   Txt754: {
@@ -202,7 +306,7 @@ const styles = StyleSheet.create({
     fontWeight: "400",
     lineHeight: 22,
     letterSpacing: 0.2,
-    // color: "black",
+    color: "black",
     width: 350,
   },
   Txt914: {
@@ -217,8 +321,8 @@ const styles = StyleSheet.create({
   Text_field: {
     display: "flex",
     flexDirection: "column",
-    justifyContent: "flex-start",
-    alignItems: "flex-start",
+    justifyContent: "center",
+    alignItems: "center",
     marginBottom: 16,
     marginRight: -25
   },
@@ -270,8 +374,8 @@ const styles = StyleSheet.create({
     paddingLeft: 18.5,
     paddingRight: 18.5,
     borderRadius: 12,
-    backgroundColor: "rgba(0,43,127,0.03)",
-    borderWidth: 1.5,
+    // backgroundColor: "rgba(0,43,127,0.03)",
+    borderWidth: 1,
     borderStyle: "solid",
     borderColor: "rgba(15,67,123,1)",
     width: 380,
@@ -356,7 +460,7 @@ const styles = StyleSheet.create({
     borderWidth: 1,
     borderStyle: 'solid',
     borderColor: GetColors.PrimaryBlue_500,
-    width: '80%',
+    width: '90%',
     marginHorizontal: '10%',
   },
   btnTxt: {

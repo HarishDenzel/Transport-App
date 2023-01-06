@@ -1,9 +1,10 @@
-import { StyleSheet, Text, View, TextInput, TouchableOpacity ,Dimensions} from "react-native";
+import { StyleSheet, Text, View, TextInput, TouchableOpacity ,Dimensions,Image} from "react-native";
 import React, { useState } from "react";
 import Header from "../../Components/Header";
 import { height, View_Spacing } from "../../assets/fontsAndColors";
 import Bt_Main from "../../Components/Bt_Main";
 import ReactModal from "../../Components/ReactModal";
+import GetImage from "../../assets/GetImage";
 import Lottie from 'lottie-react-native';
 export default function TopupScreen(props) {
     const[amount,setAmount]=React.useState("");
@@ -75,7 +76,7 @@ setAmount(e.amount)
         >
           <Text style={{
                     fontSize: (height / 100) * 2.0,
-                    fontFamily: "Urbanist",
+                    fontFamily: "Urbanist, sans-serif",
                   fontStyle:'normal',
                     color:'#000'
                   }} >{" Enter the amount of top up"}</Text>
@@ -111,7 +112,7 @@ setAmount(e.amount)
               fontSize: View_Spacing.VS_W5,
               height: View_Spacing.VS_W15,
               textAlign: "center",
-              color:'#0F437B'
+              color:'gray'
             }}
             placeholder="0"
             placeholderTextColor={'#000'}
@@ -165,15 +166,15 @@ setAmount(e.amount)
                     }}
                 >
                     <View style={{ flex: 0.4, }}>
-                        {/* <Image
+                        <Image
               source={GetImage.promoSuccess}
               style={{
                 height: (height / 100) * 18,
                 width: (height / 100) * 18,
                 resizeMode: "contain",
               }}
-            /> */}
-                        <Lottie style={{ height: height / 100 * 20, width: height / 100 * 30 }} source={require("../../assets/Animation/lf20_s2lryxtd.json")} autoPlay />
+            />
+                        {/* <Lottie style={{ height: height / 100 * 20, width: height / 100 * 30 }} source={require("../../assets/Animation/lf20_s2lryxtd.json")} autoPlay /> */}
                     </View>
                     <View
                         style={{

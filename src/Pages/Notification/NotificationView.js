@@ -37,7 +37,7 @@ export default function NotificationView(props) {
 
 
 
-                    <View style={{ height: height / 100 * 2, borderBottomWidth: 0.5,borderColor:'#EEEEEE' }} />
+                    <View style={{ height: height / 100 * 2, borderBottomWidth: 1.5,borderColor:'#EEEEEE' }} />
 
                     <Text style={{
                         fontSize: (height / 100) * 2.3,
@@ -56,16 +56,17 @@ export default function NotificationView(props) {
                   
 
                 </ScrollView>
-                <View style={{ paddingBottom:5, justifyContent: 'center', alignItems: 'center', paddingTop: 0 }}>
+                <View style={{ paddingBottom:25, justifyContent: 'center', alignItems: 'center', paddingTop: 0 }}>
                         <TouchableOpacity
-                            onPress={() => setPromoModal(true)}
+                            onPress={() => navigation.navigate("NotificationPayment")}
                             style={{
-                                height: (height / 100) * 7,
+                                height: (height / 100) * 6,
                                 backgroundColor: "#0F437B",
                                 width: (height / 100) * 40,
                                 justifyContent: "center",
                                 alignItems: "center",
                                 borderRadius: 25,
+                                marginBottom:140
 
                             }}
                         >
@@ -82,90 +83,6 @@ export default function NotificationView(props) {
                         </TouchableOpacity>
                     </View>
             </View>
-
-            <ReactModal
-                container={{
-                    backgroundColor: "rgba(0,0,0,0.7)",
-                    justifyContent: "center",
-                    alignItems: "center",
-                }}
-                visible={promoModal}
-            >
-                <View
-                    style={{
-                        backgroundColor: "#fff",
-                        height: (height / 100) * 45,
-                        width: "89%",
-                        justifyContent: "center",
-                        alignItems: "center",
-                        borderRadius: 10,
-                    }}
-                >
-                    <View style={{ flex: 0.4, }}>
-                        {/* <Image
-              source={GetImage.promoSuccess}
-              style={{
-                height: (height / 100) * 18,
-                width: (height / 100) * 18,
-                resizeMode: "contain",
-              }}
-            /> */}
-                        <Lottie style={{ height: height / 100 * 20, width: height / 100 * 30 }} source={require("../../assets/Animation/lf20_s2lryxtd.json")} autoPlay />
-                    </View>
-                    <View
-                        style={{
-                            flex: 0.2,
-                            alignItems: "center",
-                            justifyContent: "flex-end",
-                        }}
-                    >
-                        <Text
-                            style={{
-                                fontSize: (height / 100) * 2.5,
-                                fontFamily: "Urbanist_semibold",
-                                color: "#000",
-                            }}
-                        >
-                            {"Enjoy the deal"}
-                        </Text>
-                        <Text
-                            style={{
-                                fontSize: (height / 100) * 1.5,
-                                fontFamily: "Urbanist_semibold",
-                                color: "#616161",
-                            }}
-                        >
-                            We hope you get great day today
-                        </Text>
-                    </View>
-
-                    <View style={{ flex: 0.2, top: height / 100 * 5 }}>
-                        <TouchableOpacity
-                            onPress={() => setPromoModal(!promoModal)}
-                            style={{
-                                height: (height / 100) * 6,
-                                backgroundColor: "#0F437B",
-                                width: (height / 100) * 35,
-                                justifyContent: "center",
-                                alignItems: "center",
-                                borderRadius: 25,
-                            }}
-                        >
-                            <Text
-                                style={{
-                                    fontSize: (height / 100) * 2,
-                                    fontFamily: "Urbanist_semibold",
-                                    color: "#fff",
-                                }}
-                            >
-                                {"Got It"}
-                            </Text>
-                        </TouchableOpacity>
-                        <View style={{ height: (height / 100) * 2 }}></View>
-
-                    </View>
-                </View>
-            </ReactModal>
         </Header>
 
     )

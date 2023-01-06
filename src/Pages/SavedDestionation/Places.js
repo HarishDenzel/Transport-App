@@ -1,5 +1,5 @@
 import React from "react"
-import { StyleSheet, Image, Text, View, ScrollView, TouchableOpacity } from "react-native"
+import { StyleSheet, Image, Text, View, ScrollView, TouchableOpacity,Pressable } from "react-native"
 import { useNavigation } from "@react-navigation/native";
 import { RadioButton } from 'react-native-paper';
 import GetColors from '../../assets/GetColors';
@@ -8,7 +8,7 @@ export default function Places() {
   const navigation = useNavigation();
   const [checked, setChecked] = React.useState('first');
   return (
-    <ScrollView>
+    <View style={styles.container}>
       <View style={styles.Address_01}>
         <View style={styles.Group}>
           <View style={styles.AutoLayoutVertical3}>
@@ -25,20 +25,28 @@ export default function Places() {
                         value="first"
                         status={checked === 'first' ? 'checked' : 'unchecked'}
                         onPress={() => setChecked('first')}
+                        color={'#0F437B'}
                       />
                     </View>
                     <View style={styles.AutoLayoutVertical}>
-                      <Text style={styles.Txt363}>Home</Text>
+                      <Text style={styles.Txt363}>Delicious Food Stall</Text>
                       <Text style={styles.Txt979}>
                         364 Stillwater Ave. Attleboro, MA 02703
                       </Text>
                     </View>
                   </View>
+                  <Pressable  onPress={() => navigation.navigate("Addresspage")}>
                   <Image
                     style={styles.IconlyBoldEdit}
                     source={require('../../assets/Profile/pencil.png')}
                   />
+                  </Pressable>
                 </View>
+                <Image
+                style={[styles.themeLightDividerIcon, styles.mt16]}
+                resizeMode="cover"
+                source={require("../../assets/Profile/themelight-divider1.png")}
+              />
                 <View
                   style={
                     styles.CategoryLocationEditThemeLightComponentLocationList1
@@ -50,20 +58,28 @@ export default function Places() {
                         value="second"
                         status={checked === 'second' ? 'checked' : 'unchecked'}
                         onPress={() => setChecked('second')}
+                        color={'#0F437B'}
                       />
                     </View>
                     <View style={styles.AutoLayoutVertical}>
-                      <Text style={styles.Txt363}>Office</Text>
+                      <Text style={styles.Txt363}>Bestie House</Text>
                       <Text style={styles.Txt979}>
                         73 Virginia Rd. Cuyahoga Falls, OH 44221
                       </Text>
                     </View>
                   </View>
+                  <Pressable  onPress={() => navigation.navigate("Addresspage")}>
                   <Image
                     style={styles.IconlyBoldEdit}
                     source={require('../../assets/Profile/pencil.png')}
                   />
+                  </Pressable>
                 </View>
+                <Image
+                style={[styles.themeLightDividerIcon, styles.mt16]}
+                resizeMode="cover"
+                source={require("../../assets/Profile/themelight-divider1.png")}
+              />
                 <View
                   style={
                     styles.CategoryLocationEditThemeLightComponentLocationList1
@@ -75,6 +91,7 @@ export default function Places() {
                         value="three"
                         status={checked === 'three' ? 'checked' : 'unchecked'}
                         onPress={() => setChecked('three')}
+                        color={'#0F437B'}
                       />
                     </View>
                     <View style={styles.AutoLayoutVertical}>
@@ -84,11 +101,18 @@ export default function Places() {
                       </Text>
                     </View>
                   </View>
+                  <Pressable  onPress={() => navigation.navigate("Addresspage")}>
                   <Image
                     style={styles.IconlyBoldEdit}
                     source={require('../../assets/Profile/pencil.png')}
                   />
+                  </Pressable>
                 </View>
+                <Image
+                style={[styles.themeLightDividerIcon, styles.mt16]}
+                resizeMode="cover"
+                source={require("../../assets/Profile/themelight-divider1.png")}
+              />
                 <View
                   style={
                     styles.CategoryLocationEditThemeLightComponentLocationList1
@@ -100,6 +124,7 @@ export default function Places() {
                         value="four"
                         status={checked === 'four' ? 'checked' : 'unchecked'}
                         onPress={() => setChecked('four')}
+                        color={'#0F437B'}
                       />
                     </View>
                     <View style={styles.AutoLayoutVertical}>
@@ -109,11 +134,18 @@ export default function Places() {
                       </Text>
                     </View>
                   </View>
+                  <Pressable  onPress={() => navigation.navigate("Addresspage")}>
                   <Image
                     style={styles.IconlyBoldEdit}
                     source={require('../../assets/Profile/pencil.png')}
                   />
+                  </Pressable>
                 </View>
+                <Image
+                style={[styles.themeLightDividerIcon, styles.mt16]}
+                resizeMode="cover"
+                source={require("../../assets/Profile/themelight-divider1.png")}
+              />
                 <View
                   style={
                     styles.CategoryLocationEditThemeLightComponentLocationList1
@@ -125,6 +157,7 @@ export default function Places() {
                         value="five"
                         status={checked === 'five' ? 'checked' : 'unchecked'}
                         onPress={() => setChecked('five')}
+                        color={'#0F437B'}
                       />
                     </View>
                     <View style={styles.AutoLayoutVertical}>
@@ -134,11 +167,18 @@ export default function Places() {
                       </Text>
                     </View>
                   </View>
+                  <Pressable  onPress={() => navigation.navigate("Addresspage")}>
                   <Image
                     style={styles.IconlyBoldEdit}
                     source={require('../../assets/Profile/pencil.png')}
                   />
+                  </Pressable>
                 </View>
+                <Image
+                style={[styles.themeLightDividerIcon, styles.mt16]}
+                resizeMode="cover"
+                source={require("../../assets/Profile/themelight-divider1.png")}
+              />
                 <View
                   style={
                     styles.CategoryLocationEditThemeLightComponentLocationList2
@@ -150,6 +190,7 @@ export default function Places() {
                         value="six"
                         status={checked === 'six' ? 'checked' : 'unchecked'}
                         onPress={() => setChecked('six')}
+                        color={'#0F437B'}
                       />
                     </View>
                     <View style={styles.AutoLayoutVertical}>
@@ -159,36 +200,53 @@ export default function Places() {
                       </Text>
                     </View>
                   </View>
+                  <Pressable  onPress={() => navigation.navigate("Addresspage")}>
                   <Image
                     style={styles.IconlyBoldEdit}
                     source={require('../../assets/Profile/pencil.png')}
                   />
+                  </Pressable>
                 </View>
               </View>
             {/* </View> */}
-            <TouchableOpacity style={styles.Button} onPress={() => navigation.navigate("Addressnew")}>
+            <TouchableOpacity style={styles.Button} onPress={() => navigation.navigate("Saved")}>
         <Text style={styles.btnTxt}>Add new</Text>
       </TouchableOpacity>
           </View>
         </View>
       </View>
-    </ScrollView>
+     </View>
   )
 }
 
 const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+    backgroundColor: "#fff",
+},
   Address_01: {
     display: "flex",
     flexDirection: "column",
     justifyContent: "center",
     alignItems: "center",
-    backgroundColor: "rgba(255, 255, 255, 1)",
-    width: '100%',
-    height: '100%',
+    // backgroundColor: "rgba(255, 255, 255, 1)",
+    // width: '100%',
+    // height: '100%',
   },
   Group: {
     display: "flex",
     flexDirection: "column",
+  },
+  themeLightDividerIcon: {
+    alignSelf: "stretch",
+    position: "relative",
+    maxWidth: "100%",
+    overflow: "hidden",
+    height: 1,
+    flexShrink: 0,
+  },
+  mt16: {
+    marginTop: 16,
   },
   AutoLayoutVertical3: {
     display: "flex",
@@ -199,8 +257,8 @@ const styles = StyleSheet.create({
     paddingBottom: 47,
     paddingLeft: 23,
     paddingRight: 23,
-    height: 600,
-    width: 428,
+    // height: 600,
+    // width: 428,
   },
   AutoLayoutVertical2: {
     display: "flex",
@@ -257,7 +315,7 @@ const styles = StyleSheet.create({
     lineHeight: 20,
     letterSpacing: 0.2,
     color: "rgba(97,97,97,1)",
-    width: 301,
+    // width: 301,
   },
 
   IconlyBoldEdit: {
@@ -270,14 +328,16 @@ const styles = StyleSheet.create({
     flexDirection: "row",
     justifyContent: "flex-start",
     alignItems: "center",
-    marginBottom: 16,
-    width: 380,
+    marginBottom: 15,
+    // width: 380,
+    marginTop:10,
   },
   CategoryLocationEditThemeLightComponentLocationList2: {
     display: "flex",
     flexDirection: "row",
     justifyContent: "flex-start",
     alignItems: "center",
+    marginTop:10,
     // width: 380,
   },
   Button: {
@@ -285,15 +345,16 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
     justifyContent: 'center',
     alignItems: 'center',
-    top: 1,
+    top: 60,
     padding: 12,
     borderRadius: 100,
     backgroundColor: GetColors.PrimaryBlue_500,
     borderWidth: 1,
     borderStyle: 'solid',
     borderColor: GetColors.PrimaryBlue_500,
-    width: '80%',
+    width: '90%',
     marginHorizontal: '10%',
+    // marginTop:50,
   },
   btnTxt: {
     fontSize: 18,

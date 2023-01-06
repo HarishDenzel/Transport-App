@@ -42,8 +42,8 @@ const Ewallet = (props) => {
     },
     {
       id: 4,
-      img: GetImage.ticket,
-      title: "Bus Ticket",
+      img: GetImage.topup,
+      title: "Top Up Wallet",
       time: "Dec 11, 2024 | 11:48 PM",
       rate: "- $14",
     },
@@ -56,8 +56,8 @@ const Ewallet = (props) => {
     },
     {
       id: 6,
-      img: GetImage.ticket,
-      title: "Bus Ticket",
+      img: GetImage.topup,
+      title: "Top Up Wallet",
       time: "Dec 11, 2024 | 11:48 PM",
       rate: "- $14",
     },
@@ -76,6 +76,7 @@ const Ewallet = (props) => {
             marginHorizontal: 15,
             height: 220,
             backgroundColor: "#071959",
+            marginTop:20
           }}
         >
           <ImageBackground source={GetImage.cardbg} style={{ flex: 1 }}>
@@ -117,7 +118,7 @@ const Ewallet = (props) => {
                     {"Your Balance"}
                   </Text>
                   <Text
-                    style={[styles.subText, { fontSize: 30, color: "#fff" ,fontWeight:'bold'}]}
+                    style={[styles.subText, { fontSize: 43, color: "#fff" ,fontWeight:'bold'}]}
                   >
                     {"$957,5"}
                   </Text>
@@ -129,9 +130,9 @@ const Ewallet = (props) => {
                       flexDirection: "row",
                       justifyContent: "center",
                       alignItems: "center",
-                      padding: 8,
+                      padding: 10,
                       borderRadius: 20,
-                      paddingHorizontal: 20,
+                      paddingHorizontal: 25,
                     }}
                   >
                     <Image
@@ -184,12 +185,12 @@ const Ewallet = (props) => {
         />
       </View>
   
-   <View style={{marginTop:5,height:30,width:'90%',alignSelf:'center',borderTopWidth:0.8,borderColor:'#c1c1c1'}}>
+   <View style={{marginTop:15,height:30,width:'90%',alignSelf:'center',borderTopWidth:0.8,borderColor:'#c1c1c1'}}>
     <Text style={{fontSize: 14,
     fontFamily: "Urbanist_regular",
-    fontWeight: "600",
+    fontWeight: "700",
     color: "#0F437B",
-    marginTop:5}}>{"View more result"}</Text>
+    marginTop:15}}>{"View more result"}</Text>
     </View>
       <View style={{height:height/100*5}} />
    </ScrollView>
@@ -216,7 +217,7 @@ const styles = StyleSheet.create({
     color: "#000",
   },
   subText: {
-    fontSize: 14,
+    fontSize: 18,
     fontFamily: "  Urbanist_regular",
     color: "#616161",
   },

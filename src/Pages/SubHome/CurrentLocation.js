@@ -14,6 +14,7 @@ import React, { useState } from "react";
 import GetImage from "../../assets/GetImage";
 import { useNavigation } from "@react-navigation/native";
 import GetLocation from "../../Components/GetLocation";
+import { black } from "react-native-paper/lib/typescript/styles/colors";
 
 export default function Destination() {
   const height = Dimensions.get("screen").height;
@@ -81,10 +82,11 @@ export default function Destination() {
         </View>
       </View>
       <View style={{ flex: 0.93 ,}}>
-      <KeyboardAvoidingView style={{ flex: 1, }}   behavior={Platform.OS === "ios" ? "padding" : null}>
+      <KeyboardAvoidingView style={{ flex: 1,}}   behavior={Platform.OS === "ios" ? "padding" : null}>
         <View style={{height:height/100*2}}></View>
          
         < GetLocation 
+        currentLocation={true}
         onPress={(data)=> navigation.navigate("Home",{data:false,para:data.description})}
         label={"Use my current location"}
          />

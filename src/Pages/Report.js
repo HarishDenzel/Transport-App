@@ -1,10 +1,15 @@
-import React from "react"
-import { StyleSheet, Image, Text, View, ScrollView,TextInput,TouchableOpacity } from "react-native"
+import React, { useState } from 'react';
+import { StyleSheet, Image, Text, View, Dimensions,ScrollView,TextInput,TouchableOpacity } from "react-native"
 import { useNavigation } from "@react-navigation/native";
+import GetColors from "../assets/GetColors";
+import Lottie from 'lottie-react-native';
+import ReactModal from '../Components/ReactModal';
 export default function Report() {
+  const height = Dimensions.get("screen").height;
+  const [promoModal, setPromoModal] = useState(false)
     const navigation = useNavigation();
   return (
-    <ScrollView>
+    <View style={styles.container}>
     <View style={styles.HelpCenter_03}>
       <View style={styles.Group7810}>
         <View style={styles.AutoLayoutVertical3}>
@@ -21,7 +26,7 @@ export default function Report() {
                             underlineColorAndroid = "transparent"
                             placeholder = "Reporter Name"
                             autoCapitalize = "none"
-                            placeholderTextColor = "black" />
+                            placeholderTextColor = "gray" />
                           </View>
                           </View>
 
@@ -36,7 +41,7 @@ export default function Report() {
                             underlineColorAndroid = "transparent"
                             placeholder = "What This All About"
                             autoCapitalize = "none"
-                            placeholderTextColor = "black"/>
+                            placeholderTextColor = "gray"/>
 
                           </View>
                     </View>
@@ -52,7 +57,7 @@ export default function Report() {
                             underlineColorAndroid = "transparent"
                             placeholder = "Description"
                             autoCapitalize = "none"
-                            placeholderTextColor = "black"/>
+                            placeholderTextColor = "gray"/>
                           </View>
                         </View>
                       </View>
@@ -65,31 +70,115 @@ export default function Report() {
         <View style={styles.Button}>
           <View style={styles._buttonBasePrimary}>
           <TouchableOpacity
-       onPress={() => navigation.navigate("Home",{data:true,para:''})}
+       onPress={() => setPromoModal(true)}
       >
-        <Text>Submit</Text>
+        <Text style={{color: GetColors.white}}>Submit</Text>
       </TouchableOpacity>
           </View>
         </View>
       </View>
     </View>
-    </ScrollView>
+    <ReactModal
+        container={{
+          backgroundColor: "rgba(0,0,0,0.7)",
+          justifyContent: "center",
+          alignItems: "center",
+        }}
+        visible={promoModal}
+      >
+        <View
+          style={{
+            backgroundColor: "#fff",
+            height: (height / 100) * 45,
+            width: "89%",
+            justifyContent: "center",
+            alignItems: "center",
+            borderRadius: 10,
+          }}
+        >
+          <View style={{ flex: 0.4, }}>
+            {/* <Image
+              source={GetImage.promoSuccess}
+              style={{
+                height: (height / 100) * 18,
+                width: (height / 100) * 18,
+                resizeMode: "contain",
+              }}
+            /> */}
+            <Lottie style={{ height: height / 100 * 20, width: height / 100 * 30 }} source={require("../assets/Animation/lf20_s2lryxtd.json")} autoPlay />
+          </View>
+          <View
+            style={{
+              flex: 0.2,
+              alignItems: "center",
+              justifyContent: "flex-end",
+            }}
+          >
+            <Text
+              style={{
+                fontSize: (height / 100) * 2.5,
+                fontFamily: "Urbanist_semibold",
+                color: "#000",
+              }}
+            >
+              {"Report Sent"}
+            </Text>
+            <Text
+              style={{
+                fontSize: (height / 100) * 1.5,
+                fontFamily: "Urbanist_semibold",
+                color: "#616161",
+              }}
+            >
+             Your report has been submitted
+            </Text>
+          </View>
+
+          <View style={{ flex: 0.2, top: height / 100 * 5 }}>
+            <TouchableOpacity
+              onPress={() => setPromoModal(!promoModal)}
+              style={{
+                height: (height / 100) * 6,
+                backgroundColor: "#0F437B",
+                width: (height / 100) * 35,
+                justifyContent: "center",
+                alignItems: "center",
+                borderRadius: 25,
+              }}
+            >
+              <Text
+                style={{
+                  fontSize: (height / 100) * 2,
+                  fontFamily: "Urbanist_semibold",
+                  color: "#fff",
+                }}
+              >
+                {"Okay"}
+              </Text>
+            </TouchableOpacity>
+            <View style={{ height: (height / 100) * 2 }}></View>
+
+          </View>
+        </View>
+      </ReactModal>
+    </View>
   )
 }
 
 const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+    backgroundColor: "#fff",
+  },
   HelpCenter_03: {
     display: "flex",
     flexDirection: "column",
-    justifyContent: "flex-start",
-    alignItems: "flex-start",
+    justifyContent: "center",
+    alignItems: "center",
     paddingTop: 0,
     paddingBottom: 47,
     paddingLeft: 0,
     paddingRight: 0,
-    backgroundColor: "rgba(255, 255, 255, 1)",
-    width: 428,
-    height: 926,
   },
   Group7810: {
     display: "flex",
@@ -299,7 +388,7 @@ const styles = StyleSheet.create({
   AutoLayoutVertical3: {
     display: "flex",
     flexDirection: "column",
-    justifyContent: "flex-start",
+    justifyContent: "center",
     alignItems: "center",
     paddingTop: 23,
     paddingBottom: 23,
@@ -311,8 +400,8 @@ const styles = StyleSheet.create({
   AutoLayoutVertical2: {
     display: "flex",
     flexDirection: "column",
-    justifyContent: "flex-start",
-    alignItems: "flex-start",
+    justifyContent: "center",
+    alignItems: "center",
     width: 380,
   },
   AutoLayoutVertical2: {
@@ -325,7 +414,7 @@ const styles = StyleSheet.create({
   AutoLayoutVertical1: {
     display: "flex",
     flexDirection: "column",
-    justifyContent: "flex-start",
+    justifyContent: "center",
     alignItems: "center",
     width: 380,
   },
@@ -395,7 +484,7 @@ const styles = StyleSheet.create({
   Content1: {
     display: "flex",
     flexDirection: "row",
-    justifyContent: "flex-start",
+    justifyContent: "center",
     alignItems: "center",
     flex: 1,
     paddingTop: 0,
@@ -530,16 +619,16 @@ const styles = StyleSheet.create({
   Content2: {
     display: "flex",
     flexDirection: "column",
-    justifyContent: "flex-start",
-    alignItems: "flex-start",
+    justifyContent: "center",
+    alignItems: "center",
     flex: 1,
     height: 179,
   },
   Input1: {
     display: "flex",
     flexDirection: "row",
-    justifyContent: "flex-start",
-    alignItems: "flex-start",
+    justifyContent: "center",
+    alignItems: "center",
     flex: 1,
     paddingTop: 13.5,
     paddingBottom: 13.5,
@@ -550,13 +639,13 @@ const styles = StyleSheet.create({
     borderWidth: 0.5,
     borderStyle: "solid",
     borderColor: "rgba(189,189,189,1)",
-    width: 380,
-    height: 179,
+    // width: 380,
+    // height: 179,
   },
   Content1: {
     display: "flex",
     flexDirection: "row",
-    justifyContent: "flex-start",
+    justifyContent: "center",
     alignItems: "center",
     flex: 1,
     paddingTop: 0,
@@ -593,7 +682,7 @@ const styles = StyleSheet.create({
     paddingLeft: 27,
     paddingRight: 27,
     borderRadius: 100,
-    backgroundColor: "blue",
+    backgroundColor: "#0F437B",
     borderWidth: 1,
     borderStyle: "solid",
     borderColor: "rgba(181,197,214,1)",

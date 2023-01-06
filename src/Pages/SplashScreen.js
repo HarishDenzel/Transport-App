@@ -17,9 +17,9 @@ export default function SplashScreen({navigation}) {
   const checkData = () => {
     Helper.getData('userdata').then(userdata => {
       if (!userdata) {
-        navigation.navigate('Intro1');
+        navigation.navigate("Intro1");
       } else {
-        navigation.navigate('BottomTab');
+        navigation.navigate("BottomTab");
       }
     });
   };

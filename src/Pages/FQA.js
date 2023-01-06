@@ -1,91 +1,111 @@
 import React from "react"
-import { StyleSheet, Image, Text, View, ImageBackground } from "react-native"
-
-export default function FQA() {
+import { StyleSheet, Image, Text, View, ImageBackground, Button, TouchableOpacity } from "react-native"
+import { useNavigation } from "@react-navigation/native";
+export default function FQA(props) {
+  const navigation = useNavigation();
   return (
-    <View style={styles.HelpCenter_01}>
-      <View style={styles.Group896}>
-        <View style={styles.AutoLayoutVertical2}>
-          <View style={styles.AutoLayoutHorizontal1}>
-            <View style={styles.Chips}>
-              <View style={styles._chips}>
-                <Text style={styles.Txt575}>General</Text>
+    <View style={styles.container}>
+      <View style={styles.HelpCenter_01}>
+        <View style={styles.Group896}>
+          <View style={styles.AutoLayoutVertical2}>
+            <View style={styles.AutoLayoutHorizontal1}>
+              <View style={styles.Chips}>
+                <View style={styles._chips}>
+                  <TouchableOpacity 
+                    onPress={() => navigation.navigate("General")}>
+                      <Text style={styles.Txt575}>General</Text>
+                      </TouchableOpacity>
+                </View>
+              </View>
+              <View style={styles.Chips}>
+                <View style={styles._chips1}>
+                  <TouchableOpacity 
+                    onPress={() => navigation.navigate("General")}>
+                      <Text style={styles.Txt1056}>Account</Text>
+                      </TouchableOpacity>
+                </View>
+              </View>
+              <View style={styles.Chips}>
+                <View style={styles._chips1}>
+                <TouchableOpacity 
+                    onPress={() => navigation.navigate("General")}>
+                  <Text style={styles.Txt1056}>Service</Text>
+                  </TouchableOpacity>
+                </View>
+              </View>
+              <View style={styles.TopAppBar}>
+                <View style={styles._chips1}>
+                <TouchableOpacity 
+                    onPress={() => navigation.navigate("General")}>
+                  <Text style={styles.Txt1056}>Payment</Text>
+                  </TouchableOpacity>
+                </View>
               </View>
             </View>
-            <View style={styles.Chips}>
-              <View style={styles._chips1}>
-                <Text style={styles.Txt1056}>Account</Text>
+            <Image
+              style={[styles.themeLightDividerIcon, styles.mt16]}
+              resizeMode="cover"
+              source={require("../assets/Profile/themelight-divider1.png")}
+            />
+            <View style={styles.AutoLayoutVertical1}>
+              <View style={styles.ThemeLightComponentFaq}>
+                <View style={styles.AutoLayoutHorizontal2}>
+                  <Text style={styles.Txt657}>What is Bus</Text>
+                  <Image
+                    style={styles.IconlyBoldArrowDown2}
+                    source={{
+                      uri: "https://firebasestorage.googleapis.com/v0/b/unify-bc2ad.appspot.com/o/0x8l7ravappe-1633%3A44193?alt=media&token=6525db99-0a3e-4372-a6f9-87ffb70b6454",
+                    }}
+                  />
+                </View>
+                <Text style={styles.Txt065}>
+                  Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+                  eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                </Text>
               </View>
-            </View>
-            <View style={styles.Chips}>
-              <View style={styles._chips1}>
-                <Text style={styles.Txt1056}>Service</Text>
+              <View style={styles.ThemeLightComponentFaq}>
+                <View style={styles.AutoLayoutHorizontal3}>
+                  <Text style={styles.Txt657}>How to use Bus</Text>
+                  <Image
+                    style={styles.IconlyBoldArrowDown2}
+                    source={{
+                      uri: "https://firebasestorage.googleapis.com/v0/b/unify-bc2ad.appspot.com/o/0x8l7ravappe-1633%3A44200?alt=media&token=392065cd-ee7c-47dc-b05f-7e9eeb843109",
+                    }}
+                  />
+                </View>
               </View>
-            </View>
-            <View style={styles.TopAppBar}>
-              <View style={styles._chips1}>
-                <Text style={styles.Txt1056}>Payment</Text>
+              <View style={styles.ThemeLightComponentFaq}>
+                <View style={styles.AutoLayoutHorizontal3}>
+                  <Text style={styles.Txt657}>How do I cancel a booking?</Text>
+                  <Image
+                    style={styles.IconlyBoldArrowDown2}
+                    source={{
+                      uri: "https://firebasestorage.googleapis.com/v0/b/unify-bc2ad.appspot.com/o/0x8l7ravappe-1633%3A44207?alt=media&token=7df0fc7f-2602-4767-873e-30894bc9807b",
+                    }}
+                  />
+                </View>
               </View>
-            </View>
-          </View>
-          <View style={styles.AutoLayoutVertical1}>
-            <View style={styles.ThemeLightComponentFaq}>
-              <View style={styles.AutoLayoutHorizontal2}>
-                <Text style={styles.Txt657}>What is Bus</Text>
-                <Image
-                  style={styles.IconlyBoldArrowDown2}
-                  source={{
-                    uri: "https://firebasestorage.googleapis.com/v0/b/unify-bc2ad.appspot.com/o/0x8l7ravappe-1633%3A44193?alt=media&token=6525db99-0a3e-4372-a6f9-87ffb70b6454",
-                  }}
-                />
+              <View style={styles.ThemeLightComponentFaq}>
+                <View style={styles.AutoLayoutHorizontal3}>
+                  <Text style={styles.Txt657}>Is Bus free to use?</Text>
+                  <Image
+                    style={styles.IconlyBoldArrowDown2}
+                    source={{
+                      uri: "https://firebasestorage.googleapis.com/v0/b/unify-bc2ad.appspot.com/o/0x8l7ravappe-1633%3A44214?alt=media&token=5fe5b771-6ba8-4bbd-8a80-99fb5ca4e9ce",
+                    }}
+                  />
+                </View>
               </View>
-              <Text style={styles.Txt065}>
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-                eiusmod tempor incididunt ut labore et dolore magna aliqua.
-              </Text>
-            </View>
-            <View style={styles.ThemeLightComponentFaq}>
-              <View style={styles.AutoLayoutHorizontal3}>
-                <Text style={styles.Txt657}>How to use Bus</Text>
-                <Image
-                  style={styles.IconlyBoldArrowDown2}
-                  source={{
-                    uri: "https://firebasestorage.googleapis.com/v0/b/unify-bc2ad.appspot.com/o/0x8l7ravappe-1633%3A44200?alt=media&token=392065cd-ee7c-47dc-b05f-7e9eeb843109",
-                  }}
-                />
-              </View>
-            </View>
-            <View style={styles.ThemeLightComponentFaq}>
-              <View style={styles.AutoLayoutHorizontal3}>
-                <Text style={styles.Txt657}>How do I cancel a booking?</Text>
-                <Image
-                  style={styles.IconlyBoldArrowDown2}
-                  source={{
-                    uri: "https://firebasestorage.googleapis.com/v0/b/unify-bc2ad.appspot.com/o/0x8l7ravappe-1633%3A44207?alt=media&token=7df0fc7f-2602-4767-873e-30894bc9807b",
-                  }}
-                />
-              </View>
-            </View>
-            <View style={styles.ThemeLightComponentFaq}>
-              <View style={styles.AutoLayoutHorizontal3}>
-                <Text style={styles.Txt657}>Is Bus free to use?</Text>
-                <Image
-                  style={styles.IconlyBoldArrowDown2}
-                  source={{
-                    uri: "https://firebasestorage.googleapis.com/v0/b/unify-bc2ad.appspot.com/o/0x8l7ravappe-1633%3A44214?alt=media&token=5fe5b771-6ba8-4bbd-8a80-99fb5ca4e9ce",
-                  }}
-                />
-              </View>
-            </View>
-            <View style={styles.ThemeLightComponentFaq1}>
-              <View style={styles.AutoLayoutHorizontal3}>
-                <Text style={styles.Txt657}>How to add promo on Bus</Text>
-                <Image
-                  style={styles.IconlyBoldArrowDown2}
-                  source={{
-                    uri: "https://firebasestorage.googleapis.com/v0/b/unify-bc2ad.appspot.com/o/0x8l7ravappe-1633%3A44221?alt=media&token=706f7bbd-e2a7-46b8-a900-d56397697b02",
-                  }}
-                />
+              <View style={styles.ThemeLightComponentFaq1}>
+                <View style={styles.AutoLayoutHorizontal3}>
+                  <Text style={styles.Txt657}>How to add promo on Bus</Text>
+                  <Image
+                    style={styles.IconlyBoldArrowDown2}
+                    source={{
+                      uri: "https://firebasestorage.googleapis.com/v0/b/unify-bc2ad.appspot.com/o/0x8l7ravappe-1633%3A44221?alt=media&token=706f7bbd-e2a7-46b8-a900-d56397697b02",
+                    }}
+                  />
+                </View>
               </View>
             </View>
           </View>
@@ -96,6 +116,10 @@ export default function FQA() {
 }
 
 const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+    backgroundColor: "#fff",
+  },
   HelpCenter_01: {
     display: "flex",
     flexDirection: "column",
@@ -105,9 +129,9 @@ const styles = StyleSheet.create({
     paddingBottom: 121,
     paddingLeft: 0,
     paddingRight: 0,
-    backgroundColor: "rgba(255, 255, 255, 1)",
-    width: 428,
-    height: 926,
+    // backgroundColor: "rgba(255, 255, 255, 1)",
+    // width: 428,
+    // height: 926,
   },
   Group896: {
     display: "flex",
@@ -116,13 +140,13 @@ const styles = StyleSheet.create({
   TopAppBar1: {
     display: "flex",
     flexDirection: "column",
-    justifyContent: "flex-start",
-    alignItems: "flex-start",
+    justifyContent: "center",
+    alignItems: "center",
   },
   StatusBar: {
     display: "flex",
     flexDirection: "row",
-    justifyContent: "flex-start",
+    justifyContent: "center",
     alignItems: "center",
     paddingTop: 10,
     paddingBottom: 8,
@@ -153,24 +177,6 @@ const styles = StyleSheet.create({
     height: 13,
   },
 
-  TopAppBar: {
-    display: "flex",
-    flexDirection: "row",
-    justifyContent: "flex-start",
-    alignItems: "flex-start",
-  },
-  _topAppBar: {
-    display: "flex",
-    flexDirection: "row",
-    justifyContent: "flex-start",
-    alignItems: "center",
-    paddingTop: 0,
-    paddingBottom: 0,
-    paddingLeft: 23,
-    paddingRight: 23,
-    width: 428,
-    height: 64,
-  },
   Content: {
     display: "flex",
     flexDirection: "row",
@@ -317,15 +323,16 @@ const styles = StyleSheet.create({
     paddingBottom: 0,
     paddingLeft: 23,
     paddingRight: 23,
-    width: 428,
+    // width: 428,
   },
   AutoLayoutHorizontal1: {
     display: "flex",
     flexDirection: "row",
-    justifyContent: "flex-start",
-    alignItems: "flex-start",
-    marginBottom: 24,
-    width: 380,
+    justifyContent: "center",
+    alignItems: "center",
+    marginBottom: 20,
+    marginTop: 10
+    // width: 380,
   },
   Chips: {
     display: "flex",
@@ -475,7 +482,20 @@ const styles = StyleSheet.create({
     flexDirection: "column",
     justifyContent: "flex-start",
     alignItems: "flex-start",
-    width: 380,
+    // width: 380,
+    marginTop: 10,
+    marginRight: 15
+  },
+  themeLightDividerIcon: {
+    alignSelf: "stretch",
+    position: "relative",
+    maxWidth: "100%",
+    overflow: "hidden",
+    height: 1,
+    flexShrink: 0,
+  },
+  mt16: {
+    marginTop: 16,
   },
   ThemeLightComponentFaq: {
     display: "flex",
@@ -495,7 +515,7 @@ const styles = StyleSheet.create({
     shadowColor: "rgba(4,6,15,0.05)",
     elevation: 6,
     shadowOffset: { width: 0, height: 4 },
-    width: 380,
+    // width: 380,
   },
   AutoLayoutHorizontal2: {
     display: "flex",

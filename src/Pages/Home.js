@@ -8,7 +8,7 @@ import {
   TouchableOpacity,
   ScrollView,
   Platform,
-  PermissionsAndroid,Linking
+  PermissionsAndroid, Linking
 } from "react-native";
 import MapView, { PROVIDER_GOOGLE, Marker } from "react-native-maps";
 import GetLocation from "react-native-get-location";
@@ -17,7 +17,7 @@ import Geolocation from "@react-native-community/geolocation";
 import { useIsFocused, useNavigation } from "@react-navigation/native";
 import CustomMarker from "../Components/CustomMarker";
 import ReactModal from "../Components/ReactModal";
-import {request, PERMISSIONS, RESULTS} from 'react-native-permissions';
+import { request, PERMISSIONS, RESULTS } from 'react-native-permissions';
 import { icon } from "../assets/icons";
 const { width, height } = Dimensions.get("window");
 const Hight = Dimensions.get("screen").height;
@@ -28,38 +28,23 @@ const LATITUDE_DELTA = 2200;
 const LONGITUDE_DELTA = LATITUDE_DELTA * ASPECT_RATIO;
 
 const Home = (props) => {
-  const{data,para}=props.route?.params
- console.log(para)
-  const isFocused=useIsFocused();
+  const { data, para } = props.route?.params
+  console.log(para)
+  const isFocused = useIsFocused();
   // var date ='11-12-2022';
   // var varDate = new Date(date); //dd-mm-YYYY
   // var today = new Date();
   // console.log("date==>",varDate,t)
-  useEffect(()=>{
-  
-    var specific_date = new Date('2022-12-17');
-    var current_date = new Date();
-    if(current_date.getTime() >= specific_date.getTime())
-    {
-        today.push(["h"])
-    }
-    else
-    {
-        console.log('current_date date is lower than specific_date')
-    }
-    
-  }
- 
-  ,[isFocused])
-  useEffect(()=>{
+
+  useEffect(() => {
     setSome(data)
 
-if(from!==""){
-  setTo(para)
-}else{
-  setFrom(para)
-}
-  },[isFocused])
+    if (from !== "") {
+      setTo(para)
+    } else {
+      setFrom(para)
+    }
+  }, [isFocused])
   const [state, setState] = useState({
     isLoading: true,
     latitude: "37.78825",
@@ -67,38 +52,38 @@ if(from!==""){
   });
   const [some, setSome] = useState(true);
   const [locationModal, setLocationModal] = useState(false);
-  const[from,setFrom]=useState("");
-  const[to,setTo]=useState("");
-  const[locationEnable,setLocationEnable]=useState(false)
+  const [from, setFrom] = useState("");
+  const [to, setTo] = useState("");
+  const [locationEnable, setLocationEnable] = useState(false)
   const Bold = "Urbanist_bold";
   const navigation = useNavigation();
 
 
-  useEffect(async()=>{
+  useEffect(async () => {
     const granted = await PermissionsAndroid.check(
       PermissionsAndroid.PERMISSIONS.ACCESS_FINE_LOCATION,
-      
+
     );
 
     if (granted === PermissionsAndroid.RESULTS.GRANTED) {
       setLocationEnable(false)
-    }else{
+    } else {
       setLocationEnable(true)
     }
-//     Geolocation.getCurrentPosition((info) => {
-      
-//       setLocationModal(false);
-//       console.log("==>", info);
-//       state["latitude"] = info?.coords?.latitude;
-//       state["longitude"] = info?.coords?.longitude;
-//       state["isLoading"] = false;
-//       setState({ ...state });
-//     },(error)=>{
-//       Linking.openSettings();
-// console.log("h==>",error)
-// setLocationEnable(true)
-//     })
-  },[])
+    //     Geolocation.getCurrentPosition((info) => {
+
+    //       setLocationModal(false);
+    //       console.log("==>", info);
+    //       state["latitude"] = info?.coords?.latitude;
+    //       state["longitude"] = info?.coords?.longitude;
+    //       state["isLoading"] = false;
+    //       setState({ ...state });
+    //     },(error)=>{
+    //       Linking.openSettings();
+    // console.log("h==>",error)
+    // setLocationEnable(true)
+    //     })
+  }, [])
   useEffect(() => {
     setLocationModal(true);
   }, []);
@@ -172,7 +157,7 @@ if(from!==""){
     <View style={styles.container}>
       <View style={{ flex: 0.6 }}>
         <TouchableOpacity
-        onPress={()=>navigation.navigate("NotificationScreen")}
+          onPress={() => navigation.navigate("NotificationScreen")}
           style={{
             zIndex: 5,
             alignSelf: "flex-end",
@@ -198,7 +183,7 @@ if(from!==""){
           provider={PROVIDER_GOOGLE} // remove if not using Google Maps
           style={styles.map}
           scrollEnabled={true}
-          showsUserLocation={true}
+          showsUserLocation={false}
           initialRegion={{
             latitude: parseFloat(state.latitude),
             longitude: parseFloat(state.longitude),
@@ -242,12 +227,13 @@ if(from!==""){
           borderTopLeftRadius: 25,
           width: "100%",
           zIndex: 5,
+          marginBottom:10
         }}
       >
         {some ? (
           <>
             <TouchableOpacity
-            onPress={()=>navigation.navigate("Ewallet")}
+              onPress={() => navigation.navigate("Ewallet")}
               style={{
                 flex: 0.5,
                 justifyContent: "flex-end",
@@ -256,19 +242,19 @@ if(from!==""){
               }}
             >
               <Image
-              
+
                 source={GetImage.wallet}
                 style={{ height: "50%", width: "90%", resizeMode: "contain" }}
               />
             </TouchableOpacity>
             <View
               style={{
-                flex: 0.07,
+                flex: 0.08,
                 width: "85%",
                 flexDirection: "row",
                 justifyContent: "space-between",
                 paddingHorizontal: 1,
-                alignSelf:'center'
+                alignSelf: 'center'
               }}
             >
               <TouchableOpacity>
@@ -277,7 +263,7 @@ if(from!==""){
                     fontSize: (height / 100) * 2.2,
                     fontFamily: "Urbanist_bold",
                     fontWeight: "bold",
-                    color:'#000'
+                    color: '#000'
                   }}
                 >
                   Promo
@@ -285,11 +271,11 @@ if(from!==""){
               </TouchableOpacity>
               <TouchableOpacity>
                 <Text
-                onPress={()=>navigation.navigate("PromoCode")}
+                  onPress={() => navigation.navigate("PromoCode")}
                   style={{
                     fontSize: (height / 100) * 1.5,
                     fontFamily: "Urbanist_semibold",
-                    color:'#000'
+                    color: '#000'
                   }}
                 >
                   View all
@@ -297,7 +283,7 @@ if(from!==""){
               </TouchableOpacity>
             </View>
             <TouchableOpacity
-              onPress={ ()=>{ Linking.openURL('https://google.com')}}
+              onPress={() => { Linking.openURL('https://google.com') }}
               style={{ flex: 0.45, width: "100%" }}
             >
               <Image
@@ -332,13 +318,13 @@ if(from!==""){
                       fontSize: (height / 100) * 1.5,
                       fontFamily: "Urbanist_regular",
                       color: "#616161",
-                      fontWeight:'600'
+                      fontWeight: '600'
                     }}
                   >
                     {"Get me Somewhere"}
                   </Text>
                 </TouchableOpacity>
-                
+
                 <View
                   style={{
                     flex: 0.5,
@@ -348,7 +334,7 @@ if(from!==""){
                   }}
                 >
                   <TouchableOpacity
-              onPress={() => navigation.navigate("SavedDestionation")}
+                    onPress={() => setSome(false)}
                     style={{
                       flex: 0.6,
                       flexDirection: "row",
@@ -372,13 +358,13 @@ if(from!==""){
                         fontSize: (height / 100) * 1.5,
                         fontFamily: "Urbanist_regular",
                         color: "#616161",
-                        fontWeight:'600'
+                        fontWeight: '600'
                       }}
                     >
                       {"Get me home"}
                     </Text>
                   </TouchableOpacity>
-                  
+
                   <View
                     style={{
                       flex: 0.4,
@@ -388,7 +374,7 @@ if(from!==""){
                     }}
                   >
                     <TouchableOpacity
-                                  onPress={() => navigation.navigate("SavedDestionation")}
+                      onPress={() => navigation.navigate("SavedDestionation")}
 
                       style={{
                         flex: 0.5,
@@ -399,7 +385,7 @@ if(from!==""){
                       <Image source={GetImage.work} style={styles.Img_2} />
                     </TouchableOpacity>
                     <TouchableOpacity
-                                  onPress={() => navigation.navigate("SavedDestionation")}
+                      onPress={() => navigation.navigate("SavedDestionation")}
 
                       style={{
                         flex: 0.5,
@@ -460,7 +446,7 @@ if(from!==""){
                       color: "#616161",
                     }}
                   >
-                   {from==""?"Current Location":from}
+                    {from == "" ? "Current Location" : from}
                   </Text>
                 </TouchableOpacity>
                 <View style={{ height: (height / 100) * 1 }} />
@@ -485,7 +471,7 @@ if(from!==""){
                       color: "#616161",
                     }}
                   >
-                    {to==""?"Destination":to}
+                    {to == "" ? "Destination" : to}
                   </Text>
                 </TouchableOpacity>
               </View>
@@ -548,7 +534,7 @@ if(from!==""){
               >
                 <TouchableOpacity
                   style={styles.btn3}
-                  onPress={()=>navigation.navigate("SavedDestionation")}
+                  onPress={() => navigation.navigate("HomeAction")}
                 >
                   <Text
                     style={{
@@ -615,7 +601,7 @@ if(from!==""){
                 fontSize: (height / 100) * 1.8,
                 fontFamily: "Urbanist_semibold",
                 color: "#616161",
-                alignSelf:'center'
+                alignSelf: 'center'
               }}
             >
               We need access to your location to be able {"\n"}
@@ -719,7 +705,7 @@ const styles = StyleSheet.create({
     paddingHorizontal: (Hight / 100) * 4,
     marginRight: (Hight / 100) * 9,
   },
-  sub_Con:{
+  sub_Con: {
     flexDirection: "row",
     height: (Hight / 100) * 6,
     borderWidth: 0.3,
@@ -728,7 +714,7 @@ const styles = StyleSheet.create({
     paddingHorizontal: (Hight / 100) * 2,
     borderRadius: 12,
   },
-  btn3:{
+  btn3: {
     height: (height / 100) * 6,
     width: "90%",
     justifyContent: "center",

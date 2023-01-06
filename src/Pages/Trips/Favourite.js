@@ -1,6 +1,7 @@
 import * as React from "react";
-import { Image, StyleSheet, Text, View, Pressable } from "react-native";
+import { Image, StyleSheet, Text, View, Pressable,TouchableOpacity } from "react-native";
 import { useNavigation } from "@react-navigation/native";
+import GetColors from "../../assets/GetColors";
 
 const Favourite = () => {
   const navigation = useNavigation();
@@ -10,6 +11,8 @@ const Favourite = () => {
       {/* <View style={styles.autoLayoutVertical4}> */}
         <View style={styles.autoLayoutVertical3}>
           <View style={styles.autoLayoutVertical2}>
+            <Pressable
+            onPress={() => navigation.navigate("list")}>
             <View style={styles.categoryDefaultCollapseThe}>
               <View style={styles.typeDriverListComponentAc}>
                 <View style={styles.autoLayoutHorizontal4}>
@@ -61,7 +64,10 @@ const Favourite = () => {
                 source={require("../../assets/Profile/Trips/iconlylightarrow--down-2.png")}
               />
             </View>
+            </Pressable>
           </View>
+          
+
         </View>
       {/* </View> */}
     </View>
@@ -98,6 +104,30 @@ const styles = StyleSheet.create({
   },
   mt16: {
     marginTop: 16,
+  },
+  Button: {
+    display: 'flex',
+    flexDirection: 'row',
+    justifyContent: 'center',
+    alignItems: 'center',
+    padding: 12,
+    borderRadius: 100,
+    backgroundColor: GetColors.PrimaryBlue_500,
+    borderWidth: 1,
+    borderStyle: 'solid',
+    borderColor: GetColors.PrimaryBlue_500,
+    width: '90%',
+    marginHorizontal: '10%',
+  },
+  btnTxt: {
+    fontSize: 18,
+    fontFamily: 'Urbanist, sans-serif',
+    fontWeight: '600',
+    lineHeight: 28,
+    letterSpacing: 0.2,
+    color: GetColors.white,
+    textAlign: 'center',
+    justifyContent: 'center',
   },
   iconlyLightOutlineHome: {
     position: "relative",
@@ -545,14 +575,15 @@ const styles = StyleSheet.create({
   autoLayoutVertical2: {
     alignSelf: "stretch",
     flexDirection: "column",
-    alignItems: "flex-start",
-    justifyContent: "flex-start",
+    alignItems: "center",
+    justifyContent: "center",
+    marginTop:20
   },
   autoLayoutVertical3: {
     alignSelf: "stretch",
     flexDirection: "column",
-    alignItems: "flex-start",
-    justifyContent: "flex-start",
+    alignItems: "center",
+    justifyContent: "center",
   },
   autoLayoutVertical4: {
     position: "absolute",

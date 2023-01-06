@@ -34,7 +34,7 @@ export default function GetLocation(props) {
           ref?.setAddressText("123 myDefault Street, mycity");
         }}
         query={{
-          key: "AIzaSyCl4PwObilcXBAT-Vj6GTU0mH9az06nGDc",
+          key: "google key",
           language: "en",
           //components: `country:${isDefaultCountry}`,
         }}
@@ -94,7 +94,7 @@ onPress(data)
             `https://maps.googleapis.com/maps/api/geocode/json?address=` +
               data.description +
               `&key=` +
-              "AIzaSyCl4PwObilcXBAT-Vj6GTU0mH9az06nGDc",
+              "goole key",
             {
               method: "POST",
             }

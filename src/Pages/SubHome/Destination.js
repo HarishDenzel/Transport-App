@@ -86,8 +86,9 @@ export default function Destination() {
         <View style={{height:height/100*2}}></View>
          
         < GetLocation 
+        currentLocation={true}
         onPress={(data)=> navigation.navigate("Home",{data:false,para:data.description})}
-        currentLocation={false}
+        label={"Use my current location"}
          />
           <FlatList
             data={search_location==""?null: data}

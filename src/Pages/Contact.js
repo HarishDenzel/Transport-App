@@ -3,70 +3,72 @@ import { StyleSheet, Image, Text, View, Pressable } from "react-native";
 import { useNavigation } from "@react-navigation/native";
 
 export default function Contact() {
-    const navigation = useNavigation();
+  const navigation = useNavigation();
   return (
-    <View style={styles.HelpCenter_02}>
-      <View style={styles.Group436}>
-        <View style={styles.AutoLayoutVertical3}>
-          <View style={styles.AutoLayoutVertical1}>
-          <Pressable
-           onPress={() => navigation.navigate("Home")}>
-            <View style={styles.AutoLayoutHorizontal1}>
-              <Image
-                style={styles.Frame}
-                source={require('../assets/Profile/whatsapp.png')}
-              />
-              <Text style={styles.Txt522}>WhatsApp</Text>
+    <View style={styles.container}>
+      <View style={styles.HelpCenter_02}>
+        <View style={styles.Group436}>
+          <View style={styles.AutoLayoutVertical3}>
+            <View style={styles.AutoLayoutVertical1}>
+              <Pressable
+                onPress={() => navigation.navigate("Home",{data:false,para:''})}>
+                <View style={styles.AutoLayoutHorizontal1}>
+                  <Image
+                    style={styles.Frame}
+                    source={require('../assets/Profile/whatsapp.png')}
+                  />
+                  <Text style={styles.Txt522}>WhatsApp</Text>
+                </View>
+              </Pressable>
             </View>
-            </Pressable>
-          </View>
-          <View style={styles.AutoLayoutVertical1}>
-          <Pressable
-           onPress={() => navigation.navigate("Home")}>
-            <View style={styles.AutoLayoutHorizontal1}>
-              <Image
-                style={styles.Frame}
-                source={require('../assets/Profile/www.png')}
-              />
-              <Text style={styles.Txt522}>Website</Text>
+            <View style={styles.AutoLayoutVertical1}>
+              <Pressable
+                onPress={() => navigation.navigate("Home",{data:false,para:''})}>
+                <View style={styles.AutoLayoutHorizontal1}>
+                  <Image
+                    style={styles.Frame}
+                    source={require('../assets/Profile/www.png')}
+                  />
+                  <Text style={styles.Txt522}>Website</Text>
+                </View>
+              </Pressable>
             </View>
-            </Pressable>
-          </View>
-          <View style={styles.AutoLayoutVertical1}>
-          <Pressable
-           onPress={() => navigation.navigate("Home")}>
-            <View style={styles.AutoLayoutHorizontal1}>
-              <Image
-                style={styles.Frame}
-                source={require('../assets/Profile/facebook.png')}
-              />
-              <Text style={styles.Txt522}>Facebook</Text>
+            <View style={styles.AutoLayoutVertical1}>
+              <Pressable
+                onPress={() => navigation.navigate("Home",{data:false,para:''})}>
+                <View style={styles.AutoLayoutHorizontal1}>
+                  <Image
+                    style={styles.Frame}
+                    source={require('../assets/Profile/facebook.png')}
+                  />
+                  <Text style={styles.Txt522}>Facebook</Text>
+                </View>
+              </Pressable>
             </View>
-            </Pressable>
-          </View>
-          <View style={styles.AutoLayoutVertical1}>
-          <Pressable
-           onPress={() => navigation.navigate("Home")}>
-            <View style={styles.AutoLayoutHorizontal1}>
-              <Image
-                style={styles.Frame}
-                source={require('../assets/Profile/twitter.png')}
-              />
-              <Text style={styles.Txt522}>Twitter</Text>
+            <View style={styles.AutoLayoutVertical1}>
+              <Pressable
+                onPress={() => navigation.navigate("Home",{data:false,para:''})}>
+                <View style={styles.AutoLayoutHorizontal1}>
+                  <Image
+                    style={styles.Frame}
+                    source={require('../assets/Profile/twitter.png')}
+                  />
+                  <Text style={styles.Txt522}>Twitter</Text>
+                </View>
+              </Pressable>
             </View>
-            </Pressable>
-          </View>
-          <View style={styles.AutoLayoutVertical2}>
-          <Pressable
-           onPress={() => navigation.navigate("Home")}>
-            <View style={styles.AutoLayoutHorizontal1}>
-              <Image
-                style={styles.Frame}
-                source={require('../assets/Profile/instagram.png')}
-              />
-              <Text style={styles.Txt522}>Instagram</Text>
+            <View style={styles.AutoLayoutVertical1}>
+              <Pressable
+                onPress={() => navigation.navigate("Home",{data:false,para:''})}>
+                <View style={styles.AutoLayoutHorizontal1}>
+                  <Image
+                    style={styles.Frame}
+                    source={require('../assets/Profile/instagram.png')}
+                  />
+                  <Text style={styles.Txt522}>Instagram</Text>
+                </View>
+              </Pressable>
             </View>
-            </Pressable>
           </View>
         </View>
       </View>
@@ -75,6 +77,10 @@ export default function Contact() {
 }
 
 const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+    backgroundColor: "#fff",
+  },
   HelpCenter_02: {
     display: "flex",
     flexDirection: "column",
@@ -84,9 +90,9 @@ const styles = StyleSheet.create({
     paddingBottom: 295,
     paddingLeft: 0,
     paddingRight: 0,
-    backgroundColor: "rgba(255, 255, 255, 1)",
-    width: 428,
-    height: 926,
+    // backgroundColor: "rgba(255, 255, 255, 1)",
+    // width: 428,
+    // height: 926,
   },
   Group436: {
     display: "flex",
@@ -320,13 +326,16 @@ const styles = StyleSheet.create({
     elevation: 6,
     shadowOffset: { width: 0, height: 4 },
     width: 380,
+    marginTop: 15,
+    marginLeft: 23
   },
   AutoLayoutHorizontal1: {
     display: "flex",
     flexDirection: "row",
     justifyContent: "flex-start",
     alignItems: "flex-start",
-    width: 332,
+    // marginLeft:10,
+    width: 500,
   },
   Frame: {
     width: 24,
@@ -342,34 +351,6 @@ const styles = StyleSheet.create({
     width: 293,
     height: 25,
   },
-
-  AutoLayoutVertical1: {
-    display: "flex",
-    flexDirection: "column",
-    justifyContent: "flex-start",
-    alignItems: "flex-start",
-    paddingTop: 23,
-    paddingBottom: 23,
-    paddingLeft: 23,
-    paddingRight: 23,
-    marginBottom: 16,
-    borderRadius: 20,
-    backgroundColor: "rgba(255, 255, 255, 1)",
-    borderWidth: 1,
-    borderStyle: "solid",
-    borderColor: "rgba(238,238,238,1)",
-    shadowColor: "rgba(4,6,15,0.05)",
-    elevation: 6,
-    shadowOffset: { width: 0, height: 4 },
-    width: 380,
-  },
-  AutoLayoutHorizontal1: {
-    display: "flex",
-    flexDirection: "row",
-    justifyContent: "flex-start",
-    alignItems: "flex-start",
-    width: 332,
-  },
   Frame: {
     width: 24,
     height: 24,
@@ -384,34 +365,6 @@ const styles = StyleSheet.create({
     width: 293,
     height: 25,
   },
-
-  AutoLayoutVertical1: {
-    display: "flex",
-    flexDirection: "column",
-    justifyContent: "flex-start",
-    alignItems: "flex-start",
-    paddingTop: 23,
-    paddingBottom: 23,
-    paddingLeft: 23,
-    paddingRight: 23,
-    marginBottom: 16,
-    borderRadius: 20,
-    backgroundColor: "rgba(255, 255, 255, 1)",
-    borderWidth: 1,
-    borderStyle: "solid",
-    borderColor: "rgba(238,238,238,1)",
-    shadowColor: "rgba(4,6,15,0.05)",
-    elevation: 6,
-    shadowOffset: { width: 0, height: 4 },
-    width: 380,
-  },
-  AutoLayoutHorizontal1: {
-    display: "flex",
-    flexDirection: "row",
-    justifyContent: "flex-start",
-    alignItems: "flex-start",
-    width: 332,
-  },
   Frame: {
     width: 24,
     height: 24,
@@ -425,34 +378,6 @@ const styles = StyleSheet.create({
     color: "rgba(33,33,33,1)",
     width: 293,
     height: 25,
-  },
-
-  AutoLayoutVertical1: {
-    display: "flex",
-    flexDirection: "column",
-    justifyContent: "flex-start",
-    alignItems: "flex-start",
-    paddingTop: 23,
-    paddingBottom: 23,
-    paddingLeft: 23,
-    paddingRight: 23,
-    marginBottom: 16,
-    borderRadius: 20,
-    backgroundColor: "rgba(255, 255, 255, 1)",
-    borderWidth: 1,
-    borderStyle: "solid",
-    borderColor: "rgba(238,238,238,1)",
-    shadowColor: "rgba(4,6,15,0.05)",
-    elevation: 6,
-    shadowOffset: { width: 0, height: 4 },
-    width: 380,
-  },
-  AutoLayoutHorizontal1: {
-    display: "flex",
-    flexDirection: "row",
-    justifyContent: "flex-start",
-    alignItems: "flex-start",
-    width: 332,
   },
   Frame: {
     width: 24,
@@ -487,13 +412,6 @@ const styles = StyleSheet.create({
     elevation: 6,
     shadowOffset: { width: 0, height: 4 },
     width: 380,
-  },
-  AutoLayoutHorizontal1: {
-    display: "flex",
-    flexDirection: "row",
-    justifyContent: "flex-start",
-    alignItems: "flex-start",
-    width: 332,
   },
   Frame: {
     width: 24,
