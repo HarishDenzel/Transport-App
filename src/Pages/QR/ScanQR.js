@@ -16,6 +16,7 @@ import Header from "../../Components/Header";
 import GetImage from "../../assets/GetImage";
 import ReactModal from "../../Components/ReactModal";
 import { width } from "../../assets/fontsAndColors";
+import { icon } from "../../assets/icons";
 
 function ScanQR(props) {
     const[amountModal,setAmountModal]= React.useState(false)
@@ -74,15 +75,17 @@ const _Triggr = () =>{
           style={{ justifyContent: "center", alignItems: "center", flex: 1 }}
         >
           <Text style={styles.headText}>Scan QR code for onboarding</Text>
+<Image source={icon.timer} style={{height:25,width:25,resizeMode:'contain',marginTop:25}}/>
+          
           <TouchableOpacity onPress={()=>{    setAmountModal(!amountModal)}}>
       <Image
             source={GetImage.qrimage}
             style={{
-              height: 300,
-              width: 300,
+              height: 345,
+              width: width/100*95,
               resizeMode: "contain",
               alignSelf: "center",
-              marginTop: 25,
+              marginTop: 20,
               
             }}
           />
@@ -95,9 +98,9 @@ const _Triggr = () =>{
               justifyContent: "center",
               alignItems: "center",
               flexDirection: "row",
-              padding: 15,
-              borderRadius: 10,
-              marginTop: 25,
+              padding: 8,
+              borderRadius: 5,
+              marginTop: 40,
             }}
             
             onPress={() => navigation.navigate("routerlist")}     
@@ -105,11 +108,12 @@ const _Triggr = () =>{
             <Image
               source={GetImage.d}
               style={{
+                marginLeft:5,
                 height: 13,
                 width: 13,
                 resizeMode: "contain",
                 alignSelf: "center",
-                marginRight:5
+                marginRight:3
               }}
             />
             <Text style={[styles.subText, { fontSize: 13, color: "#212121" }]}>
@@ -121,6 +125,7 @@ const _Triggr = () =>{
                 height: 20,
                 backgroundColor: "#E0C654",
                 marginHorizontal:10
+            
                 
               }}
             />
@@ -131,11 +136,11 @@ const _Triggr = () =>{
                 width: 13,
                 resizeMode: "contain",
                 alignSelf: "center",
-                marginRight:5
+                marginRight:3
 
               }}
             />
-            <Text style={[styles.subText, { fontSize: 13, color: "#212121" }]}>
+            <Text style={[styles.subText, { fontSize: 13, color: "#212121",    marginRight:5 }]}>
               {"Zoo Johor"}
             </Text>
           </TouchableOpacity>

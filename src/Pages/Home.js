@@ -217,6 +217,7 @@ const Home = (props) => {
 
       <View
         style={{
+        top:height/100*50,
           flex: 0.4,
           backgroundColor: "#FFFFFF",
           height: "40%",
@@ -224,7 +225,8 @@ const Home = (props) => {
           borderTopLeftRadius: 25,
           width: "100%",
           zIndex: 5,
-          marginBottom: 20,
+       position:'absolute'
+          
         }}
       >
         {some ? (
@@ -241,7 +243,7 @@ const Home = (props) => {
             >
               <Image
                 source={GetImage.point}
-                style={{ height: "50%", width: "90%", resizeMode: "contain",padding:10 ,backgroundColor:'red'}}
+                style={{ height: "50%", width: "90%", resizeMode: "contain",padding:10 ,}}
               />
            
             </TouchableOpacity>
@@ -270,7 +272,7 @@ const Home = (props) => {
                 flexDirection: "row",
                 justifyContent: "space-between",
                 paddingHorizontal: 1,
-                alignSelf: "center",backgroundColor:'red'
+                alignSelf: "center",
             
               }}
             >
