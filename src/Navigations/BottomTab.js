@@ -30,18 +30,18 @@ const RenderTabIcon = (Props) => {
                 height: height ? height : 40,
                 resizeMode: "contain",
                 tintColor: tint,
-                bottom,
+                bottom:-2,
               }
             : {
                 width: width ? width : 35,
                 height: height ? height : 35,
                 resizeMode: "contain",
-                bottom: bottom,
+                bottom: bottom ? bottom : -1,
                 tintColor: "#6A6A6A",
               },
         ]}
       />
-      <Text style={{ color: isFocused ? "#0F437B" : "#6A6A6A", fontSize: 10 }}>
+      <Text style={{ color: isFocused ? "#0F437B" : "#6A6A6A", fontSize: 10,fontWeight:isFocused ?'bold':'500' }}>
         {title}
       </Text>
     </View>
@@ -55,6 +55,7 @@ function BottomTab() {
     <Tab.Navigator
       screenOptions={{
         tabBarStyle: { height: 65, padding: 10 },
+        tabBarLabelStyle:{fontWeight:'bold'},
       }}
       initialRouteName="Home"
     >
@@ -68,8 +69,8 @@ function BottomTab() {
             return (
               <RenderTabIcon
                 isFocused={focused}
-                width={25}
-                height={25}
+                width={20}
+                height={20}
                 activeIcon={GetImage.homeIcon}
                 inactiveIcon={GetImage.homeLightIcon}
                 tint={"#0F437B"}
@@ -90,8 +91,8 @@ function BottomTab() {
             return (
               <RenderTabIcon
                 isFocused={focused}
-                width={25}
-                height={25}
+                width={20}
+                height={20}
                 activeIcon={GetImage.documentIcon}
                 inactiveIcon={GetImage.documentLightIcon}
                 tint={"#0F437B"}
@@ -110,8 +111,8 @@ function BottomTab() {
           tabBarIcon: ({ focused }) => {
             return (
               <RenderTabIcon
-                width={25}
-                height={25}
+              width={20}
+                height={20}
                 isFocused={focused}
                 activeIcon={GetImage.scanIcon}
                 inactiveIcon={GetImage.scanLightIcon}
@@ -132,8 +133,8 @@ function BottomTab() {
             return (
               <RenderTabIcon
                 isFocused={focused}
-                width={25}
-                height={25}
+                width={20}
+                height={20} 
                 activeIcon={GetImage.profileIcon}
                 inactiveIcon={GetImage.profileLightIcon}
                 tint={"#0F437B"}

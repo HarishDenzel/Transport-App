@@ -8,7 +8,8 @@ import {
   TouchableOpacity,
   ScrollView,
   Platform,
-  PermissionsAndroid, Linking
+  PermissionsAndroid,
+  Linking,
 } from "react-native";
 import MapView, { PROVIDER_GOOGLE, Marker } from "react-native-maps";
 import GetLocation from "react-native-get-location";
@@ -17,7 +18,7 @@ import Geolocation from "@react-native-community/geolocation";
 import { useIsFocused, useNavigation } from "@react-navigation/native";
 import CustomMarker from "../Components/CustomMarker";
 import ReactModal from "../Components/ReactModal";
-import { request, PERMISSIONS, RESULTS } from 'react-native-permissions';
+import { request, PERMISSIONS, RESULTS } from "react-native-permissions";
 import { icon } from "../assets/icons";
 const { width, height } = Dimensions.get("window");
 const Hight = Dimensions.get("screen").height;
@@ -28,8 +29,7 @@ const LATITUDE_DELTA = 2200;
 const LONGITUDE_DELTA = LATITUDE_DELTA * ASPECT_RATIO;
 
 const Home = (props) => {
-  const { data, para } = props.route?.params
-  console.log(para)
+  const { data, para } = props.route?.params;
   const isFocused = useIsFocused();
   // var date ='11-12-2022';
   // var varDate = new Date(date); //dd-mm-YYYY
@@ -37,14 +37,14 @@ const Home = (props) => {
   // console.log("date==>",varDate,t)
 
   useEffect(() => {
-    setSome(data)
+    setSome(data);
 
     if (from !== "") {
-      setTo(para)
+      setTo(para);
     } else {
-      setFrom(para)
+      setFrom(para);
     }
-  }, [isFocused])
+  }, [isFocused]);
   const [state, setState] = useState({
     isLoading: true,
     latitude: "37.78825",
@@ -54,21 +54,19 @@ const Home = (props) => {
   const [locationModal, setLocationModal] = useState(false);
   const [from, setFrom] = useState("");
   const [to, setTo] = useState("");
-  const [locationEnable, setLocationEnable] = useState(false)
+  const [locationEnable, setLocationEnable] = useState(false);
   const Bold = "Urbanist_bold";
   const navigation = useNavigation();
 
-
   useEffect(async () => {
     const granted = await PermissionsAndroid.check(
-      PermissionsAndroid.PERMISSIONS.ACCESS_FINE_LOCATION,
-
+      PermissionsAndroid.PERMISSIONS.ACCESS_FINE_LOCATION
     );
 
     if (granted === PermissionsAndroid.RESULTS.GRANTED) {
-      setLocationEnable(false)
+      setLocationEnable(false);
     } else {
-      setLocationEnable(true)
+      setLocationEnable(true);
     }
     //     Geolocation.getCurrentPosition((info) => {
 
@@ -83,7 +81,7 @@ const Home = (props) => {
     // console.log("h==>",error)
     // setLocationEnable(true)
     //     })
-  }, [])
+  }, []);
   useEffect(() => {
     setLocationModal(true);
   }, []);
@@ -100,7 +98,7 @@ const Home = (props) => {
         {
           title: "Location Permission",
           message: "Transport needs access to your location",
-        },
+        }
       );
       if (granted === PermissionsAndroid.RESULTS.GRANTED) {
         Geolocation.getCurrentPosition((info) => {
@@ -110,14 +108,13 @@ const Home = (props) => {
           state["longitude"] = info?.coords?.longitude;
           state["isLoading"] = false;
           setState({ ...state });
-          setLocationEnable(false)
-        }
-        )
-        setLocationEnable(false)
+          setLocationEnable(false);
+        });
+        setLocationEnable(false);
         console.log("You can use the location");
       } else {
         console.log("location permission denied");
-        requestLocationPermission()
+        requestLocationPermission();
       }
     } catch (err) {
       console.warn(err);
@@ -150,7 +147,7 @@ const Home = (props) => {
         alert("Location permission denied");
       }
     } catch (err) {
-      console.warn(err);
+      console.log(err);
     }
   };
   return (
@@ -227,11 +224,27 @@ const Home = (props) => {
           borderTopLeftRadius: 25,
           width: "100%",
           zIndex: 5,
-          marginBottom:10
+          marginBottom: 20,
         }}
       >
         {some ? (
           <>
+            <View style={{flex:0.5,flexDirection:'row',paddingTop:10}}>
+            <TouchableOpacity
+            //  onPress={() => navigation.navigate("Ewallet")}
+              style={{
+                flex: 0.5,
+                justifyContent: "flex-end",
+                alignItems: "center",
+            paddingLeft:20
+              }}
+            >
+              <Image
+                source={GetImage.point}
+                style={{ height: "50%", width: "90%", resizeMode: "contain",padding:10 ,backgroundColor:'red'}}
+              />
+           
+            </TouchableOpacity>
             <TouchableOpacity
               onPress={() => navigation.navigate("Ewallet")}
               style={{
@@ -239,14 +252,17 @@ const Home = (props) => {
                 justifyContent: "flex-end",
                 width: "100%",
                 alignItems: "center",
+                paddingRight:20
               }}
             >
+             
               <Image
-
                 source={GetImage.wallet}
                 style={{ height: "50%", width: "90%", resizeMode: "contain" }}
               />
             </TouchableOpacity>
+            </View>
+          
             <View
               style={{
                 flex: 0.08,
@@ -254,7 +270,8 @@ const Home = (props) => {
                 flexDirection: "row",
                 justifyContent: "space-between",
                 paddingHorizontal: 1,
-                alignSelf: 'center'
+                alignSelf: "center",backgroundColor:'red'
+            
               }}
             >
               <TouchableOpacity>
@@ -263,19 +280,19 @@ const Home = (props) => {
                     fontSize: (height / 100) * 2.2,
                     fontFamily: "Urbanist_bold",
                     fontWeight: "bold",
-                    color: '#000'
+                    color: "#000",
                   }}
                 >
-                  Promo
+                  Promos
                 </Text>
               </TouchableOpacity>
               <TouchableOpacity>
                 <Text
                   onPress={() => navigation.navigate("PromoCode")}
                   style={{
-                    fontSize: (height / 100) * 1.5,
+                    fontSize: (height / 100) * 1.7,
                     fontFamily: "Urbanist_semibold",
-                    color: '#000'
+                    color: "#616161",
                   }}
                 >
                   View all
@@ -283,8 +300,10 @@ const Home = (props) => {
               </TouchableOpacity>
             </View>
             <TouchableOpacity
-              onPress={() => { Linking.openURL('https://google.com') }}
-              style={{ flex: 0.45, width: "100%" }}
+              onPress={() => {
+                Linking.openURL("https://google.com");
+              }}
+              style={{ flex: 0.5, width: "100%", marginBottom: 5 }}
             >
               <Image
                 source={GetImage.promo}
@@ -315,10 +334,10 @@ const Home = (props) => {
                   />
                   <Text
                     style={{
-                      fontSize: (height / 100) * 1.5,
+                      fontSize: (height / 100) * 1.7,
                       fontFamily: "Urbanist_regular",
                       color: "#616161",
-                      fontWeight: '600'
+                      fontWeight: "600",
                     }}
                   >
                     {"Get me Somewhere"}
@@ -341,8 +360,9 @@ const Home = (props) => {
                       flexDirection: "row",
                       alignItems: "center",
                       justifyContent: "space-around",
-                      paddingHorizontal: 8,
-                      marginLeft: 5,
+                      paddingHorizontal: 18,
+                      marginLeft: 1,
+
                     }}
                   >
                     <Image
@@ -351,14 +371,16 @@ const Home = (props) => {
                         height: (height / 100) * 3.5,
                         width: (height / 100) * 3.5,
                         resizeMode: "contain",
+                        right:5
                       }}
                     />
                     <Text
                       style={{
-                        fontSize: (height / 100) * 1.5,
+                        fontSize: (height / 100) * 1.7,
                         fontFamily: "Urbanist_regular",
                         color: "#616161",
-                        fontWeight: '600'
+                        fontWeight: "600",
+                        right:20
                       }}
                     >
                       {"Get me home"}
@@ -375,7 +397,6 @@ const Home = (props) => {
                   >
                     <TouchableOpacity
                       onPress={() => navigation.navigate("SavedDestionation")}
-
                       style={{
                         flex: 0.5,
                         justifyContent: "center",
@@ -386,7 +407,6 @@ const Home = (props) => {
                     </TouchableOpacity>
                     <TouchableOpacity
                       onPress={() => navigation.navigate("SavedDestionation")}
-
                       style={{
                         flex: 0.5,
                         justifyContent: "center",
@@ -601,7 +621,7 @@ const Home = (props) => {
                 fontSize: (height / 100) * 1.8,
                 fontFamily: "Urbanist_semibold",
                 color: "#616161",
-                alignSelf: 'center'
+                alignSelf: "center",
               }}
             >
               We need access to your location to be able {"\n"}
@@ -663,10 +683,11 @@ const Home = (props) => {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
+    backgroundColor: "#ffffff",
   },
 
   map: {
-    ...StyleSheet.absoluteFillObject,
+   ...StyleSheet.absoluteFillObject,
     height: "100%",
     width: "100%",
   },
@@ -691,8 +712,8 @@ const styles = StyleSheet.create({
     resizeMode: "contain",
   },
   Img_2: {
-    height: (Hight / 100) * 4.8,
-    width: (Hight / 100) * 4.8,
+    height: (Hight / 100) * 4.9,
+    width: (Hight / 100) * 4.9,
     resizeMode: "contain",
   },
   btn2: {
@@ -723,7 +744,7 @@ const styles = StyleSheet.create({
     borderRadius: 25,
     top: 5,
     position: "absolute",
-  }
+  },
 });
 
 export default Home;
