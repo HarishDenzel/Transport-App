@@ -6,7 +6,7 @@ import GetImage from '../assets/GetImage';
 export default function Header(props) {
     const height = Dimensions.get("screen").height;
     const navigation = useNavigation();
-    const { title, onPress, righticon ,isBackground} = props
+    const { title, onPress, righticon ,isBackground,container,isCustom} = props
     return (
         <View style={{ flex: 1, backgroundColor: isBackground ?'#002B7F':"#fff" }}>
             <View
@@ -41,7 +41,8 @@ export default function Header(props) {
                         style={{
                             flex: 0.1,
                             justifyContent: "center",
-                            alignItems: 'center'
+                            alignItems: 'center',
+                            right:4
                         }}>
                         <Image
                             source={GetImage.choose}
@@ -53,7 +54,7 @@ export default function Header(props) {
                         />
                     </TouchableOpacity>}
             </View>
-            <View style={righticon ? styles.margin : styles.sub_scroll}>
+            <View style={righticon ? styles.margin : isCustom? container:styles.sub_scroll}>
 
                 {props.children}
 
@@ -67,7 +68,8 @@ const styles = StyleSheet.create({
     container: {
         flex: 0.05,
         flexDirection: "row",
-        paddingTop: height / 100 * 2
+        paddingTop: height / 100 * 2,
+        left:-2,
     },
     sub_Con: {
         flex: 0.15,

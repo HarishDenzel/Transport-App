@@ -34,7 +34,7 @@ export default function GetLocation(props) {
           ref?.setAddressText("123 myDefault Street, mycity");
         }}
         query={{
-          key: "google key",
+          key: "AIzaSyDTxfALZJJC30L1XXhQs7uvNtjvsNLBLlA",
           language: "en",
           //components: `country:${isDefaultCountry}`,
         }}

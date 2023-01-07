@@ -25,6 +25,7 @@ const Ewallet = (props) => {
       title: "Bus Ticket",
       time: "Dec 16, 2024 | 16:42 PM",
       rate: "- $14",
+
     },
     {
       id: 2,
@@ -62,6 +63,14 @@ const Ewallet = (props) => {
       rate: "- $14",
     },
   ];
+  const _Tigger=(item)=>{
+    console.log(item['title'])
+if(item["title"].includes("Top Up")){
+ navigation.navigate("EReceiptTopup")
+}else{
+   navigation.navigate("EReceipt")
+}
+  }
   return (
     <View style={styles.container}>
            <Header {...props}
@@ -162,7 +171,8 @@ const Ewallet = (props) => {
         <FlatList
           data={data}
           renderItem={({ item, index }) => (
-            <View
+            <TouchableOpacity
+            onPress={()=>_Tigger(item)}
               key={index}
               style={{ flex: 1, flexDirection: "row", padding: 10,top:10 }}
             >
@@ -179,7 +189,7 @@ const Ewallet = (props) => {
                   <Text style={styles.subText}>{item.rate}</Text>
                 </View>
               </View>
-            </View>
+            </TouchableOpacity>
           )}
           keyExtractor={(item) => item.id}
         />

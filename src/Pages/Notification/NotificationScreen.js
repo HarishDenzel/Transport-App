@@ -5,6 +5,8 @@ import { useNavigation } from '@react-navigation/native';
 import GetImage from '../../assets/GetImage';
 import NotificationList from '../../Components/Notofication/NotificationList';
 import BottomModal from '../../Components/BottomModal';
+import { icon } from '../../assets/icons';
+
 export default function NotificationScreen(props) {
   const height = Dimensions.get("screen").height;
   const navigation = useNavigation();
@@ -14,7 +16,7 @@ export default function NotificationScreen(props) {
       mode: "latest",
       id: 1,
       head: "30% Special Discount!",
-      subhead: "Special promotion only valid today",
+      subhead:"Special promotion only valid today",
       time: "just Now",
       img: GetImage.Notifi2,
     },
@@ -76,7 +78,7 @@ export default function NotificationScreen(props) {
     },
   ];
   return (
-    <View style={{ flex: 1, backgroundColor: "#FFFFFF" }}>
+    <View style={{ flex: 1, backgroundColor: "#E5E5E5",paddingLeft:5 }}>
       <Header
         {...props}
         righticon={true}
@@ -95,7 +97,7 @@ export default function NotificationScreen(props) {
               style={{
                 fontSize: (height / 100) * 2.2,
                 fontFamily: "Urbanist, sans-serif",
-                fontWeight: "bold",
+                fontWeight: "700",
                 color: "black",
               }}
               onPress={() => alert("hi")}
@@ -104,9 +106,9 @@ export default function NotificationScreen(props) {
             </Text>
             <Text
               style={{
-                fontSize: (height / 100) * 1.8,
+                fontSize: (height / 100) * 1.6,
                 fontFamily: "Urbanist, sans-serif",
-                color: "#0F437B",
+                color: "#0F437B",fontWeight:'500',
               }}
             >
               View All
@@ -119,7 +121,7 @@ export default function NotificationScreen(props) {
                 {item.mode == "latest" ? (
                   <NotificationList
                     Head={item.head}
-                    onPress={() => navigation.navigate("NotificationView")}
+                    onPress={() => {item.subhead.includes('Special promotion')?navigation.navigate("NotificationView"):item.subhead.includes('You have')?navigation.navigate("NotificationPayment"):item.subhead.includes('Get points')?navigation.navigate("NotificationGeneral"):null}}
                     SubHead={item.subhead}
                     time={item.time}
                     img={item.img}
@@ -142,7 +144,7 @@ export default function NotificationScreen(props) {
               style={{
                 fontSize: (height / 100) * 2.2,
                 fontFamily: "Urbanist, sans-serif",
-                fontWeight: "bold",
+                fontWeight: "700",
                 color: "black",
               }}
               onPress={() => alert("hi")}
@@ -151,9 +153,9 @@ export default function NotificationScreen(props) {
             </Text>
             <Text
               style={{
-                fontSize: (height / 100) * 1.8,
+                fontSize: (height / 100) * 1.6,
                 fontFamily: "Urbanist, sans-serif",
-                color: "#0F437B",
+                color: "#0F437B",fontWeight:'500',
               }}
             >
               View All
@@ -166,7 +168,7 @@ export default function NotificationScreen(props) {
                 {item.mode == "today" ? (
                   <NotificationList
                     Head={item.head}
-                    onPress={() => navigation.navigate("NotificationView")}
+                    onPress={() => {item.subhead.includes('Special promotion')?navigation.navigate("NotificationView"):item.subhead.includes('You have')?navigation.navigate("NotificationPayment"):item.subhead.includes('Get points')?navigation.navigate("NotificationGeneral"):null}}
                     SubHead={item.subhead}
                     time={item.time}
                     img={item.img}
@@ -177,19 +179,21 @@ export default function NotificationScreen(props) {
             )}
             keyExtractor={(item) => item.id}
           />
+                    <View style={{ height: (height / 100) * 2 }} />
+
           <View
             style={{
               flex: 0.1,
               flexDirection: "row",
               justifyContent: "space-between",
-              top: (height / 100) * 2,
+              //top: (height / 100) * 2,
             }}
           >
             <Text
               style={{
                 fontSize: (height / 100) * 2.2,
                 fontFamily: "Urbanist, sans-serif",
-                fontWeight: "bold",
+                fontWeight: "700",
                 color: "black",
               }}
               onPress={() => alert("hi")}
@@ -213,7 +217,7 @@ export default function NotificationScreen(props) {
                 {item.mode == "older" ? (
                   <NotificationList
                     Head={item.head}
-                    onPress={() => navigation.navigate("NotificationView")}
+                    onPress={() => {item.subhead.includes('Special promotion')?navigation.navigate("NotificationView"):item.subhead.includes('You have')?navigation.navigate("NotificationPayment"):item.subhead.includes('Get points')?navigation.navigate("NotificationGeneral"):null}}
                     SubHead={item.subhead}
                     time={item.time}
                     img={item.img}
@@ -228,7 +232,7 @@ export default function NotificationScreen(props) {
       </Header>
       <BottomModal
         container={{
-          backgroundColor: "rgba(0,0,0,0.7)",
+          backgroundColor: "rgba(0,9,16,0.7)",
         }}
         visible={optionModal}
       >
@@ -242,29 +246,34 @@ export default function NotificationScreen(props) {
             backgroundColor: "#fff",
             borderTopLeftRadius: 25,
             borderTopEndRadius: 25,
+          
           }}
         >
-          <View style={{ flex: 1, margin: 20 }}>
+        <Image source={icon.pull} style={{height:20,width:25,resizeMode:'contain',alignSelf:'center'}}></Image>
+          <View style={{ flex: 1, margin: 20 ,paddingLeft:2}}>
             <Text
               onPress={() => setOptionModal(!optionModal)}
               style={{
-                paddingTop: 10,
+                paddingTop: 1,
                 fontSize: (height / 100) * 1.8,
                 fontFamily: "Urbanist,sans-serif",
                 color: "#0F437B",
+                padding:5
               }}
             >
               {"Mark all as read"}
             </Text>
             <View
               style={{
-                flex: 0.7,
-                borderTopWidth: 0.2,
+                flex: 0.9,
+                borderTopWidth: 1,
                 justifyContent: "space-around",
-                top: 10,
-                borderBottomWidth: 0.2,
-                paddingTop: 5,
-                paddingBottom: 5,
+              
+              
+                borderColor:'#EEEEEE',
+                borderBottomWidth: 1,
+              
+                
               }}
             >
               <Text
@@ -273,6 +282,8 @@ export default function NotificationScreen(props) {
                   fontSize: (height / 100) * 1.8,
                   fontFamily: "Urbanist,sans-serif",
                   color: "#000",
+                 
+                  padding:5
                 }}
               >
                 {"Delete notification (Older > 30 Days)"}
@@ -283,6 +294,8 @@ export default function NotificationScreen(props) {
                   fontSize: (height / 100) * 1.8,
                   fontFamily: "Urbanist,sans-serif",
                   color: "#000",
+                 padding:5
+
                 }}
               >
                 {"Delete notification (Older > 60 Days)"}
@@ -293,6 +306,8 @@ export default function NotificationScreen(props) {
                   fontSize: (height / 100) * 1.8,
                   fontFamily: "Urbanist,sans-serif",
                   color: "#000",
+                padding:5
+
                 }}
               >
                 {"Delete notification (Older >90 Days)"}
@@ -303,6 +318,9 @@ export default function NotificationScreen(props) {
                   fontSize: (height / 100) * 1.8,
                   fontFamily: "Urbanist,sans-serif",
                   color: "#000",
+                paddingBottom:5,
+                 
+                  paddingLeft:5
                 }}
               >
                 {"Delete all"}

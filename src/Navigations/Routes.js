@@ -76,6 +76,7 @@ import SavedDelete from '../Pages/SavedDestionation/savedDelete';
 import HomeAction from '../Pages/SubHome/Bus';
 import Homelist from '../Pages/SubHome/homelist';
 import Successaddress from '../Pages/Address/success';
+import EReceiptTopup from '../Pages/wallet/EReceiptTopup';
 
 
 const Stack = createNativeStackNavigator();
@@ -292,6 +293,11 @@ function Routes() {
         <Stack.Screen
           name="EReceipt"
           component={EReceipt}
+          options={{ headerShown: false }}
+        />
+         <Stack.Screen
+          name="EReceiptTopup"
+          component={EReceiptTopup}
           options={{ headerShown: false }}
         />
 

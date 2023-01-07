@@ -20,7 +20,7 @@ export default function NotificationGeneral(props) {
             rightIcon={false}
             title={"General"} >
             <View style={{ flex: 0.7 ,backgroundColor:'#fff'}}>
-                <ScrollView style={{ margin: 15, }}>
+                <ScrollView style={{ margin: 15,left:5}}>
                     <Text style={[styles.font,{fontSize:height/100*2.5,paddingBottom:5}]
                         
 
@@ -51,7 +51,7 @@ export default function NotificationGeneral(props) {
                   
 
                 </ScrollView>
-                <View style={{ paddingBottom:5, justifyContent: 'center', alignItems: 'center', paddingTop: 0 }}>
+                {/* <View style={{ paddingBottom:5, justifyContent: 'center', alignItems: 'center', paddingTop: 0 }}>
                         <TouchableOpacity
                             onPress={() => setPromoModal(true)}
                             style={{
@@ -75,7 +75,7 @@ export default function NotificationGeneral(props) {
                                 {"Apply Promo"}
                             </Text>
                         </TouchableOpacity>
-                    </View>
+                    </View> */}
             </View>
             <ReactModal
                 container={{
