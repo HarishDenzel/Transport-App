@@ -43,7 +43,7 @@ export default function NotificationGeneral(props) {
                     }} >{"Details"}</Text>
 
                     <Text style={{
-                        fontSize: (height / 100) * 1.8,
+                        fontSize: 14,
                         fontFamily: "Urbanist_semibold",
                         color: "#616161", paddingTop: height / 100 * 2,
                         fontWeight: '400', lineHeight: 25

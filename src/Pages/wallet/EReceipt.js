@@ -74,7 +74,7 @@ export default function EReceipt(props) {
               <Text style={styles.text}>$20.00</Text>
             </View>
             <View style={styles.Card_sub}>
-              <Text style={styles.text1}>{"promo"}</Text>
+              <Text style={[styles.text1,{color:"#335599"}]}>{"Promo"}</Text>
               <Text style={[styles.text,{color:'#002B7F'}]}>-$6.00</Text>
             </View>
             <View

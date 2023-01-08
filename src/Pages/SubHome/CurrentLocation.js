@@ -60,7 +60,7 @@ export default function Destination() {
         }}
       >
         <TouchableOpacity
-                   onPress={() => navigation.navigate("Home",{data:false,para:''})}
+                   onPress={() => navigation.navigate("BottomTab",{data:false,para:''})}
           style={{ flex: 0.15, justifyContent: "center", alignItems: "center" }}
         >
           <Image

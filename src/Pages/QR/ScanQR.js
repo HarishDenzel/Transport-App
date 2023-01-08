@@ -211,7 +211,7 @@ const _Triggr = () =>{
                             style={{
                                 height: (height / 100) * 6,
                                 backgroundColor: "#0F437B",
-                                width: width/1.8,
+                                width: width/100*70,
                                 justifyContent: "center",
                                 alignItems: "center",
                                 borderRadius: 25,

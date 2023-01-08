@@ -63,7 +63,7 @@ const cardDetails = (props) => {
 const _trigger=()=>{
   // Alert.alert("Card added successfully...")
   setTimeout(()=>{
-    navigation.navigate("TopupScreen")
+    navigation.navigate("cardlist")
   },2000)
 }
   return (
@@ -81,34 +81,35 @@ const _trigger=()=>{
                 flex: 1,
                 justifyContent: "center",
                 alignItems: "center",
+                
               }}
             >
               <Image
                 style={{
                   height: (height / 100) * 30,
-                  width: (width / 100) * 90,
+                  width: (width / 100) * 92,
                   resizeMode: "contain",
                 }}
                 source={require("../../assets/icons/debit.png")}
               ></Image>
             </View>
-          <View style={{height:height/100*2}}></View>
+          <View style={{height:height/100*1.8}}></View>
          
-            <View >
+            <View  >
               <Text
                 style={{
                   fontSize: (height / 100) * 2,
                   fontFamily: "Urbanist_bold",
                   fontWeight: "bold",
                   color: "#000",
-                  paddingLeft: 18,
+                  paddingLeft: 23,
                 }}
               >
                 {"Card Name"}
               </Text>
               <View style={styles.textinput_con}>
                 <TextInput
-                  placeholder="Name On Card"
+                  placeholder="  Name On Card"
                   placeholderTextColor={"gray"}
                   style={styles.textinput}
                 />
@@ -157,7 +158,7 @@ const _trigger=()=>{
                 </Text>
                 <View style={styles.textinput_con}>
                   <TextInput
-                    placeholder="MM/YY"
+                    placeholder="  MM/YY"
                     placeholderTextColor={"#9E9E9E"}
                     keyboardType='numeric'
                     onChangeText={onChangeNumber}
@@ -179,11 +180,12 @@ const _trigger=()=>{
                 </Text>
                 <View style={styles.textinput_con}>
                   <TextInput
-                    placeholder="CVV"
+                    placeholder="  CVV"
                     placeholderTextColor={"#9E9E9E"}
                     keyboardType='numeric'
                     onChangeText={onChangeNumber}
                     style={styles.textinput}
+                    
                   />
                 </View>
               </View>
@@ -200,7 +202,7 @@ const _trigger=()=>{
                 expiry={reg_details.date}
                 cvc={reg_details.cvv}
               /> */}
-              <View style={{height:height/100*4}}></View>
+              <View style={{height:height/100*7}}></View>
         <Bt_Main label="Add new Card" onPress={()=>_trigger()}></Bt_Main>
         </KeyboardAwareScrollView>
 

@@ -151,6 +151,7 @@ onPress(data)
             </TouchableOpacity>
           </View>
         )}
+       
       />
 
       <View
@@ -161,7 +162,7 @@ onPress(data)
           alignItems: "center",
         }}
       >
-       {currentLocation? <View
+       {currentLocation? <><View
           style={{
             height: (height / 100) * 6,
             width: "90%",
@@ -181,8 +182,7 @@ onPress(data)
               resizeMode: "contain",
 
               left: 5,
-            }}
-          />
+            }} />
           <Text
             style={{
               fontSize: (height / 100) * 2,
@@ -194,7 +194,24 @@ onPress(data)
           >
             {label}
           </Text>
-        </View>:<View
+
+        </View><Text
+          style={{
+            alignSelf:'flex-start',
+            paddingTop:8,
+           
+            paddingLeft:23,
+            fontSize: 14,
+            fontFamily: "Urbanist_semibold",
+            fontWeight: "600",
+            color: "#0F437B",
+            fontFamily: "Urbanist_regular",
+            
+                  }}
+        >
+            {text.length == 0 ?'':'See results for Larkin Stadium'}
+          </Text></>
+        :<View
           style={{
             height: (height / 100) * 6,
             width: "90%",
@@ -211,7 +228,11 @@ onPress(data)
           fontFamily: "Urbanist_semibold",
           fontWeight: "bold",
           color:'#0F437B'
-        }}>{"View more result"}</Text></View>}
+        }}>
+        
+        {text.length == 0 ?'':'See results for Larkin Stadium'}
+
+        </Text></View>}
       </View>
     </View>
   );

@@ -8,16 +8,21 @@ import {
     FlatList,
     Dimensions,
     ImageBackground,
+    Pressable,
   } from "react-native";
-  import React from "react";
+  import React, { useState } from "react";
   import GetImage from "../../assets/GetImage";
   const height = Dimensions.get("screen").height;
   import Header from "../../Components/Header";
   // import CircleCheckBox, { LABEL_POSITION } from "react-native-circle-checkbox";
   import { useNavigation } from "@react-navigation/native";
+import { width } from "../../assets/fontsAndColors";
 
   const addnewcard = (props) => {
     const navigation = useNavigation();
+const[manually,setManally]=useState(false)
+const[scan,setScan]=useState(true)
+
 
     const data = [
       {
@@ -46,14 +51,22 @@ import {
           onPress={() => setOptionModal(!optionModal)}
           title={"Add New Card"}
         >
-          <View style={{ flex: 1, marginTop: 10 }}>
-            <Text style={styles.headText}>
+          <View style={{ flex: 0.8, marginTop: 10 }}>
+          <View style={{height:20}}></View>
+            <Text style={[styles.headText,{paddingHorizontal:10}]}>
             Select your preference choice of adding new card to your E-Wallet
             </Text>
+            <View style={{height:10}}></View>
             <FlatList
               data={data}
               renderItem={({ item, index }) => (
-                <TouchableOpacity onPress={()=>{index === 1 ?navigation.navigate("cardDetails"):null}}>
+                <Pressable onPress={()=> {
+                  setManally(!manually)
+                  setScan(!scan)
+
+                }}
+                // {index === 1 ?navigation.navigate("cardDetails"):null}}
+                >
                 <View
                   key={index}
                   style={{
@@ -72,7 +85,7 @@ import {
                     backgroundColor: "#ffff",
                     justifyContent:'center',
                     alignItems:'center',
-                    borderColor: item.isChecked?'#002B7F':'#fff',
+                    borderColor:  index ==1 ? manually ? '#002B7F':'#fff' : scan ? '#002B7F':'#fff',
                     borderWidth:1
                   }}
                 >
@@ -90,11 +103,39 @@ import {
                   </View>
                 
                 </View>
-                </TouchableOpacity>
+                </Pressable>
               )}
               keyExtractor={(item) => item.id}
             />
           </View>
+          <View style={{ flex: 0.2 ,justifyContent:"center"}}>
+            <View style={{  justifyContent: 'center', alignItems: 'center',}}>
+                        <TouchableOpacity
+                            onPress={() => {manually ?navigation.navigate("cardDetails"):null}}
+                            style={{
+                                height: (height / 100) * 6,
+                                backgroundColor: "#0F437B",
+                                width: (width / 100) * 90,
+                                justifyContent: "center",
+                                alignItems: "center",
+                                borderRadius: 25,
+                              
+
+                            }}
+                        >
+                            <Text
+                                style={{
+                                    fontSize: (height / 100) * 2,
+                                    fontFamily: "Urbanist_semibold",
+                                    color: "#fff",
+                                    fontWeight: '600'
+                                }}
+                            >
+                                {"Continue"}
+                            </Text>
+                        </TouchableOpacity>
+                    </View>
+            </View>
         </Header>
       </View>
     );

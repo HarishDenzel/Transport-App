@@ -12,6 +12,7 @@ import {
   Pressable
 } from "react-native";
 const height = Dimensions.get("screen").height;
+const width = Dimensions.get("screen").width;
 import { useNavigation } from "@react-navigation/native";
 import Header from "../../Components/Header";
 import GetImage from "../../assets/GetImage";
@@ -73,12 +74,18 @@ export default function routerlist(props) {
     return (
       <View
         style={{
+          borderTopWidth:1,
+          borderBottomWidth:1,
           flexDirection: "row",
           justifyContent: "space-between",
-          marginHorizontal: 5,
+          marginHorizontal: 20,
           marginVertical: 10,
+          height:45,
           alignItems: "center",
           paddingHorizontal: 30,
+          borderColor:'#EEEEEE',
+        
+          
         }}
       >
         <Text
@@ -105,7 +112,7 @@ export default function routerlist(props) {
   };
   return (
     <View style={styles.container}>
-      <Header {...props} rightIcon={false} title={"Current Trip"}>
+      <Header {...props} rightIcon={false} showBuss={true} title={"Current Trip"}>
         <View style={{ flex: 1 }}>
           <FlatList
             data={data}
@@ -175,12 +182,15 @@ export default function routerlist(props) {
                       source={item.img}
                       style={{ height: 15, width: 15, resizeMode: "contain" }}
                     /> 
-                    <Pressable  onPress={() => navigation.navigate("NotificationView")}>
+                    <Pressable  onPress={() => props.navigation.navigate("NotificationView")}>
                     <Text style={[styles.subText, { paddingLeft: 2, flex: 1 }]}>
                       {item.time}
                     </Text>
                     </Pressable>
-                    <Text style={styles.subText}>{item.rate}</Text>
+                    <Text style={{ fontSize: 14,
+    fontFamily: "  Urbanist_regular",
+    color: "#616161",left:width/100*38
+  }}>{item.rate}</Text>
                     
                   </View>
                 </View>
@@ -189,6 +199,7 @@ export default function routerlist(props) {
             keyExtractor={(item) => item.id}
           />
         </View>
+        <View style={{height:20}}></View>
       </Header>
     </View>
   );

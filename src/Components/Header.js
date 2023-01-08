@@ -2,11 +2,12 @@ import { StyleSheet, Text, View, TouchableOpacity, Dimensions, Image, ScrollView
 import React from 'react'
 import { useNavigation } from "@react-navigation/native";
 import GetImage from '../assets/GetImage';
+import { icon } from '../assets/icons';
 
 export default function Header(props) {
     const height = Dimensions.get("screen").height;
     const navigation = useNavigation();
-    const { title, onPress, righticon ,isBackground,container,isCustom} = props
+    const { title, onPress, righticon ,isBackground,container,isCustom,showBuss} = props
     return (
         <View style={{ flex: 1, backgroundColor: isBackground ?'#002B7F':"#fff" }}>
             <View
@@ -35,6 +36,17 @@ export default function Header(props) {
                         {title}
                     </Text>
                 </View>
+               {showBuss &&<View style={{flexDirection:'row',right:15,justifyContent:'center',alignItems:'center'}}>
+                <Image
+                            source={icon.routerNo}
+                            style={{
+                                height: 55,
+                                width: 55,
+                                resizeMode: 'contain'
+                            }}
+                        />
+                         
+                </View>}
                 {righticon &&
                     <TouchableOpacity
                         onPress={onPress}

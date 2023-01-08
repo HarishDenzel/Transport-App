@@ -26,23 +26,25 @@ export default function EReceiptTopup(props) {
        
       
           <View style={{ height: View_Spacing.VS_W3 }} />
-          <View style={[styles.card1, { height: (height / 100) * 9 ,padding:5}]}>
+          <View style={[styles.card1, { height: (height / 100) * 7 ,}]}>
             
             <View
               style={{
-                height: View_Spacing.VS_W1,
-                borderTopWidth: 0.2,
-                margin: 10,
-                borderColor: "#E5E5E5",
+              flex:1,
+               
+              justifyContent:'center',
+              alignItems:'center'
+                
               }}
             />
-            <View style={[{ bottom: 24 }, styles.Card_sub]}>
+            <View style={ styles.Card_sub}>
               <Text style={styles.text1}>{"Amount"}</Text>
               <Text style={styles.text}>$40.00</Text>
             </View>
           </View>
           <View style={{ height: View_Spacing.VS_W3 }} />
-          <View style={[styles.card1, { height: (height / 100) * 23,padding:5 }]}>
+
+          <View style={[styles.card1, { height: (height / 100) * 20,padding:5 ,}]}>
             <View style={styles.Card_sub}>
               <Text style={styles.text1}>{"Payment Methods"}</Text>
               <Text style={styles.text}>Visa</Text>
@@ -73,7 +75,7 @@ export default function EReceiptTopup(props) {
                 />
               </TouchableOpacity>
             </View>
-            <View style={[{ bottom: 36 }, styles.Card_sub]}>
+            <View style={[{ bottom: 35 }, styles.Card_sub]}>
               <Text style={styles.text1}>{"Status"}</Text>
               <View
                 style={{
@@ -96,7 +98,9 @@ export default function EReceiptTopup(props) {
                   Topup
                 </Text>
               </View>
+              
             </View>
+           
           </View>
         </ScrollView>
       </Header>

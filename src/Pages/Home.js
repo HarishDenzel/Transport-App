@@ -44,7 +44,7 @@ const Home = (props) => {
     } else {
       setFrom(para);
     }
-  }, [isFocused]);
+  }, []);
   const [state, setState] = useState({
     isLoading: true,
     latitude: "37.78825",
@@ -168,7 +168,7 @@ const Home = (props) => {
           style={{
             zIndex: 5,
             alignSelf: "flex-end",
-            top: (height / 100) * 35,
+            top: (height / 100) * 30,
             right: (height / 100) * 1.5,
           }}
           onPress={() => requestLocationPermission()}
@@ -427,19 +427,24 @@ const Home = (props) => {
         ) : (
           <View
             style={{
-              backgroundColor: "#ffff",
+            
               flex: 1,
               zIndex: 1,
-              bottom: 24,
+              
               borderTopLeftRadius: 25,
               borderTopRightRadius: 25,
+              
             }}
           >
+ <Image style={{height:25,width:25,alignSelf:'center',resizeMode:'contain'}} source={icon.pull} />
+      
             <ScrollView
               showsVerticalScrollIndicator={false}
               style={{ flex: 1 }}
             >
-              <View style={{ height: (height / 100) * 4 }} />
+
+              <View style={{ height: (height / 100) * 2 }} />
+             
               <View
                 style={{
                   flex: 0.3,
@@ -555,8 +560,17 @@ const Home = (props) => {
                 }}
               >
                 <TouchableOpacity
-                  style={styles.btn3}
-                  onPress={() => navigation.navigate("HomeAction")}
+                  style={{ height: (height / 100) * 6,
+    width: "90%",
+    justifyContent: "center",
+    alignItems: "center",
+    backgroundColor: from==""&&to==""? "#B5C5D6":"#0F437B",
+    borderRadius: 25,
+    top: 5,
+    position: "absolute",}}
+                  onPress={() =>{ 
+                    setSome(true)
+                    navigation.navigate("HomeAction")}}
                 >
                   <Text
                     style={{
@@ -736,6 +750,8 @@ const styles = StyleSheet.create({
     alignItems: "center",
     paddingHorizontal: (Hight / 100) * 2,
     borderRadius: 12,
+   
+    borderColor:'#BDBDBD'
   },
   btn3: {
     height: (height / 100) * 6,

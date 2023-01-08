@@ -86,7 +86,7 @@ export default function Destination() {
         <View style={{height:height/100*2}}></View>
          
         <GetLocation 
-        currentLocation={true}
+        currentLocation={false}
         onPress={(data)=> navigation.navigate("Home",{data:false,para:data.description})}
         label={"Use my current location"}
          />

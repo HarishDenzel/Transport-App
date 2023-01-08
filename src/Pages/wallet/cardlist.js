@@ -42,6 +42,7 @@ const cardlist = (props) => {
     //View to set in Footer
     return (
       <TouchableOpacity onPress={() => navigation.navigate("addnewcard")}>
+        <View style={{height:20}}></View>
       <View style={styles.headerFooterStyle}>
          <Image
                   source={GetImage.addic}
@@ -60,10 +61,12 @@ const cardlist = (props) => {
         onPress={() => setOptionModal(!optionModal)}
         title={"Top Up E-Wallet"}
       >
-        <View style={{ flex: 1, marginTop: 10 }}>
+      <View style={{height:20}}></View>
+        <View style={{ flex: 1, marginTop: 10, }}>
           <Text style={styles.headText}>
             Select the top up method you want to use.
           </Text>
+          <View style={{height:10}}></View>
           <FlatList
             data={data}
             ListFooterComponent={ListFooter}
@@ -73,7 +76,7 @@ const cardlist = (props) => {
                 style={{
                   flex: 1,
                   flexDirection: "row",
-                  padding: 20,
+                  padding: 22,
                   borderRadius: 10,
                   shadowColor: "#171717",
                   shadowOffset: { width: -2, height: 2 },
@@ -107,7 +110,7 @@ const cardlist = (props) => {
           />
         </View>
 
-        <Bt_Main label={"Contine"} onPress={()=>props.navigation.navigate("TopupScreen")} />
+        <Bt_Main label={"Continue"} onPress={()=>props.navigation.navigate("TopupScreen")} />
       </Header>
     </View>
   );

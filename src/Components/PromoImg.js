@@ -27,6 +27,7 @@ function PromoImg(props) {
           marginBottom: 3,
           justifyContent: "center",
           alignItems: "center",
+          paddingBottom:15
         }}
       >
         <Image

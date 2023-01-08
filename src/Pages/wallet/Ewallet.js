@@ -77,7 +77,7 @@ if(item["title"].includes("Top Up")){
                 rightIcon={false}
                 title={"E-Wallet"}>
                    <ScrollView>
-      <View style={{ flex: 0.4, justifyContent: "center" }}>
+      <View style={{ flex: 0.4, justifyContent: "center", }}>
         <View
           style={{
             borderRadius: 20,
@@ -110,7 +110,7 @@ if(item["title"].includes("Top Up")){
                 </View>
                 <Image
                   source={GetImage.visa}
-                  style={{ height: 75, width: 75, resizeMode: "contain" }}
+                  style={{ height: 100, width: 100, resizeMode: "contain",paddingBottom:5 }}
                 />
               </View>
               <View
@@ -120,40 +120,48 @@ if(item["title"].includes("Top Up")){
                   justifyContent: "center",
                   alignItems: "center",
                   flex: 0.5,
+                 
                 }}
               >
-                <View style={{ paddingTop: 5, flex: 1 }}>
-                  <Text style={[styles.subText, { color: "#fff" }]}>
+                <View style={{ paddingTop: 5, flex: 1, }}>
+                  <Text style={{ color: "#fff", fontSize: 15,
+                  
+    fontFamily: "Urbanist_regular",bottom:5
+   }}>
                     {"Your Balance"}
                   </Text>
                   <Text
-                    style={[styles.subText, { fontSize: 43, color: "#fff" ,fontWeight:'bold'}]}
+                    style={[styles.subText, { fontSize: 35, color: "#fff" ,fontWeight:'bold'}]}
                   >
                     {"$957,5"}
                   </Text>
                 </View>
-                <TouchableOpacity onPress={() => navigation.navigate("cardlist")}>
+                <TouchableOpacity style={{paddingTop:30}} onPress={() => navigation.navigate("cardlist")}>
                   <View
                     style={{
                       backgroundColor: "#fff",
                       flexDirection: "row",
                       justifyContent: "center",
                       alignItems: "center",
-                      padding: 10,
+                      padding: 8,
+                     height:35,
                       borderRadius: 20,
-                      paddingHorizontal: 25,
+                      paddingHorizontal: 22,
                     }}
                   >
                     <Image
                       source={GetImage.topupic}
                       style={{
-                        height: 20,
-                        width: 20,
+                        height: 15,
+                        width: 15,
                         resizeMode: "contain",
                         marginRight: 5,
                       }}
                     />
-                    <Text style={[styles.headsubText, { color: "#35383F" }]}>
+                    <Text style={ { color: "#35383F",  fontSize: 13,
+    fontFamily: "Urbanist_regular",
+    
+    }}>
                       Top Up
                     </Text>
                   </View>
@@ -174,7 +182,7 @@ if(item["title"].includes("Top Up")){
             <TouchableOpacity
             onPress={()=>_Tigger(item)}
               key={index}
-              style={{ flex: 1, flexDirection: "row", padding: 10,top:10 }}
+              style={{ flex: 1, flexDirection: "row", padding: 10,top:10, paddingHorizontal:16}}
             >
               <Image
                 source={item.img}
@@ -185,8 +193,12 @@ if(item["title"].includes("Top Up")){
               >
                 <Text style={styles.headsubText}>{item.title}</Text>
                 <View style={{ flexDirection: "row", paddingTop: 5 }}>
-                  <Text style={[styles.subText, { flex: 1 }]}>{item.time}</Text>
-                  <Text style={styles.subText}>{item.rate}</Text>
+                  <Text style={ { flex: 1 , fontSize: 12,
+    fontFamily: "  Urbanist_regular",
+    color: "#616161",}}>{item.time}</Text>
+                  <Text style={{ fontSize: 12,
+    fontFamily: "  Urbanist_regular",
+    color: "#616161",}}>{item.rate}</Text>
                 </View>
               </View>
             </TouchableOpacity>
@@ -200,7 +212,7 @@ if(item["title"].includes("Top Up")){
     fontFamily: "Urbanist_regular",
     fontWeight: "700",
     color: "#0F437B",
-    marginTop:15}}>{"View more result"}</Text>
+    marginTop:12}}>{"View more result"}</Text>
     </View>
       <View style={{height:height/100*5}} />
    </ScrollView>
